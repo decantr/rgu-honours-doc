@@ -1,0 +1,37 @@
+
+
+\section{Endpoint Devices}
+
+The Internet of Things (IoT) is a burgeoning field that has seen a massive boom in the Smart Devices market. (Lueth, 2018)⁠ IoT devices are defined by their low cost and low power and their ability to communicate with each other on the same LAN and have a degree of interoperability. (Vujovic et al., 2014)⁠. With the ever increasing rise of such devices the availability of low cost SoC (System On a Chip) devices increases with it. Many vendors have begun targeting the SoC devices after the Raspberry Pi Foundation unveiled the Raspberry Pi 1. Today there exists a myriad of low cost SoC’s with differing qualities for differing use cases. (Larabel, 2018) Many System On a Chips are available in the current market. Two of the largest names include Raspberry Pi from the Non Profit Raspberry Pi Foundation and the Arduino board from Arduino LLC. 
+
+\subsection{Raspberry Pi}
+The Raspberry Pi Zero W (RPi0), the Non W (Wireless) is pictured below, is a nice fit for our endpoint controller.  It’s availability and it’s wide range of support makes it an appealing choice for the controller. The RPi0 is an excellent fit for our project as at idle it will only draw a maximum average of 100mA (Alex, 2017)⁠ with further tweaks reducing it. On a relatively low cost battery we can expect this to last a day. Many of the current SEPA stations use solar power to power the electronics inside the shed. (SEPA, 2007) Our sensors will also be battery powered leveraging a solar panel to ensure charge is maintained.
+
+
+\subsection{Arduino}
+The Arduino is a compelling choice as it’s Arduino Nano product, pictured below, uses the ATmega328 microcontroller. This is a controller with a miniscule power draw of only 19mA. (ArduinoLLC, 2018)⁠ This can be further improved to reach as low as 54 µA ( 0.054 mA ). This would enable us to run on a minimal power source such as a 9V battery cell for periods of years. (Madcoffee, 2018)⁠ 
+
+
+\subsection{Other}
+Many other SoC’s include the ASUS tinker board, BeagleBoard and Bannana PI to name a few. These are all compelling options with a range of hardware benefits over the Raspberry Pi. 
+
+\subsection{Comparison}
+
+\hspace{-3cm}
+\begin{tabular}{cccccccc}
+	\hline 
+	{} & Uno Rev 3 & Nano & Pi 3B+ & Pi Zero W & BeagleBone & TinkerBoard & Bannana Pi \\ 
+	\hline 
+	Cost (£) & 15 & 15 & 35 & 15 &  &  &  \\ 
+	Power Draw Idle & 0.225W & 0.01W & 2.3W & 0.5W &  &  &  \\ 
+	WiFI & N/A & N/A & 802.11 b/g/n & 802.11 b/g/n &  &  &  \\ 
+	Bluetooth & N/A & N/A & 4.2 & 4.1 &  &  &  \\ 
+	CPU Arch & AVR & AVR & ARMv8 & ARMv6 & ARM & ARM & ARM \\ 
+	Clock Speed & 16 MHz & 16 Mhz & 1.4 GHz & 1 GHz &  &  &  \\ 
+	Core Count & 1 & 1 & 4 & 1 &  &  &  \\ 
+	RAM & 32 KB & 32 KB & 1 GB & 512 MB &  &  &  \\ 
+	OS & N/A & N/A & Linux & Linux & Linux & Linux & Linux \\ 
+	\hline 
+\end{tabular}
+\\\\\\
+The advantage afforded to the RPi0 is it’s availability, low cost, support but more importantly familiarity. It is important to ensure the barrier for entry, both cost and technical ability, is kept to a minimal for anyone who wishes to deploy one or more of these. Additionally by using the RPi0 we can leverage technologies already created for the device. 

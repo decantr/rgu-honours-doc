@@ -3,3 +3,9 @@
 *.blg
 *.log
 *.synctex.gz
+
+
+*/*.aux
+
+papers/
+images/

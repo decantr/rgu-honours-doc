@@ -1,2 +1,19 @@
-Server Hardware
+\section{Server}
+
+A server is defined as a device that can serve one or more "client" devices. This will usually be a powerful device that clients can send raw data to and have the server do any computation required before returning a result. \citep{Raymond2003} 
+
+A number of operating systems exist to target the server. This is achieved by first stripping the system of as many superfluous systems as possible, such as a graphics stack. \citep{Guide2016} The configuration is therefore handled primarily though the shell, under Linux this is usually Bash (Bourne Again Shell). Windows Server's do not abide by this however and run a graphical stack \citep{Microsoft2017}. Due to the a Linux server must be used due to its far lower system requirements to run.
+\\\\
+\begin{center}
+\begin{tabular}{cccc}
+ 			\hline 
+ 			& \textbf{Raspbian Lite} & \textbf{Ubuntu Server} & \textbf{Microsoft Server} \\ 
+ 			\hline 
+ 			CPU &  & 300 MHz &  \\ 
+ 			RAM &  & 384 MB &  \\ 
+ 			Storage &  & 1.5 GB &  \\ 
+ 			\hline 
+\end{tabular}
+\\\citep{Guide2016},\citep{Microsoft2018}\\
+\end{center}
 Device to use. How to store the DB, i.e which database (mongo/sql/...). API for data to be retrieved by web portal and other users.

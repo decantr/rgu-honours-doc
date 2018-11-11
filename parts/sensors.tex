@@ -10,8 +10,7 @@ The collection of the river data will be the trickiest part of the project. To c
 \end{figure}
 
 \subsection{pH Sensor}
-The sensing of the pH level is somewhat more difficult and requires a specialist tool. The EZO-pH Embedded pH Circuit \citep{AtlasScientific2018a} which allows a digital signal to be read through i2c or UART by a connected device. \cite{Dey2018}
+The sensing of the pH level is somewhat more difficult and requires a specialist tool. The EZO-pH Embedded pH Circuit \citep{AtlasScientific2018a} which allows a digital signal to be read through i2c or UART by a connected device. \cite{Dey2018} One issue with this sensor is that is an analogue device and thus if a Raspberry Pi is used we will require an ADC (Analogue to Digital Converter) to hook it up, if however a Arduino is used this will not be an issue.
 
 \subsection{Temperature Sensor}
-
-Types of sensors that could be used. Elements that need to be detected. 
+To collect the temperature a wide range of sensors can be used with the only requirement being they are waterproof. The most accessible of these is the DS18B20 \citep{DS18B20} which communicates over the 1-Wire protocol. This is particularly useful to us as it is a digital sensor meaning we will not need the additional ADC if a Raspberry Pi (Zero) is used. Once connected this can be polled for the current temperature at the sensor. \citep{Monk2013}

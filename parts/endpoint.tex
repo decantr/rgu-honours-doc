@@ -6,40 +6,53 @@ The Internet of Things (IoT) is a burgeoning field that has seen a massive boom 
 
 \subsection{Raspberry Pi}
 The Raspberry Pi Zero W (RPi0), the Non W (Wireless) is pictured below, is a nice fit for our endpoint controller.  It’s availability and it’s wide range of support makes it an appealing choice for the controller. The RPi0 is an excellent fit for our project as at idle it will only draw a maximum average of 100mA \citep{Alex2017} with further tweaks reducing it. On a relatively low cost battery we can expect this to last a day. Many of the current SEPA stations use solar power to power the electronics inside the shed. \citep{SEPA2007} Our sensors will also be battery powered leveraging a solar panel to ensure charge is maintained.
-\\\\
-\includegraphics[width=\linewidth]{images/RaspberryPiZero.jpg}\\\cite{Amos2016}
-\\\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/RaspberryPiZero.jpg}\\
+	\caption{ Raspberry Pi Zero \citep{Amos2016}}
+	\label{fig:pizero}
+\end{figure}
 The Raspberry Pi 3B+ on the other hand is a much better fit for a server/command and control device. \citep{Leccese2014} With it's more powerful CPU increasing the power draw to an idle of ~500mA \citep{RaspberryPiFoundation2018} powering this from a battery wouldn't be ideal. Instead it should be used to connecting a LTE adapter or Ethernet cable to connect the endpoints to the larger LAN or WAN for sending information back to a central server.
-\\\\
-\includegraphics[width=\linewidth]{images/RaspberryPi3B+.jpg}\\\citep{RaspberryPiFoundation2018a}
-\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/RaspberryPi3B+.jpg}
+	\caption{ Raspberry Pi 3B+ \citep{RaspberryPiFoundation2018a}}
+	\label{fig:pi3b}
+\end{figure}
 \subsection{Arduino}
 The Arduino is a compelling choice as it’s Arduino Nano product, pictured below, uses the ATmega328 microcontroller. This is a controller with a miniscule power draw of only 19mA. \citep{ArduinoLLC2010}⁠ This can be further improved to reach as low as 54 µA ( 0.054 mA ). This would enable us to run on a minimal power source such as a 9V battery cell for periods of years. \citep{Madcoffee2018} Further the arduino features a smaller SoC size for both the Nano and the full-size Uno device \citep{ArduinoLLC2010} making it more versatile.
 
-\includegraphics[width=\linewidth]{images/ArduinoNano.jpg}\\\citep{Mellis2010}
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/ArduinoNano.jpg}
+	\caption{ Arduino Nano \citep{Mellis2010}}
+	\label{fig:nano}
+\end{figure}
 
 \subsection{Other}
 Many other SoC’s include the ASUS tinker board and BeagleBoard among many others. Other SoC's target features found lacking in the Raspberry Pi, namely Gigabit Ethernet and increased RAM or reducing power consumption and SoC size. These make them compelling choices in scenario's where size or bandwidth etc. are essential however these other board's are often more expensive and even more difficult to source.
 
 \subsection{Comparison}
+\begin{figure}[H]
+	\hspace{-2cm}
+	\begin{tabular}{ccccccc}
+		\hline 
+		{} & Uno Rev 3 & Nano & Pi 3B+ & Pi Zero W & BeagleBone & TinkerBoard \\ 
+		\hline 
+		Cost (£) & 15 & 15 & 35 & 15 & 50 & 55 \\ 
+		Power Draw Idle & 0.225 W & 0.01 W & 2 W & 0.5 W & 1.75 W & 2 W  \\ 
+		WiFI & N/A & N/A & 802.11 b/g/n & 802.11 b/g/n & 802.11 b/g/n & 802.11 b/g/n \\ 
+		Bluetooth & N/A & N/A & 4.2 & 4.1 & 4.1 & 4.0 \\ 
+		CPU Arch & AVR & AVR & ARMv8 & ARMv6 & ARMv8 & ARMv7 \\ 
+		Clock Speed & 16 MHz & 16 Mhz & 1.4 GHz & 1 GHz & 1 GHz & 1.8 GHz \\ 
+		Core Count & 1 & 1 & 4 & 1 & 1 & 4 \\ 
+		RAM & 32 KB & 32 KB & 1 GB & 512 MB & 512 MB & 2 GB \\ 
+		OS & N/A & N/A & Linux & Linux & Linux & TinkerOS \\
+		\hline 
+	\end{tabular}
+	\caption{ Comparison of devices \citep{ArduinoLLC2010}, \citep{ArduinoLLC2008a}, \citep{RaspberryPiFoundation2018}, \citep{RaspberryPiFoundation2017}, \citep{BeagleBoard2017}, \citep{Asus2017}}
+	\label{fig:devicecompare}
+\end{figure}
 
-\hspace{-2cm}
-\begin{tabular}{ccccccc}
-	\hline 
-	{} & Uno Rev 3 & Nano & Pi 3B+ & Pi Zero W & BeagleBone & TinkerBoard \\ 
-	\hline 
-	Cost (£) & 15 & 15 & 35 & 15 & 50 & 55 \\ 
-	Power Draw Idle & 0.225 W & 0.01 W & 2 W & 0.5 W & 1.75 W & 2 W  \\ 
-	WiFI & N/A & N/A & 802.11 b/g/n & 802.11 b/g/n & 802.11 b/g/n & 802.11 b/g/n \\ 
-	Bluetooth & N/A & N/A & 4.2 & 4.1 & 4.1 & 4.0 \\ 
-	CPU Arch & AVR & AVR & ARMv8 & ARMv6 & ARMv8 & ARMv7 \\ 
-	Clock Speed & 16 MHz & 16 Mhz & 1.4 GHz & 1 GHz & 1 GHz & 1.8 GHz \\ 
-	Core Count & 1 & 1 & 4 & 1 & 1 & 4 \\ 
-	RAM & 32 KB & 32 KB & 1 GB & 512 MB & 512 MB & 2 GB \\ 
-	OS & N/A & N/A & Linux & Linux & Linux & TinkerOS \\
-	\hline 
-\end{tabular}
-\\\\\\
 The advantage afforded to the RPi0 is it’s availability, low cost, support but more importantly familiarity. It is important to ensure the barrier for entry, both cost and technical ability, is kept to a minimal for anyone who wishes to deploy one or more of these. Additionally by using the RPi0 we can leverage technologies already created for the device. 
 From the graph above we can see that the pi3 and pi0 fit nicely into the middle of the graph offering good hardware and low power consumption. 

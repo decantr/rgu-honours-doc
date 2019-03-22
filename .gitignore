@@ -1,11 +1,14 @@
+# latex
 *.aux
 *.bbl
 *.blg
 *.log
 *.synctex.gz
 
-
 */*.aux
 
 papers/
 images/
+
+# output
+report.pdf

@@ -49,21 +49,61 @@ Finally it will end with the conclusion which will describe things learned and d
 .NH
 Introduction
 .PP
+.NH 2
+Motivation
+.NH 2
+Aims and Objectives
+.NH 2
+Ethics of IoT
+
+
 .NH
 Literature Review
-.PP
+\# TODO : port lit review to groff.
 .NH
 Design / Methodology
+.NH 2
+Client Tooling - Reporter.go
 .PP
+.NH 2
+Server Handler - Recorder.go
+.PP
+.NH 3
+Database Structure
+.PP
+.NH 2
+User Interface - Represent.js
+.PP
+.NH 2
+Design of the Nodes
+.PP
+.NH 2
+Design of Server
+.PP
+
 .NH
 Implementation
+.PP
+The implementation fo the project has followed a familiar path.
+Initially the design and development of deployment tooling was neccassary both as a key part of the project but also to allow for rapid prototyping of future work.
+Below will document these individual parts of the project.
+.NH 2
+Deployment Tools
 .PP
 .NH
 Testing and Results
 .PP
+
 .NH
 Evaluation
 .PP
+Below is a breakdown of the sections created to build this project and a discussion of the effectiveness of the implementation.
+.NH 2
+One
+.PP
+.NH 2
+Two
+
 .NH
 Conclusion
 .PP

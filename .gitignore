@@ -11,4 +11,4 @@ papers/
 images/
 
 # output
-report.pdf
+*.pdf

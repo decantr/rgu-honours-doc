@@ -21,7 +21,8 @@ Thanks to the rise of the Non Profit "Raspberry Pi Foundation" and its (mostly) 
 .SH
 Project Aims
 .XP
-This project aims to provide
+This project aims to provide an open source and easy to deploy utility for setting up a monitoring system.
+It will provide a framework to allow others use or build a top, opening up the field to a wider range of people from enthusiasts to small business.
 .SH
 Methods
 .XP

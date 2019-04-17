@@ -23,12 +23,47 @@ Project Aims
 .XP
 This project aims to provide an open source and easy to deploy utility for setting up a monitoring system.
 It will provide a framework to allow others use or build a top, opening up the field to a wider range of people from enthusiasts to small business.
+A reliable backbone will be essential to providing a useful piece of software and built using secure and stable software.
 .SH
 Methods
+.PS
+lineht = lineht / 4
+
+SB: box width 2 "sensor-bridge"
+
+left
+line <- from SB.w
+line
+circle rad .4 "\fIsensor-x"
+
+up
+line <- from SB.n
+line
+circle rad .4 "\fIsesnor-y"
+
+down
+line <- from SB.s
+line
+circle rad .4 "\fIsensor-z"
+
+right
+line -> from SB.e
+box "influxDB"
+
+line <->
+box "\fRWeb UI"
+.PE
+.XP
+The project is divided into three distinct sections, the setup scripts written in POSIX complaint shell, a program to facilitate the reporting of readings from the sensors written in Golang, due to its ability to cross compile binaries, and a Spartan Web UI.
+This UI is expected to be expanded up on by users of the tool as different data types will require different forms of representation.
+
+.SH
+Figures
 .XP
 .SH
-Figures & Results
+Results
 .XP
+
 .SH
 Conclusion
 .XP

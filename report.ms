@@ -90,7 +90,36 @@ and its (mostly) open source
 .B "Raspberry Pi"
 line, we have access to a plethora of Low Power SBC'S which we can leverage to produce our own LPIoTD.
 
-.bp
+.NH 2
+Project Motivation
+.PP
+My initial experience with IoT devices, as many peoples will likely be, was through a smart assistant device.
+This seemingly innocuous cylinder would light up and respond to questions by using it's name.
+Over the next few years the stories of data harvesting from IoT devices, breaches and security breaches
+.[
+Mirai
+.]
+the need for a standard, open source implementation became clearer.
+A number of these projects caught my attention such as
+.B "Mozilla" 's
+.B WebThings
+tool that attempts to allow interoperability between the differing protocols
+.[
+WebThings
+.]
+and
+.B "Mycroft AI" 's
+.B "Mycroft"
+which is an open source AI implementation competing with the likes of
+.B "Amazon" 's
+.B "Alexa"
+or
+.B "Google" 's
+.B "Google Assistant"
+in order to provide a free platform that can be self hosted.
+.[
+Mycroft
+.]
 .NH 2
 Motivation
 .NH 2

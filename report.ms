@@ -1,3 +1,5 @@
+.nr PSINCR 4p
+.nr GROWPS 2
 .TL
 Distributed Mesh Sensor Network using Raspberry Pi's
 .AU
@@ -38,15 +40,30 @@ Appendices
 \# TODO : ONGOING : keep ToC up to date
 .SH
 Report Structure
-.QP
+.LP
 This report details the process required to construct a distributed mesh network of sensors.
 The report will walkthrough the process undertook to create the open source tooling that has been made available with the release of this document.
-The literature review section details the projects done that are in the similar field as this.
-The design methodology section will walkthrough the rational followed in the design of the project.
-Following this the implementation section describes the issues that were encountered and overcome in the building of the final product.
-This is followed by the testing and results which will describe the testing process overall and the results achieved from this resting.
-An evaluation of the project as a whole will follow this and cover the implementation and the results of testing.
-Finally it will end with the conclusion which will describe things learned and describe the pitfalls to any future implementations.
+.XP
+.B "Literature Review"
+- The literature review section details the projects done that are in the similar field as this.
+.XP
+.B "Specification"
+- Compiled list of requirements for the project.
+.XP
+.B "Design Methodology"
+- The design methodology section will walkthrough the rational followed in the design of the project.
+.XP
+.B "Issues"
+- Following this the implementation section describes the issues that were encountered and overcome in the building of the final product.
+.XP
+.B "Testing"
+- This is followed by the testing and results which will describe the testing process overall and the results achieved from this resting.
+.XP
+.B "Evaluation"
+- An evaluation of the project as a whole will follow this and cover the implementation and the results of testing.
+.XP
+.B "Conclusion"
+- Finally the conclusion which will describe things learned and describe the pitfalls to any future implementations.
 .bp
 .NH
 Introduction

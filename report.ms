@@ -91,7 +91,7 @@ and its (mostly) open source
 line, we have access to a plethora of Low Power SBC'S which we can leverage to produce our own LPIoTD.
 
 .NH 2
-Project Motivation
+Motivation
 .PP
 My initial experience with IoT devices, as many peoples will likely be, was through a smart assistant device.
 This seemingly innocuous cylinder would light up and respond to questions by using it's name.
@@ -120,8 +120,7 @@ in order to provide a free platform that can be self hosted.
 .[
 Mycroft
 .]
-.NH 2
-Motivation
+There have been a number of attempts from other academic papers, which I will touch on later, to create a similar implementation for distributed sensor networks, however none have really allowed such a low barrier to entry as this project aims to provide.
 .NH 2
 Aims and Objectives
 .NH 2

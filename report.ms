@@ -32,6 +32,7 @@ Conclusion
 Appendices
 .XE
 .TC
+.bp
 \# TODO : expand the abstract
 \# TODO : more on the ethics
 \# TODO : ONGOING : keep ToC up to date
@@ -46,9 +47,12 @@ Following this the implementation section describes the issues that were encount
 This is followed by the testing and results which will describe the testing process overall and the results achieved from this resting.
 An evaluation of the project as a whole will follow this and cover the implementation and the results of testing.
 Finally it will end with the conclusion which will describe things learned and describe the pitfalls to any future implementations.
+.bp
 .NH
 Introduction
 .PP
+
+.bp
 .NH 2
 Motivation
 .NH 2

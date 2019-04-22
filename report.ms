@@ -127,7 +127,7 @@ Aims and Objectives
 .NH 2
 Ethics of IoT
 
-
+.bp
 .NH
 Literature Review
 \# TODO : port lit review to groff.

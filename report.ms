@@ -220,9 +220,169 @@ This is also a key principle for this project, and the Open Database License
 OpenDataCommons2011
 .]
  will ensure the data can be used freely.
+.SH 2
+Endpoint Devices
+.PP
+The Internet of Things
+.B "IoT" ) (
+is a burgeoning field that has seen a massive boom in the Smart Devices market.
+.[
+Lueth2018
+.]
+IoT devices are defined by their low cost and low power and their ability to communicate with each other on the same LAN and have a degree of interoperability.
+.[
+Vujovic2014
+.]
+With the ever increasing rise of such devices the availability of low cost System On a Chip
+.B "SOC" ) (
+devices increases with it.
+Many vendors have begun targeting the SoC devices after the Raspberry Pi Foundation unveiled the Raspberry Pi 1.
+Today there exists a myriad of low cost SoC's with differing qualities for differing use cases.
+.[
+Larabel2018
+.]
+Many System On a Chips are available in the current market.
+Two of the largest names include Raspberry Pi from the Non Profit Raspberry Pi Foundation and the Arduino board from Arduino LLC.
+.SH 3
+Raspberry Pi
+.PP
+The Raspberry Pi Zero W
+.B "RPi0" ), (
+the Non W (Wireless) is pictured below, is a nice fit for our endpoint controller.
+It's availability and it's wide range of support makes it an appealing choice for the controller.
+The RPi0 is an excellent fit for our project as at idle it will only draw a maximum average of 100mA
+.[
+Alex2017
+.]
+with further tweaks reducing it.
+On a relatively low cost battery we can expect this to last a day.
+Many of the current SEPA stations use solar power to power the electronics inside the shed.
+.[
+SEPA2007
+.]
+Our sensors will also be battery powered leveraging a solar panel to ensure charge is maintained.
+.IMAGE
+The Raspberry Pi 3B+ on the other hand is a much better fit for a server/command and control device.
+.[
+Leccese2014
+.]
+With it's more powerful CPU increasing the power draw to an idle of ~500mA
+.[
+RaspberryPiFoundation2018
+.]
+powering this from a battery wouldn't be ideal. Instead it should be used to connecting a LTE adapter or Ethernet cable to connect the endpoints to the larger LAN or WAN for sending information back to a central server.
+.SH 3
+Arduino
+.PP
+The Arduino is a compelling choice as it's Arduino Nano product, pictured below, uses the ATmega328 microcontroller.
+This is a controller with a miniscule power draw of only 19mA.
+.[
+ArduinoLLC2010
+.]
+This can be further improved to reach as low as 54 µA (0.054 mA).
+This would enable us to run on a minimal power source such as a 9V battery cell for periods of years.
+.[
+Madcoffee2018
+.]
+Further the arduino features a smaller SoC size for both the Nano and the full-size Uno device
+.[
+ArduinoLLC2010
+.]
+making it more versatile.
+.IMAGE
+.SH 3
+Other
+.PP
+Many other SoC's include the ASUS tinker board and BeagleBoard among many others.
+Other SoC's target features found lacking in the Raspberry Pi, namely Gigabit Ethernet and increased RAM or reducing power consumption and SoC size.
+These make them compelling choices in scenario's where size or bandwidth etc. are essential however these other board's are often more expensive and even more difficult to source.
+.SH 3
+Comparison
+.PP
+.bl
+.TS
+centre tab(&) expand nowarn;
+lcccccc
+lrrrrrr.
+_
+& Uno Rev 3 & Nano & Pi 3B+ & Pi Zero W & BeagleBone & TinkerBoard
+_
+Cost (£) & 15 & 15 & 35 & 15 & 50 & 55
+Power Draw Idle & 0.225 W & 0.01 W & 2 W & 0.5 W & 1.75 W & 2 W
+WiFI & N/A & N/A & 802.11 b/g/n & 802.11 b/g/n & 802.11 b/g/n & 802.11 b/g/n
+Bluetooth & N/A & N/A & 4.2 & 4.1 & 4.1 & 4.0
+CPU Arch & AVR & AVR & ARMv8 & ARMv6 & ARMv8 & ARMv7
+Clock Speed & 16 MHz & 16 Mhz & 1.4 GHz & 1 GHz & 1 GHz & 1.8 GHz
+Core Count & 1 & 1 & 4 & 1 & 1 & 4
+RAM & 32 KB & 32 KB & 1 GB & 512 MB & 512 MB & 2 GB
+OS & N/A & N/A & Linux & Linux & Linux & TinkerOS
+_
+.TE
+.bl
+The advantage afforded to the RPi0 is it's availability, low cost, support but more importantly familiarity.
+It is important to ensure the barrier for entry, both cost and technical ability, is kept to a minimal for anyone who wishes to deploy one or more of these.
+Additionally by using the RPi0 we can leverage technologies already created for the device.
+From the graph above we can see that the pi3 and pi0 fit nicely into the middle of the graph offering good hardware and low power consumption.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \# TODO : port lit review to groff.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .bp
 .NH
 Specification

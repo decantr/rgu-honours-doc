@@ -477,62 +477,21 @@ Volume2013
 .[
 Pocero2017
 .]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\# TODO : port lit review to groff.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.SH 2
+Conclusion
+.PP
+There are a number of possibilities for the devices that could be used but overall the needs of the sensors used dictate the choice of the endpoint.
+The Arduino suits this role more than the Raspberry Pi Zero in terms of power consumption and having the Analog pins available with no additional modules necessary.
+.PP
+In contrast it's clear the lack of computational power on the Arduino Uno makes the Raspberry Pi 3B+ the clear winner for the command and control 'server' for the endpoints to report back to.
+It's increased power consumption can easily be offset if it is placed in a position with a hard line power source which may not be able to reach the other devices.
+Further if Ethernet/ADSL can be used it far better placed to interface with a physical connection.
+Alternatively the additional demands on the hardware of a GSM/LTE adapter and connection will be offset with the more beefy device.
+.PP
+Network choice is majorly dependant on the topography of the terrain the devices are being deployed in.
+If foliage is a major issue then the already weak WiFi is going to be inoperable and ZigBee will be essential, however if there is little vegetation then WiFi may be viable alternative to keep costs and complexity low.
+.PP
+The sensors used are entirely determined by the market and what is available. As stated previously this is a niche and thus there are few options.
 .bp
 .NH
 Specification

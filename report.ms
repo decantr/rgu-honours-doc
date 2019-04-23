@@ -281,6 +281,10 @@ a NoSQL Time Series Database because of its low system requirements and easy to 
 .bp
 .NH
 Design / Methodology
+.PP
+This section will detail the design decisions taken to build the various sections of the project.
+The initial plan of how the project would work, prior to any attempted implementation will be discussed first and then contraposed against the final implementation.
+Many items discussed in the Literature Review and technologies that initally appeared promising proved to be either redundant or incompatible with the more core technologies being used, as such many of the decisions taken were interlinked with the restrictions imposed by the core requirements laid out in the previous section.
 .NH 2
 Client Tooling - Reporter.go
 .PP

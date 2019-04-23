@@ -123,9 +123,24 @@ Mycroft
 There have been a number of attempts from other academic papers, which I will touch on later, to create a similar implementation for distributed sensor networks, however none have really allowed such a low barrier to entry as this project aims to provide.
 .NH 2
 Aims and Objectives
-.NH 2
-Ethics of IoT
-
+.PP
+The primary aim of this project is to provide an open source and easy to deploy utility for setting up a monitoring system.
+It will provide a framework to allow others use or build a top, opening up the field to a wider range of people from enthusiasts to small business.
+A reliable backbone will be essential to providing a useful piece of software and built using secure and stable software.
+Due to the nature of where these sensors are deployed, a robust network is required (allowing for nodes to drop and come back up again) which our choice of B.A.T.M.A.N allows.
+This protocol can even route around a dead node, allowing packets to reach the bridge from any node.
+This is broken down into some simple objectives below.
+.RS
+.IP \[bu]
+Create a POSIX complaint script capable of deploying images to SD Cards.
+.IP \[bu]
+Network must be Mesh capable and provide a high
+.B "QoS" .
+.IP \[bu]
+Create a binary capable of reporting sensor information to the database.
+.IP \[bu]
+A simple User Interface that a user can connect to to view the data being returned.
+.RE
 .bp
 .NH
 Literature Review

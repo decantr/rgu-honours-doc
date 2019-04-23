@@ -147,6 +147,139 @@ Literature Review
 \# TODO : port lit review to groff.
 .bp
 .NH
+Specification
+.PP
+.NH 2
+Requirements Analysis
+.PP
+As discussed in the Literature Review there are many different approaches to the monitoring remote locations with low powered devices.
+The most common trend takes the form of an Arduino with a ZigBee antenna feeding back to a Raspberry Pi acting as a server to manage all the “clients” or endpoints.
+This causes barriers to entry for anyone wishing to deploy a small scale sensor network as it increases the amount of different devices they need to buy.
+This project shall attempt to do two things; to implement a solid architecture allowing the endpoint and server to communicate and store data and to explore the possibilities of using onboard solutions for wireless transmission.
+.NH 2
+Functional Requirements
+.PP
+.B "Endpoint"
+.RS
+.IP \[bu]
+The endpoint must be able to communicate with the server over distance
+.IP \[bu]
+The endpoints must have a sensor
+.IP \[bu]
+The endpoints must be able to retrieve data from sensors
+.IP \[bu]
+The endpoints must relay that information to the server
+.IP \[bu]
+Packetise the data and compress it for transmission over the likely low bandwidth connection
+.IP \[bu]
+Ensure that any lost data is resent
+.IP \[bu]
+The endpoints must be able to recover from loss of network
+.IP \[bu]
+In the case of weather conditions and the connection is lost, data to be sent should be held until the network returns
+.IP \[bu]
+The endpoint can recover from loss of power, incase of battery discharge
+.RE
+.PP
+.B "Server"
+.RS
+.IP \[bu]
+The server must be able to communicate with the endpoint
+.IP \[bu]
+The server must be able to store incoming data using a DBMS
+.IP \[bu]
+The server should not be susceptible to crashes
+.IP \[bu]
+Code running on the server should ensure that its uptime is maximum
+.IP \[bu]
+The mesh network must be able to establish new connections and handle lost connections on the fly.
+.RS
+As the endpoints are going to be susceptible to disconnecting and reconnecting, this should not cause an issue
+.RE
+.RE
+.PP
+.B "Software"
+.RS
+.IP \[bu]
+Clients should sleep periodically to conserve power
+.IP \[bu]
+A minimum of Linux Kernel 4.18 should be used for the enhanced power saving improvements
+.IP \[bu]
+Client software must be deliverable as a single binary
+.IP \[bu]
+Should communicate of WiFi 2.4 GHz for the enhanced range
+.IP \[bu]
+Server software should be modelled as a RESTful API
+.RE
+.PP
+.B "Sensors"
+.RS
+.IP \[bu]
+.B "HC SR04"
+Ultrasonic Sensor
+.IP \[bu]
+.B "EZO-pH"
+Embedded pH Circuit
+.IP \[bu]
+.B "DS18B20"
+Temperature Sensor
+.IP \[bu]
+DHT Temperature & Humidity Sensors
+.RS
+.IP \[bu]
+.B "DHT11"
+Sensor
+.IP \[bu]
+.B "DHT22"
+Sensor
+.IP \[bu]
+.B "AM2302"
+Sensor
+.RE
+.RE
+.PP
+.B "Non-Functional Requirements"
+.RS
+.IP \[bu]
+Software developed should be open source
+.IP \[bu]
+Software developed should be maintainable
+.IP \[bu]
+Should be well documented allowing hobbyists and professionals to implement on their own
+.IP \[bu]
+Software should be written in the LTS versions of software to ensure long life of the project
+.IP \[bu]
+Client software should be written with power saving in mind
+.IP \[bu]
+Must have scripts for deploying software packages to SD Cards
+.IP \[bu]
+Endpoints and servers should comply with IEEE & IETF standards where possible
+.RE
+.NH 2
+Legal and Ethical Requirements
+.PP
+This project has no Legal or Ethical ramifications as it collects no personal information.
+.NH 2
+Technologies Required
+.PP
+This project will require a
+.B "Raspberry Pi 3 B +" ,
+one or more
+.B "Raspberry Pi Zero"
+and one Sensor from the list above.
+This is in addition to the mandatory power cables, or battery packs and SD Card for the devices.
+Both the server and the clients will run on top of the standard
+.B "Raspbian Lite"
+Linux distribution, this includes no GUI and can only be accessed through SSH (which will be enabled for testing purposes) and through the openened port
+.CW "8080"
+to access the graphs and port
+.CW "3000"
+to access the API.
+Database will use the popular
+.B "InfluxDB" ,
+a NoSQL Time Series Database because of its low system requirements and easy to use HTTP API.
+.bp
+.NH
 Design / Methodology
 .NH 2
 Client Tooling - Reporter.go

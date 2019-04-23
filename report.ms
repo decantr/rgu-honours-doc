@@ -1,5 +1,6 @@
 .nr PSINCR 4p
 .nr GROWPS 2
+.so msacros
 .TL
 Distributed Mesh Sensor Network using Raspberry Pi's
 .AU
@@ -285,8 +286,23 @@ Design / Methodology
 This section will detail the design decisions taken to build the various sections of the project.
 The initial plan of how the project would work, prior to any attempted implementation will be discussed first and then contraposed against the final implementation.
 Many items discussed in the Literature Review and technologies that initally appeared promising proved to be either redundant or incompatible with the more core technologies being used, as such many of the decisions taken were interlinked with the restrictions imposed by the core requirements laid out in the previous section.
+To aid in the seperation structure of the project, it has been split into a number of different repositories for each subject discussed below.
 .NH 2
-Client Tooling - Reporter.go
+Setup Tools
+.PP
+The setup tools are provided by the primary repository for the code.
+The primary file for the project deployment is the
+.CW "prepare-sd.sh"
+file which provides the setup for the document.
+.IMAGE
+
+.NH 2
+Client Tooling
+.NH 3
+Reporter
+
+
+
 .PP
 .NH 2
 Server Handler - Recorder.go

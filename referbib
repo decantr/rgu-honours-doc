@@ -53,6 +53,7 @@
 %O https://commons.wikimedia.org/wiki/File:Arduino\_Nano.jpg,
 %D 2010
 
+
 %A Windows IT Pro Center
 %T Windows Server 2016 System Requirements
 %O https://docs.microsoft.com/en-us/windows-server/get-started/system-requirements\#network-adapter-requirements,
@@ -167,6 +168,7 @@
 %O http://www.top500.org/statistics/list/,
 %D 2015
 
+%K Raymond2003
 %A Raymond, Eric
 %T Server
 %O http://www.catb.org/jargon/html/S/server.html,
@@ -306,11 +308,13 @@
 %O https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/,
 %D 2018
 
+%K Dey2018
 %A Dey, Ranjib
 %T Reef Pi Guide 7 pH Monitoring
 %O https://learn.adafruit.com/reef-pi-guide-7-ph-monitoring?view=all,
 %D 2018
 
+%K MicrosoftCorporation2017a
 %A Microsoft Corporation
 %T Windows Server Nano
 %O https://docs.microsoft.com/en-gb/windows-server/get-started/getting-started-with-nano-server,
@@ -364,6 +368,7 @@
 %V 14
 %D 2014
 
+%K Canonical2013
 %A Canonical
 %J Methods
 %P 416
@@ -377,6 +382,7 @@
 %O https://www.the-iot-marketplace.com/smart-water-iot-vertical-kit,
 %D 2015
 
+%K MicrosoftCorporation2017b
 %A Microsoft Corporation
 %T Windows 10 IoT Core for Raspberry Pi 2 / 3
 %O https://www.microsoft.com/en-us/download/details.aspx?id=55029,
@@ -389,6 +395,7 @@
 %T On availability and energy consumption of the fast connection establishment method by using bluetooth classic and bluetooth low energy
 %D 2017
 
+%K MicrosoftCorporation2017c
 %A Microsoft Corporation
 %T Windows S
 %O https://www.microsoft.com/en-gb/windows/s-mode,

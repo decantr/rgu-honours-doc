@@ -323,8 +323,47 @@ The advantage afforded to the RPi0 is it's availability, low cost, support but m
 It is important to ensure the barrier for entry, both cost and technical ability, is kept to a minimal for anyone who wishes to deploy one or more of these.
 Additionally by using the RPi0 we can leverage technologies already created for the device.
 From the graph above we can see that the pi3 and pi0 fit nicely into the middle of the graph offering good hardware and low power consumption.
-
-
+.SH 2
+Server
+.PP
+A server is defined as a device that can serve one or more "client" devices.
+This will usually be a powerful device that clients can send raw data to and have the server do any computation required before returning a result.
+.[
+Raymond2003
+.]
+A number of operating systems exist to target the server.
+This is achieved by first stripping the system of as many superfluous systems as possible, such as a graphics stack.
+.[
+Canonical2013
+.]
+The configuration is therefore handled primarily though the shell, under Linux this is usually Bash (Bourne Again Shell).
+Windows Server's do not abide by this however and usually a graphical stack is used to perform most configuration.
+.[
+MicrosoftCorporation2017a
+.]
+Due to this, a Linux server is best placed due to its far lower system requirements to run.
+.TS
+centre tab(&);
+cccc
+lrrr.
+_
+& Raspbian Lite & Ubuntu Server & Microsoft Server
+_
+CPU & 1 GHz & 1 GHz & 1.4 GHz
+RAM & 128 MB & 384 MB & 512 MB
+Storage & 2 GB & 1.5 GB & 32 GB
+_
+.TE
+To ensure that costs are kept low, small SD Cards are ideal which somewhat rules out the Windows option.
+In addition hardware support for Windows on Raspberry Pi is limited to Windows S
+.[
+MicrosoftCorporation2017b
+.]
+ which would require any software to be written as a UWP
+.[
+MicrosoftCorporation2017c
+.]
+ which would hinder performance.
 
 
 

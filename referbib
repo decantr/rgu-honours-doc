@@ -410,3 +410,29 @@
 %T Windows S
 %O https://www.microsoft.com/en-gb/windows/s-mode,
 %D 2017
+
+%K 10.1109/ieeestd.1994.81704
+%O https://doi.org/10.1109%2Fieeestd.1994.81704,
+%D 1994
+%A IEEE
+%I Institute of Electrical and Electronics Engineers (IEEE)
+%T 1003.1/2003
+
+%K Lewine1991
+%T POSIX Programmer's Guide
+%A Donald A. Lewine
+%O http://cdn.worldcolleges.info/sites/default/files/HowToGuide-POSIX.pdf
+%D 1991
+
+%K Gallmeister1995
+%T POSIX.4: Programming for the Real World
+%A Bill O. Gallmeister
+%O http://www.0x04.net/doc/posix/O'Reilly,%20Posix%204,%20Programming%20for%20The%20Real%20World.pdf
+%D 1995
+
+%K gnubashmanual
+%T GNU Bash Manual
+%A Free Software Foundation
+%O https://www.gnu.org/software/bash/manual/
+%D 2019
+

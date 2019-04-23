@@ -86,6 +86,7 @@
 %O https://store.arduino.cc/arduino-uno-rev3,
 %D 2010
 
+%K AtlasScientific2018a
 %A Atlas Scientific
 %T EZO-pH
 %V 99
@@ -194,6 +195,7 @@
 %V 2
 %D 2004
 
+%K AravindJayan2016
 %A Aravind Jayan
 %T How to Make a Water-Level Indicator With Arduino
 %O https://maker.pro/arduino/projects/ultrasonic-arduino-water-level-indicator,
@@ -244,6 +246,7 @@
 %V 194-195
 %D 1997
 
+%K AdafruitDS18
 %A Adafruit
 %T Waterproof DS18B20 Digital temperature sensor
 %O https://www.adafruit.com/product/381
@@ -270,7 +273,8 @@
 %T WFD Operational and Surveillance RIver Monitoring Points in Scotland
 %D 2006
 
-%A Scientific, Atlas
+%K AtlasScientific2018b
+%A Atlas Scientific
 %T EZO-pH Embedded pH Circuit
 %O https://www.atlas-scientific.com/\_files/\_datasheets/\_circuit/pH\_EZO\_datasheet.pdf,
 %D 2018
@@ -287,6 +291,7 @@
 %O https://www.saa.gov.uk/blog/document-search/river-gauging-stations/,
 %D 2016
 
+%K MouserElectronics
 %A Mouser Electronics and OSEPP Electronics
 %T HC-SR04 Sensor
 %O https://www.mouser.co.uk/ProductDetail/OSEPP-Electronics/HC-SR04?qs=sGAEpiMZZMu8c2wsui\%252biYud73BL9dHAk5B2HDuQZqCU=,
@@ -336,7 +341,8 @@
 %O https://uk.rs-online.com/web/p/zigbee-modules/1225774/,
 %D 2015
 
-%A Monk, Simon
+%K Monk2013
+%A Simon Monk
 %T DS18B20 Temperature Sensing Measure temperature with your Raspberry Pi using the DS18B20
 %O https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing,
 %D 2013

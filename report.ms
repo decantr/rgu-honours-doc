@@ -364,8 +364,61 @@ which would require any software to be written as a UWP
 MicrosoftCorporation2017c
 .]
 which would hinder performance.
-
-
+.SH 2
+Sensors
+.SH 3
+Water Level
+.PP
+The collection of the river data will be the trickiest part of the project.
+Currently to collect water level data, a wire is laid across the river and a buoy attached to the middle.
+The sag in the wire can then be used to calculate depth.
+.[
+SEPA2016
+.]
+An alternative solution involves using an ultrasonic sensor to judge the distance between the sensor and the water.
+.[
+AravindJayan2016
+.]
+An example of this sensor is shown in the figure below.
+This method has the advantage of being a low physical footprint solution to monitoring.
+.IMAGE
+.RS
+.RS
+.RS
+.[
+MouserElectronics
+.]
+.RE
+.RE
+.RE
+.SH 3
+pH Sensor
+.PP
+The sensing of the pH level is somewhat more difficult and requires a specialist tool.
+The EZO-pH Embedded pH Circuit
+.[
+AtlasScientific2018b
+.]
+allows for a digital signal to be read through i2c or UART by a connected device.
+.[
+Dey2018
+.]
+One issue with this sensor is that is an analogue device and thus if a Raspberry Pi is used we will require an ADC (Analogue to Digital Converter) to hook it up.
+If instead an Arduino is used, this will not be an issue.
+.SH 3
+Temperature Sensor
+.PP
+To collect the temperature a wide range of sensors can be used with the only requirement being they are waterproof.
+The most accessible of these is the DS18B20
+.[
+AdafruitDS18
+.]
+which communicates over the 1-Wire protocol.
+This is particularly useful to us as it is a digital sensor meaning we will not need the additional ADC if a Raspberry Pi (Zero) is used.
+Once connected this can be polled for the current temperature at the sensor.
+.[
+Monk2013
+.]
 
 
 

@@ -295,6 +295,7 @@ The primary file for the project deployment is the
 .CW "prepare-sd.sh"
 file which provides the setup for the document.
 The output from this depends on the provided options, an example setup for a Raspberry Pi Zero, which uses the ARMv6 architecture, is below.
+.bl
 .CW
 .TS
 box centre;
@@ -320,8 +321,32 @@ $ ./prepare-sd.sh 0
 ::  Install finished
 $
 .TE
+.bl
 .R
-
+There are a number of user required inputs during the process which ask the user for information about the enviroment that it cannot infer.
+These options are as follows:
+.IP \[bu]
+(If "Node" is chosen) ARM architecture that the script is deploying to ensure that the correct binaries are copied over to the device (the
+.B "B.A.T.M.A.N"
+setup deb archive and the correct compiled
+.CW "reporter"
+binary).
+.IP \[bu]
+The location of the /dev[ice] which the script should mount to. Special care is taken here to filter out the root device of the device running the script so a user does not brick their own machine.
+.IP \[bu]
+An option to deploy to the "eduroam" network. This option is included for any networks which will not correctly assign a DHCP address to devices inside the mesh network.
+.RS
+.IP \[bu]
+If [y] is selected then the user is asked to manually assign the IP address of the device, and a corresponding hostname is chosen.
+For example if
+.CW "172.16.0.22"
+is the IP then the sensor would be
+.CW "sensor-22" .
+.RE
+.IP \[bu]
+A final confirmation before writing to the selected disk, this option defaults to no.
+.PP
+This allows a multitude of differing options to be provided with the minimal amount of requirements for running the script.
 .NH 2
 Client Tooling
 .NH 3

@@ -294,11 +294,12 @@ The setup tools are provided by the primary repository for the code.
 The primary file for the project deployment is the
 .CW "prepare-sd.sh"
 file which provides the setup for the document.
-The output from this depends on the provided options, an example setup for a Rasbperry Pi Zero, which uses the ARMv6 architecture, is below.
+The output from this depends on the provided options, an example setup for a Raspberry Pi Zero, which uses the ARMv6 architecture, is below.
 .CW
 .TS
 box centre;
 l.
+.SM
 $ ./prepare-sd.sh 0
 ::  Pi2 and 3 are armhf, Pi0 and Pi1 is armel
 ::  Choose either armhf or armel: armel
@@ -313,12 +314,14 @@ $ ./prepare-sd.sh 0
 ::  This will take a while
 ::  Finished writing to /dev/mmcblk0
 ::  Creating mounting directories
-::  Mounting /dev/mmcblk0p to /mnt/sd/
+::  Mounting /dev/mmcblk0 to /mnt/sd/
 ::  Moving files
-::  Unmounting /dev/mmcblk0p
+::  Unmounting /dev/mmcblk0
 ::  Install finished
 $
 .TE
+.R
+
 .NH 2
 Client Tooling
 .NH 3

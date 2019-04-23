@@ -145,6 +145,7 @@ A simple User Interface that a user can connect to to view the data being return
 .NH
 Literature Review
 \# TODO : port lit review to groff.
+.bp
 .NH
 Design / Methodology
 .NH 2
@@ -165,7 +166,7 @@ Design of the Nodes
 .NH 2
 Design of Server
 .PP
-
+.bp
 .NH
 Implementation
 .PP
@@ -175,10 +176,11 @@ Below will document these individual parts of the project.
 .NH 2
 Deployment Tools
 .PP
+.bp
 .NH
 Testing and Results
 .PP
-
+.bp
 .NH
 Evaluation
 .PP
@@ -188,9 +190,12 @@ One
 .PP
 .NH 2
 Two
-
+.bp
 .NH
 Conclusion
 .PP
+.bp
 .NH
 Appendices
+.SH 2
+All of the other headnings

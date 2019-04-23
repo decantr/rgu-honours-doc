@@ -359,11 +359,11 @@ In addition hardware support for Windows on Raspberry Pi is limited to Windows S
 .[
 MicrosoftCorporation2017b
 .]
- which would require any software to be written as a UWP
+which would require any software to be written as a UWP
 .[
 MicrosoftCorporation2017c
 .]
- which would hinder performance.
+which would hinder performance.
 
 
 

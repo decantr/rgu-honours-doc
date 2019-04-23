@@ -297,7 +297,7 @@ file which provides the setup for the document.
 The output from this depends on the provided options, an example setup for a Rasbperry Pi Zero, which uses the ARMv6 architecture, is below.
 .CW
 .TS
-box expand;
+box centre;
 l.
 $ ./prepare-sd.sh 0
 ::  Pi2 and 3 are armhf, Pi0 and Pi1 is armel

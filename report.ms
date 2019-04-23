@@ -179,21 +179,47 @@ TheIoTMarketplace2015
 .NH 2
 Open Source
 .PP
-Attempts have been made to tackle some of the problems such as flooding \citep{Castillo-Effen2004} though few of these projects cover the many aspects this project will.
+Attempts have been made to tackle some of the problems such as flooding
+.[
+Castillo-Effen2004
+.]
+ though few of these projects cover the many aspects this project will.
 Many commercial applications developed are built with a propriety licence which prohibits the reading or sharing of the code.
 This is the antithesis of Open Source, which has slowly been gaining traction from large companies, dispelling the myth that it is hobbyist code at best.
-For example, Red Hat Inc. was valued at 35 billion during its recent acquisition \citep{Hammond2018}.
-This is no better seen than in the worldwide adoption of Apache, a \textit{http daemon} that runs many websites from hobby to major company (Apple.com, Adobe.com etc.) \citep{W3techs2018}.
+For example, Red Hat Inc. was valued at 35 billion during its recent acquisition.
+.[
+Hammond2018
+.]
+This is no better seen than in the worldwide adoption of Apache, a
+.IT "http daemon"
+that runs many websites from hobby to major company (Apple.com, Adobe.com etc.).
+.[
+W3techs2018
+.]
 Further projects such as the Linux kernel, originating from Linus Torvalds has seen a massive adoption, most strikingly in the supercomputing market where it has completely dominated the top 500 supercomputers (ranked by TFlops).
-\citep{Top5002018}
+.[
+Top5002018
+.]
 .PP
-The field of environmental monitoring is largely untapped, with much of the current solutions being closed source and expensive \citep{TheIoTMarketplace2015}.
+The field of environmental monitoring is largely untapped, with much of the current solutions being closed source and expensive.
+.[
+TheIoTMarketplace2015
+.]
+.
 There is little interaction from the community and even less interoperability from the technologies deployed.
 There's also the consumer aspect, where environmentally conscious individuals want to help monitor the local environment.
-An attempt was made to crowd source the collection of atmospheric data \citep{OKLabStuttgart2015} across Europe and beyond with small sensor units developed during workshops.
+An attempt was made to crowd source the collection of atmospheric data
+.[
+OKLabStuttgart2015
+.]
+ across Europe and beyond with small sensor units developed during workshops.
 .IMAGE
 This model of crowd sourced deployment means anyone can get involved, and it ensures that the data is freely available to all.
-This is also a key principle for this project, and the Open Database License \citep{OpenDataCommons2011} will ensure the data can be used freely.
+This is also a key principle for this project, and the Open Database License
+.[
+OpenDataCommons2011
+.]
+ will ensure the data can be used freely.
 
 
 \# TODO : port lit review to groff.

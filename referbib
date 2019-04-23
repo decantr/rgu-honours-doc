@@ -1,0 +1,395 @@
+%K iot2018
+%A Louis Columbus
+%T 2018 Roundup Of Internet Of Things Forecasts And Market Estimates
+%D 2018
+%O https://www.forbes.com/sites/louiscolumbus/2018/12/13/2018-roundup-of-internet-of-things-forecasts-and-market-estimates/
+
+%K raspberrypiorg
+%A Raspberry Pi Foundation
+%T About us
+%D 2019
+%O https://www.raspberrypi.org/about/
+
+%K batmanadv
+%A Open Mesh
+%T B.A.T.M.A.N. Advanced Overview
+%D 2016
+%O https://www.open-mesh.org/projects/batman-adv/wiki
+
+%K 10.1109/mc.2017.201
+%D 2017
+%I Institute of Electrical and Electronics Engineers (IEEE)
+%V 50
+%N 7
+%P 80--84
+%A Constantinos Kolias and Georgios Kambourakis and Angelos Stavrou and Jeffrey Voas
+%T DDoS in the IoT: Mirai and Other Botnets
+%J Computer
+
+%K mycroftdesc
+%A Mycroft AI, Inc.
+%T About Mycroft
+%D 2019
+%O https://mycroft.ai/about-mycroft/
+
+%K webthingsdesc
+%A Mozzila
+%T About WebThings
+%D 2019
+%O https://iot.mozilla.org/about/
+
+%K Castillo-Effen2004
+%A Castillo-Effen, M. and Quintela, D.H. and Jordan, R. and Westhoff, W. and Moreno, W.
+%K 10.1109/ICCDCS.2004.1393370
+%J Proc. Fifth IEEE Int. Caracas Conf. Devices, Circuits Syst. 2004.
+%P 142--146
+%T Wireless sensor networks for flash-flood alerting
+%O http://ieeexplore.ieee.org/document/1393370/,
+%V 1
+%D 2004
+
+%A Mellis, David
+%T Arduino Nano
+%O https://commons.wikimedia.org/wiki/File:Arduino\_Nano.jpg,
+%D 2010
+
+%A Windows IT Pro Center
+%T Windows Server 2016 System Requirements
+%O https://docs.microsoft.com/en-us/windows-server/get-started/system-requirements\#network-adapter-requirements,
+%D 2017
+
+%K Hammond2018
+%A Hammond, Ed and Porter, Kiel and Barinka, Alex
+%T IBM to Acquire Linux Distributor Red Hat for \$33.4 Billion
+%O https://www.bloomberg.com/news/articles/2018-10-28/ibm-is-said-to-near-deal-to-acquire-software-maker-red-hat,
+%D 2018
+
+%A Pocero, Lidia and Amaxilatis, Dimitrios and Mylonas, Georgios and Chatzigiannakis, Ioannis
+%K 10.1016/j.ohx.2017.02.002
+%J HardwareX
+%P 54--67
+%T Open source IoT meter devices for smart and energy-efficient school buildings
+%O http://dx.doi.org/10.1016/j.ohx.2017.02.002,
+%V 1
+%D 2017
+
+%A Wang, Jingdong and Shen, Heng Tao and Song, Jingkuan and Ji, Jianqiu
+%K 10.1561/2200000016
+%P 36--50
+%T Hashing for Similarity Search: A Survey
+%O http://arxiv.org/abs/1408.2927,
+%D 2014
+
+%A ArduinoLLC
+%T Arduino Uno Rev 3
+%O https://store.arduino.cc/arduino-uno-rev3,
+%D 2010
+
+%A Atlas Scientific
+%T EZO-pH
+%V 99
+%D 2018
+
+%K Vujovic2014
+%A Vujovic, Vladimir and Maksimovi\'c, Mirjana and Vujovi\'c, Vladimir and Davidovi\'c, Nikola and Milo\vsevi\'c, Vladimir and Peri\vsi\'c, Branko
+%J Des. Issues
+%N JUNE
+%P 8
+%T Raspberry Pi as Internet of Things hardware : Performances and Constraints Raspberry Pi as Internet of Things hardware : Performances and Constraints
+%V 3
+%D 2014
+
+%A Wu, Yongping and Feng, Guo and Meng, Zhang
+%P 1016--1018
+%T The Study on Coal Mine Using the Bluetooth Wireless Transmission
+%D 2014
+
+%A Rashid, Rozeha A. and Yusoff, Rohaiza
+%K 10.1109/RFM.2006.331112
+%J 2006 Int. RF Microw. Conf. Proc.
+%P 393--397
+%T Bluetooth performance analysis in personal area network (PAN)
+%V 00
+%D 2006
+
+%A Ben Bromhead
+%T 10 advantages of open source for the enterprise
+%O https://opensource.com/article/17/8/enterprise-open-source-advantages,
+%D 2017
+
+%A Ferdoush, Sheikh and Li, Xinrong
+%K 10.1016/j.procs.2014.07.059
+%J Procedia Comput. Sci.
+%P 103--110
+%T ScienceDirect Wireless Sensor Network System Design using Raspberry Pi and Arduino for Environmental Monitoring Applications
+%O www.sciencedirect.com,
+%V 34
+%D 2014
+
+%K W3techs2018
+%A Q-Success
+%T Usage statistics and market share of Unix for websites
+%O http://w3techs.com/technologies/details/os-unix/all/all,
+%D 2012
+
+%A Wallace, Craig
+%T SEPA gauging station by the River Beauly
+%O https://www.geograph.org.uk/photo/2754945,
+%D 2012
+
+%A BeagleBoard
+%T BeagleBone Black Wireless
+%O https://beagleboard.org/black-wireless,
+%D 2017
+
+%A Volume, Specification
+%N December
+%T Bluetooth v4.1 Core Specification
+%V 0
+%D 2013
+
+%A Roca, Sergi Figueras and Cited, References
+%K 10.1038/incomms1464
+%N 12
+%T ( 12 ) United States Patent
+%V 2
+%D 2006
+
+%K RaspberryPiFoundation2018
+%A Raspberry Pi Foundation
+%T Raspberry Pi 3 Model B+
+%O https://static.raspberrypi.org/files/product-briefs/Raspberry-Pi-Model-Bplus-Product-Brief.pdf,
+%D 2018
+
+%K Top5002018
+%A TOP500
+%T Operating System Family System Share
+%O http://www.top500.org/statistics/list/,
+%D 2015
+
+%A Raymond, Eric
+%T Server
+%O http://www.catb.org/jargon/html/S/server.html,
+%D 2003
+
+%A Miorandi, Daniele and Sicari, Sabrina and De Pellegrini, Francesco and Chlamtac, Imrich
+%K 10.1016/j.adhoc.2012.02.016
+%J Ad Hoc Networks
+%N 7
+%P 1497--1516
+%I Elsevier B.V.
+%T 2. Internet of things: Vision, applications and research challenges
+%O http://dx.doi.org/10.1016/j.adhoc.2012.02.016,
+%V 10
+%D 2012
+
+%A Zhou, S. and Wu, M.-Y. and Shu, W.
+%K 10.1109/CASSET.2004.1321942
+%J Proc. IEEE 6th Circuits Syst. Symp. Emerg. Technol. Front. Mob. Wirel. Commun. (IEEE Cat. No.04EX710)
+%P 529--532
+%T Finding optimal placements for mobile sensors: wireless sensor network topology adjustment
+%O http://ieeexplore.ieee.org/document/1321942/,
+%V 2
+%D 2004
+
+%A Aravind Jayan
+%T How to Make a Water-Level Indicator With Arduino
+%O https://maker.pro/arduino/projects/ultrasonic-arduino-water-level-indicator,
+%D 2016
+
+%A Environment, Scottish and Agency, Protection
+%J Framework
+%T Strathprints Institutional Repository ENVIRONMENTAL JUSTICE IN SEPA ' S ENVIRONMENTAL PROTECTION ACTIVITIES : A REPORT FOR THE SCOTTISH
+%D 2004
+
+%K Lueth2018
+%A Lueth, Knud Lasse
+%J IoT Anal. Mark. Insights Internet Things
+%T State of the IoT 2018: Number of IoT devices now at 7B – Market accelerating
+%O https://iot-analytics.com/state-of-the-iot-update-q1-q2-2018-number-of-iot-devices-now-7b/,
+%D 2018
+
+%A Debian
+%T Debian System Requirments
+%O https://www.debian.org/releases/stable/amd64/ch03s04.html.en,
+%D 2018
+
+%K SEPA2007
+%A SEPA
+%T An introduction to the significant water management issues in the Scotland river basin district
+%D 2007
+
+%A Das, Abhishek and Ghose, Abhishek and Razdan, Ashu and Saran, Huzur and Shorey, Rajeev
+%K 10.1109/INFCOM.2001.916788
+%J Proc. - IEEE INFOCOM
+%P 591--600
+%T Enhancing performance of asynchronous data traffic over the bluetooth wireless ad-hoc network
+%V 1
+%D 2001
+
+%K SEPA2009
+%A SEPA
+%P 1--14
+%T Scotland ' s WFD aquatic monitoring strategy
+%D 2009
+
+%A Leeks, G. J.L. and Neal, C. and Jarvie, H. P. and Casey, H. and Leach, D. V.
+%K 10.1016/S0048-9697(96)05356-9
+%J Sci. Total Environ.
+%N 96
+%P 101--109
+%T The LOIS river monitoring network: Strategy and implementation
+%V 194-195
+%D 1997
+
+%A Adafruit
+%T Waterproof DS18B20 Digital temperature sensor
+%O https://www.adafruit.com/product/381
+
+%K Larabel2018
+%A Larabel, Michael
+%I Phoronix
+%T The Current Linux Performance With 16 ARM Boards
+%O https://www.phoronix.com/scan.php?page=article\&item=16-armlinux-sep2018,
+%D 2018
+
+%K OpenDataCommons2011
+%A Open Data Commons
+%T Open Database License (ODbL) v1.0
+%O https://opendatacommons.org/licenses/odbl/1.0/index.html,
+%D 2011
+
+%A RaspberryPiFoundation
+%T Raspberry Pi Zero W
+%O https://www.raspberrypi.org/products/raspberry-pi-zero-w/,
+%D 2017
+
+%A SEPA
+%T WFD Operational and Surveillance RIver Monitoring Points in Scotland
+%D 2006
+
+%A Scientific, Atlas
+%T EZO-pH Embedded pH Circuit
+%O https://www.atlas-scientific.com/\_files/\_datasheets/\_circuit/pH\_EZO\_datasheet.pdf,
+%D 2018
+
+%K Alex2017
+%A Alex
+%T How much power does Pi Zero W use?
+%O https://raspi.tv/2017/how-much-power-does-pi-zero-w-use,
+%D 2017
+
+%K SEPA2016
+%A SEPA
+%T River Gauging Stations
+%O https://www.saa.gov.uk/blog/document-search/river-gauging-stations/,
+%D 2016
+
+%A Mouser Electronics and OSEPP Electronics
+%T HC-SR04 Sensor
+%O https://www.mouser.co.uk/ProductDetail/OSEPP-Electronics/HC-SR04?qs=sGAEpiMZZMu8c2wsui\%252biYud73BL9dHAk5B2HDuQZqCU=,
+%D 2016
+
+%K SEPA2018
+%A SEPA
+%T SEPA Water Level Data FAQ
+%O http://apps.sepa.org.uk/waterlevels/?faq=y,
+%D 2018
+
+%A Asus
+%T Asus TinkerBoard
+%O https://www.asus.com/uk/Single-Board-Computer/Tinker-Board/,
+%D 2917
+
+%A RaspberryPiFoundation
+%T RaspberryPi3B+
+%O https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/,
+%D 2018
+
+%A Dey, Ranjib
+%T Reef Pi Guide 7 pH Monitoring
+%O https://learn.adafruit.com/reef-pi-guide-7-ph-monitoring?view=all,
+%D 2018
+
+%A Microsoft Corporation
+%T Windows Server Nano
+%O https://docs.microsoft.com/en-gb/windows-server/get-started/getting-started-with-nano-server,
+%D 2017
+
+%A Amos, Evan
+%T Raspberry Pi Zero W
+%O https://en.m.wikipedia.org/wiki/File:Raspberry-Pi-Zero-FL.jpg,
+%D 2016
+
+%K ArduinoLLC2010
+%A Arduino LLC
+%T Arduno Nano
+%O https://store.arduino.cc/arduino-nano,
+%D 2008
+
+%A Digi International
+%T Digi International XB24CZ7WIT-004 ZigBee Module +5 dBm, +8 dBm -102 dBm, -100 dBm SPI, UART 2.1 → 3.6V 24.3mm
+%O https://uk.rs-online.com/web/p/zigbee-modules/1225774/,
+%D 2015
+
+%A Monk, Simon
+%T DS18B20 Temperature Sensing Measure temperature with your Raspberry Pi using the DS18B20
+%O https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing,
+%D 2013
+
+%K OKLabStuttgart2015
+%A OK Lab Stuttgart
+%T openData Feinstaub Map
+%O http://deutschland.maps.luftdaten.info/\#8/51.980/6.581,
+%D 2018
+
+%A OK Lab Stuttgart
+%T luftdaten
+%O https://luftdaten.info/en/home-en/,
+%D 2015
+
+%K Madcoffee2018
+%A Madcoffee
+%T Arduino Low Power - How To Run ATMEGA328P For A Year On Coin Cell Battery
+%O http://www.home-automation-community.com/arduino-low-power-how-to-run-atmega328p-for-a-year-on-coin-cell-battery/,
+%D 2018
+
+%K Leccese2014
+%A Leccese, Fabio and Cagnetti, Marco and Trinca, Daniele
+%K 10.3390/s141224408
+%J Sensors (Switzerland)
+%N 12
+%P 24408--24424
+%T A smart city application: A fully controlled street lighting isle based on Raspberry-Pi card, a ZigBee sensor network and WiMAX
+%V 14
+%D 2014
+
+%A Canonical
+%J Methods
+%P 416
+%T Installing Ubuntu Server
+%O https://help.ubuntu.com/lts/serverguide/serverguide.pdf,
+%D 2013
+
+%K TheIoTMarketplace2015
+%A The IoT Marketplace
+%T Libelium Smart Water IoT Vertical Kit
+%O https://www.the-iot-marketplace.com/smart-water-iot-vertical-kit,
+%D 2015
+
+%A Microsoft Corporation
+%T Windows 10 IoT Core for Raspberry Pi 2 / 3
+%O https://www.microsoft.com/en-us/download/details.aspx?id=55029,
+%D 2017
+
+%A Kajikawa, Nobuhiro and Minami, Yuya and Kohno, Eitaro and Kakuda, Yoshiaki
+%K 10.1109/CANDAR.2016.76
+%J Proc. - 2016 4th Int. Symp. Comput. Networking, CANDAR 2016
+%P 286--290
+%T On availability and energy consumption of the fast connection establishment method by using bluetooth classic and bluetooth low energy
+%D 2017
+
+%A Microsoft Corporation
+%T Windows S
+%O https://www.microsoft.com/en-gb/windows/s-mode,
+%D 2017

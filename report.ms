@@ -629,10 +629,22 @@ a NoSQL Time Series Database because of its low system requirements and easy to 
 .NH
 Design / Methodology
 .PP
+.bp
+.NH
+Implementation
+.PP
+Initially the design and development of deployment tooling was necessary both as a key part of the project but also to allow for rapid prototyping of future work.
 This section will detail the design decisions taken to build the various sections of the project.
 The initial plan of how the project would work, prior to any attempted implementation will be discussed first and then contraposed against the final implementation.
 Many items discussed in the Literature Review and technologies that initally appeared promising proved to be either redundant or incompatible with the more core technologies being used, as such many of the decisions taken were interlinked with the restrictions imposed by the core requirements laid out in the previous section.
 To aid in the seperation structure of the project, it has been split into a number of different repositories for each subject discussed below.
+.NH 2
+Deployment Tools
+.PP
+This project has relied heavily on Git to provide a versioning of the code.
+As previously stated the project is divided across different Repositories, this allows seperate releases to be produced, which the setup script can pull (if not building from source).
+\# TODO : Expand
+
 .NH 2
 Setup Tools
 .PP
@@ -694,42 +706,51 @@ A final confirmation before writing to the selected disk, this option defaults t
 .PP
 This allows a multitude of differing options to be provided with the minimal amount of requirements for running the script.
 .NH 2
-Client Tooling
-.NH 3
-Reporter
-
-
-
+Node Software
 .PP
-.NH 2
-Server Handler - Recorder.go
-.PP
+The nodes have a go binary deployed on them by the
+.CW "prepare-sd.sh"
+script which reports the information from the sensor attached to the
+.CW "HTTP API"
+of the
+.B "InfluxDB"
+instance running on the bridge Pi.
+Golang was chosen as it does not require any dependencies to run once compiled.
+In addition it has the ability to
+.I "cross-compile"
+to other architectures, meaning the device building code does not need to be the same architecture of the device running it.
 .NH 3
 Database Structure
 .PP
+The
+.B "InfluxDB"
+instance being used is being deployed through the
+.B "Docker"
+container provided by the official builds.
+This allows us to abstract the most vulnerable part of the bridge nodes exposed side (the DB) to a container.
+If a security flaw was exposed it would not affect the node itself.
+.bl
+The database is a NoSQL database and thus does not have a strict database layout, however the hostname of the device reporting back is marked as a "tag" for indexing purposes.
+This acts as a fast way for the Influx Query Language to find the things searched for.
 .NH 2
-User Interface - Represent.js
+API
 .PP
+The API is in the form of a RESTful HTTP API written in Node.Js.
+Incoming GET Requests are handled by the express server and query the database directly based on the paramaters sent.
+The results from the database are then parsed and turned into a JSON Object that can then be parsed by the front end.
 .NH 2
-Design of the Nodes
+Web Client
 .PP
-.NH 2
-Design of Server
-.PP
-.bp
-.NH
-Implementation
-.PP
-The implementation fo the project has followed a familiar path.
-Initially the design and development of deployment tooling was neccassary both as a key part of the project but also to allow for rapid prototyping of future work.
-Below will document these individual parts of the project.
-.NH 2
-Deployment Tools
-.PP
+The web interface is a simple implementation of two D3 libraries, Cubism and Parallel.
+These allow the user to get an at a glance view of the information in the database, without needing to do any querying directly.
+A realworld implementation of this project would expect users to deploy their own interfaces, if at all, as stated earlier the goal of the project is to build the framework.
+.IMAGE
+\# TODO : insert image of the UI
 .bp
 .NH
 Testing and Results
 .PP
+\# TODO : Do some testing
 .bp
 .NH
 Evaluation

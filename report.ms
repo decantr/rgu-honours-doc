@@ -629,15 +629,48 @@ a NoSQL Time Series Database because of its low system requirements and easy to 
 .NH
 Design / Methodology
 .PP
-.bp
-.NH
-Implementation
-.PP
-Initially the design and development of deployment tooling was necessary both as a key part of the project but also to allow for rapid prototyping of future work.
 This section will detail the design decisions taken to build the various sections of the project.
 The initial plan of how the project would work, prior to any attempted implementation will be discussed first and then contraposed against the final implementation.
 Many items discussed in the Literature Review and technologies that initally appeared promising proved to be either redundant or incompatible with the more core technologies being used, as such many of the decisions taken were interlinked with the restrictions imposed by the core requirements laid out in the previous section.
 To aid in the seperation structure of the project, it has been split into a number of different repositories for each subject discussed below.
+.NH
+Deploy Scripts
+.PP
+Initially the design and development of deployment tooling was necessary both as a key part of the project but also to allow for rapid prototyping of future work.
+Languages for creating this are limited and the choice of
+.CW "shell"
+was an obvious one.
+Most
+.B "Linux"
+Distribution's ship with Bourne Again Shell or
+.B "bash"
+as it's better known, this is also used by MacOS as the shell environment.
+Bash implements some very useful features that can be used in the Command Line Interface
+.B "CLI" ) (
+environment or in "Shell Scripts" however these features are not POSIX complaint.
+.[
+gnubashmanual
+.]
+The Portable Operating System Interface
+.B "POSIX" ) (
+is the definition described in 1994 to define a Unix-Like Operating System with a standard set of operations.
+.[
+ieeestd.1994
+.]
+The shell script will adhere to this specification in order to provide portability between the Unix-like systems.
+.PP
+There was a number of different ways this could have been implemented, the use of the utility
+.CW "dialog"
+or
+.CW "ncurses"
+to create an interactive environment that the user could choose options from was a compelling choice as it would lower the barrier to entry significantly.
+However as discussed in the previous section the portability was a more desirable feature and thus it was decided to ensure POSIX compliance, over these tools.
+
+
+.bp
+.NH
+Implementation
+.PP
 .NH 2
 Deployment Tools
 .PP

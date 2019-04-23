@@ -65,6 +65,7 @@
 %O https://www.bloomberg.com/news/articles/2018-10-28/ibm-is-said-to-near-deal-to-acquire-software-maker-red-hat,
 %D 2018
 
+%K Pocero2017
 %A Pocero, Lidia and Amaxilatis, Dimitrios and Mylonas, Georgios and Chatzigiannakis, Ioannis
 %K 10.1016/j.ohx.2017.02.002
 %J HardwareX
@@ -144,6 +145,7 @@
 %O https://beagleboard.org/black-wireless,
 %D 2017
 
+%K Volume2013
 %A Volume, Specification
 %N December
 %T Bluetooth v4.1 Core Specification
@@ -264,6 +266,7 @@
 %O https://opendatacommons.org/licenses/odbl/1.0/index.html,
 %D 2011
 
+%K RaspberryPiFoundation2017
 %A RaspberryPiFoundation
 %T Raspberry Pi Zero W
 %O https://www.raspberrypi.org/products/raspberry-pi-zero-w/,
@@ -336,6 +339,7 @@
 %O https://store.arduino.cc/arduino-nano,
 %D 2008
 
+%K zigbee2015
 %A Digi International
 %T Digi International XB24CZ7WIT-004 ZigBee Module +5 dBm, +8 dBm -102 dBm, -100 dBm SPI, UART 2.1 → 3.6V 24.3mm
 %O https://uk.rs-online.com/web/p/zigbee-modules/1225774/,

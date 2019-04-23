@@ -419,6 +419,64 @@ Once connected this can be polled for the current temperature at the sensor.
 .[
 Monk2013
 .]
+.SH 2
+Networks
+.PP
+.TS
+centre tab(&);
+ccccc
+lrrrr.
+_
+& ZigBee & Pi 3B+ WiFi & Pi 0 W & Bluetooth
+_
+IEEE & 802.15.04 & 802.11 b/g/n & 802.11 b/g/n & 802.15.1*
+Frequency (GHz) & 2.4 & 2.4/5 & 2.4 & 2.4
+Main Application & Smart Devices & WLAN & WLAN & Low Bitrate Streams
+Bit Rate & 250kbps & 600 Mbps & 54 Mbps & 24 Mbps
+Range & 100m & 100m & 30m & 15m
+_
+.TE
+.RS
+.I
+ZigBee vs. a number of other wireless network
+.[
+RaspberryPiFoundation2018
+.]
+.[
+RaspberryPiFoundation2017
+.]
+.R
+.RE
+.bl
+.PP
+The communication methods listed in Table above, all have there advantages and disadvantages.
+ZigBee has a significant advantage in this area as in addition to the above metrics, it has a significantly lower battery usage than the other two protocols .
+.[
+Leccese2014
+.]
+However this comes at a cost, both financially and to accessibility, as the ZigBee protocol requires an additional module to be attached to the device used to allow it to communicate.
+Further complicating things is these modules are an additional cost on top of the controller ( SoC ) and sensors required.
+.[
+zigbee2015
+.]
+This additional complexity serves to increases the desirability of Wifi and Bluetooth as options.
+.PP
+To connect these devices together, especially if Bluetooth is used, a method of daisy chaining them together is almost essential to keep costs to a minimum.
+This introduces many issues however as one of the main issues facing SEPA with it's current solution is vandalism
+.[
+SEPA2018
+.]
+and these sensors could be an attractive target.
+The removal of a device near the start of a chain either through a fault, theft etc. could affect many more sensors further along having a cascading effect.
+This is not ideal and makes Bluetooth a very unattractive option.
+Further, the Bluetooth 4.1 and Bluetooth LE suffer from major range limitations of a meagre 10 to 15 metres
+.[
+Volume2013
+.]
+, again ZigBee provides a excellent replacement to this with a majorly increased range over Bluetooth.
+.[
+Pocero2017
+.]
 
 
 

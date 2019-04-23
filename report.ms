@@ -153,7 +153,7 @@ Specification
 Requirements Analysis
 .PP
 As discussed in the Literature Review there are many different approaches to the monitoring remote locations with low powered devices.
-The most common trend takes the form of an Arduino with a ZigBee antenna feeding back to a Raspberry Pi acting as a server to manage all the “clients” or endpoints.
+The most common trend takes the form of an Arduino with a ZigBee antenna feeding back to a Raspberry Pi acting as a server to manage all the "clients" or endpoints.
 This causes barriers to entry for anyone wishing to deploy a small scale sensor network as it increases the amount of different devices they need to buy.
 This project shall attempt to do two things; to implement a solid architecture allowing the endpoint and server to communicate and store data and to explore the possibilities of using onboard solutions for wireless transmission.
 .NH 2

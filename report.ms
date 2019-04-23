@@ -294,8 +294,31 @@ The setup tools are provided by the primary repository for the code.
 The primary file for the project deployment is the
 .CW "prepare-sd.sh"
 file which provides the setup for the document.
-.IMAGE
-
+The output from this depends on the provided options, an example setup for a Rasbperry Pi Zero, which uses the ARMv6 architecture, is below.
+.CW
+.TS
+box expand;
+l.
+$ ./prepare-sd.sh 0
+::  Pi2 and 3 are armhf, Pi0 and Pi1 is armel
+::  Choose either armhf or armel: armel
+::  Listing out available drives
+::  mmcblk0     179:0    0   15G  0 disk
+::  Please specify drive: /dev/mmcblk0
+::  Are we deploying to an eduroam network [y/N]
+::  Hostname set to sensor-01d43a64
+::  WARNING : This will erase all data on /dev/mmcblk0!
+::  Are you sure? [y/N] y
+::  Writing 352M to /dev/mmcblk0
+::  This will take a while
+::  Finished writing to /dev/mmcblk0
+::  Creating mounting directories
+::  Mounting /dev/mmcblk0p to /mnt/sd/
+::  Moving files
+::  Unmounting /dev/mmcblk0p
+::  Install finished
+$
+.TE
 .NH 2
 Client Tooling
 .NH 3

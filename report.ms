@@ -633,7 +633,7 @@ This section will detail the design decisions taken to build the various section
 The initial plan of how the project would work, prior to any attempted implementation will be discussed first and then contraposed against the final implementation.
 Many items discussed in the Literature Review and technologies that initally appeared promising proved to be either redundant or incompatible with the more core technologies being used, as such many of the decisions taken were interlinked with the restrictions imposed by the core requirements laid out in the previous section.
 To aid in the seperation structure of the project, it has been split into a number of different repositories for each subject discussed below.
-.NH
+.NH 2
 Deploy Scripts
 .PP
 Initially the design and development of deployment tooling was necessary both as a key part of the project but also to allow for rapid prototyping of future work.
@@ -665,8 +665,6 @@ or
 .CW "ncurses"
 to create an interactive environment that the user could choose options from was a compelling choice as it would lower the barrier to entry significantly.
 However as discussed in the previous section the portability was a more desirable feature and thus it was decided to ensure POSIX compliance, over these tools.
-
-
 .bp
 .NH
 Implementation

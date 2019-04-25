@@ -953,6 +953,7 @@ $ ./prepare-sd.sh
 mmcblk0     179:0    0  3.7G  0 disk
 ::    Specifiy drive: /dev/mmcblk0
 ::    Are we deploying to an eduroam network [y/N]
+::    Should SSH on port 22 be enabled? [Y/n]
 ::    Hostname set to sensor-abd44a41
 :: WARNING : This will erase all data on /dev/mmcblk0!
 ::    Are you sure? [y/N] y

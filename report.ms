@@ -504,10 +504,17 @@ If foliage is a major issue then the already weak WiFi is going to be inoperable
 The sensors used are entirely determined by the market and what is available. As stated previously this is a niche and thus there are few options.
 
 .bp
-.NH 2
-Specification
+.NH
+Design / Methodology
+.PP
 
-.NH 3
+This section will detail the design decisions taken to build the various sections of the project.
+The initial plan of how the project would work, prior to any attempted implementation will be discussed first and then contraposed against the final implementation.
+Many items discussed in the Literature Review and technologies that initally appeared promising proved to be either redundant or incompatible with the more core technologies being used, as such many of the decisions taken were interlinked with the restrictions imposed by the core requirements laid out in the previous section.
+To aid in the seperation structure of the project, it has been split into a number of different repositories for each subject discussed below.
+Initially the projcet requirements are listed here.
+
+.NH 2
 Requirements Analysis
 
 .PP
@@ -606,9 +613,10 @@ Sensor
 .RE
 .RE
 
-.PP
-.B "Non-Functional Requirements"
+.NH 3
+Non-Functional Requirements
 
+.PP
 .RS
 .IP \[bu]
 Software developed should be open source
@@ -626,13 +634,13 @@ Must have scripts for deploying software packages to SD Cards
 Endpoints and servers should comply with IEEE & IETF standards where possible
 .RE
 
-.NH 2
+.NH 3
 Legal and Ethical Requirements
 
 .PP
 This project has no Legal or Ethical ramifications as it collects no personal information.
 
-.NH 2
+.NH 3
 Technologies Required
 
 .PP
@@ -653,16 +661,6 @@ Database will use the popular
 .B "InfluxDB" ,
 a NoSQL Time Series Database because of its low system requirements and easy to use HTTP API.
 
-
-.bp
-.NH
-Design / Methodology
-
-.PP
-This section will detail the design decisions taken to build the various sections of the project.
-The initial plan of how the project would work, prior to any attempted implementation will be discussed first and then contraposed against the final implementation.
-Many items discussed in the Literature Review and technologies that initally appeared promising proved to be either redundant or incompatible with the more core technologies being used, as such many of the decisions taken were interlinked with the restrictions imposed by the core requirements laid out in the previous section.
-To aid in the seperation structure of the project, it has been split into a number of different repositories for each subject discussed below.
 .NH 2
 Deploy Scripts
 .PP

@@ -743,6 +743,56 @@ Time Series Database because of its low system requirements and easy to use
 Mesh Network
 
 .PP
+A mesh network is.
+
+.PS
+lineht = lineht / 2
+
+up
+NW: circle rad .3 "node-w"
+up
+move
+right
+move
+NN: circle rad .3 "node-n"
+down
+move
+right
+move
+down
+NE: circle rad .3 "node-e"
+down
+move
+left
+move
+NS: circle rad .3 "node-s"
+
+line <-> from NW.e to NN.s
+line <-> from NW.e to NE.w
+line <-> from NW.e to NS.n
+
+line <-> from NN.s to NE.w
+line <-> from NN.s to NS.n
+line <-> from NN.s to NW.e
+
+line <-> from NE.w to NS.n
+line <-> from NE.w to NW.e
+line <-> from NE.w to NN.s
+
+line <-> from NS.n to NW.e
+line <-> from NS.n to NN.s
+line <-> from NS.n to NE.w
+
+.PE
+.TS
+centre;
+c.
+.I
+Fig. Mesh Network with four nodes
+.TE
+
+
+.PP
 The choice of implementation discussed in the Literature Review covered a number of potential choices for building the network on.
 The desire for a Mesh implementation seemed to narrow the choice of adapter type to WiFi or Bluetooth.
 However recent advances in the

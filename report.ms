@@ -743,7 +743,17 @@ Time Series Database because of its low system requirements and easy to use
 Mesh Network
 
 .PP
-A mesh network is.
+A mesh network is defined as as a network in which all nodes are communicating with each other, independently.
+.[
+mesh network
+.]
+This has the advantage of being a high
+.B "QoS"
+network which is very robust to disconnections and slow speeds.
+Similiar to a mesh network is a
+.B "P2P"
+protocol such as bittorrent which provides direct Peer To Peer connections accross existing network infrastructure.
+The Mesh network however is established at the hardware layer, with nodes not being physically connected.
 
 .PS
 lineht = lineht / 2
@@ -784,13 +794,109 @@ line <-> from NS.n to NN.s
 line <-> from NS.n to NE.w
 
 .PE
+
 .TS
 centre;
 c.
 .I
-Fig. Mesh Network with four nodes
+Fig. Mesh Network with four nodes.
+.R
 .TE
 
+This shows the general layout of a mesh network in that all nodes can, and are communicating with each other.
+This is an atypical mesh network however as in an optimal setup each node would only connect to one other node, though in practice two is ideal, so as not to have overlapping network.
+The mesh network ensures that if a node is dropped from the mesh, traffic can be routed around the lost node to ensure that connectivity is maintained.
+For example below we will add a further two nodes on the outer reaches of the network.
+
+.PS
+lineht = lineht / 2
+
+down
+NWW: circle rad .3 "node-ww"
+right
+move
+move
+up
+NW: circle rad .3 "node-w"
+up
+move
+right
+move
+NN: circle rad .3 "node-n"
+down
+move
+right
+move
+down
+NE: circle rad .3 "node-e"
+down
+move
+left
+move
+NS: circle rad .3 "node-s"
+up
+move
+right
+move
+move
+move
+move
+up
+NEE: circle rad .3 "node-ee"
+
+line <-> from NW.e to NN.s
+line <-> from NW.e to NE.w
+line <-> from NW.e to NS.n
+
+line <-> from NN.s to NE.w
+line <-> from NN.s to NS.n
+line <-> from NN.s to NW.e
+
+line <-> from NE.w to NS.n
+line <-> from NE.w to NW.e
+line <-> from NE.w to NN.s
+
+line <-> from NS.n to NW.e
+line <-> from NS.n to NN.s
+line <-> from NS.n to NE.w
+
+line <-> from NEE.w to NS.e
+line <-> from NEE.w to NE.e
+line <-> from NEE.w to NN.e
+
+line <-> from NWW.e to NN.w
+line <-> from NWW.e to NW.w
+line <-> from NWW.e to NS.w
+
+.PE
+
+.TS
+centre;
+c.
+.I
+Fig. Mesh Network with six nodes.
+.R
+.TE
+
+In this diagram we can see that the nodes
+.I "node-ww"
+and
+.I "node-ee"
+are not directly connected with each other.
+However they are still able to communicate with each other by routing their traffic through, for example
+.I "node-n" .
+The advantage of this network type become clear when, for example, nodes
+.I "node-n"
+and
+.I "node-s"
+lose connectivity, but
+.I "node-ww"
+and
+.I "node-ee"
+are still able to communicate through the remaining two nodes.
+
+.SH 3
+Protocol
 
 .PP
 The choice of implementation discussed in the Literature Review covered a number of potential choices for building the network on.

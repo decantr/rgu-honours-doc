@@ -672,6 +672,7 @@ Furthermore, anyone familiar with CLI tools is aware that they usually operate t
 For example running the
 .CW "git log"
 command would create an output like this
+
 .bl
 .CW
 .TS
@@ -685,6 +686,7 @@ Date:   Thu Apr 25 00:11:24 2019 +0100
 
     fix heading type
 .TE
+
 .bl
 .R
 Whereas running the
@@ -692,6 +694,8 @@ Whereas running the
 with the arguements
 .CW "--no-pager log --oneline -n 1"
 would produce the following.
+
+.bl
 .CW
 .TS
 box centre;
@@ -701,18 +705,23 @@ $ git log --no-pager log --oneline -n 1
 63701fb (HEAD -> master) fix heading type
 .TE
 .bl
+
 .R
 This is the standard way to control the behaviour of a command being run.
 However as the stated objective of this project is a low barrier for entry, an interactive script experience was chosen.
 The user will be prompted for a number of inputs, deciding what type of device we will be deploying and where the SD card is located.
+
 .SH 3
 Functionality
+
 .PP
 The remit of the setup scripts is such that it should provide an entirely automated setup experience.
 The user should only be required to input the settings and move the SD Card to the desired device.
 To accomplish this a number of processes need to be handled by the script, such as
+
 .RS
 .RS
+.bl
 .IP \[bu]
 Collecting the .deb archive dependencies
 .IP \[bu]
@@ -726,15 +735,84 @@ Assigning a unique hostname for
 .CW "DHCP-DNS"
 .IP \[bu]
 Ensure that B.A.T.M.A.N is setup on startup
+.bl
 .RE
 .RE
+
 These functions are integral to the functionality of the project and are tedious and problematic to perform manually.
 .SH 3
 Interface Configuration
 .PP
 Unfortunately, the nature of most Interface settings on Linux is to be stateless, i.e. non persistent through power cycle.
 This requires that we have a "setup" file on the device that is earmarked to run on every boot.
-There are a number of
+There are a number of ways to run a script on startup in Linux, described below.
+
+.IP
+.B "cron"
+- The cron utility has a option to define a
+.CW "@reboot"
+flag which will run the command provided on startup.
+
+.IP
+.B "systemd"
+- Systemd is the init system for most Linux disribution and the creation of "Service" can run functions at intervels, or on startup.
+
+.IP
+.B "rc.local"
+- The /etc/rc.local file is a list of "0 exit" commands to be executed on startup as root.
+
+.IP
+.B "other"
+- There are other ways to run something at differing stages of start, for example .xinitrc for the init stage of x, or .bashrc for shell initilisation, however these are too late in the boot stage.
+
+.PP
+From this list there are number of good contesters emerge.
+Crontab is the easiest to use of them all, a user unique file inside
+.CW "/var/spool/cron/crontabs/" .
+The tool is very flexible and allows for running commands at defined times and periods up to monthly.
+This functionality is slowly being phased out in most distributions in favour of the far more flexible Systemd Servies, although Raspbian does ship with crontab by default.
+A simple systemd service merely requires six lines for basic setup, as described.
+
+.bl
+.CW
+.TS
+box centre;
+l.
+.SM
+[Unit]
+Description=Service Name
+
+[Service]
+ExecStart=/path/to/foo.bar
+
+[Install]
+WantedBy=multi-user.target
+.TE
+.bl
+
+This is somewhat more legible than the archiac but simple crontab layout;
+
+.bl
+.CW
+.TS
+box centre;
+l.
+.SM
+@reboot /path/to/foo.bar
+.TE
+.R
+.bl
+
+The flaw, however, with the crontab implementation is the @reboot flag is non standard and it is not garunteed to function the same across installs.
+.[
+crontabguru
+.]
+The other alternative mentioned is a rc.local file.
+Appending to this before the exit 0 is not reccomended as the file states at the top
+.I "Make sure that the script will exit 0" ' '
+which we can ensure will happen if our script fails.
+Thus for deployment of the scripts the systemd service is the most ideal solution for deployment.
+
 
 
 .bp

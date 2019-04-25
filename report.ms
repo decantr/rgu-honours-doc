@@ -728,24 +728,25 @@ The output from this depends on the provided options, an example setup for a Ras
 box centre;
 l.
 .SM
-$ ./prepare-sd.sh 0
-::  Pi2 and 3 are armhf, Pi0 and Pi1 is armel
-::  Choose either armhf or armel: armel
-::  Listing out available drives
-::  mmcblk0     179:0    0   15G  0 disk
-::  Please specify drive: /dev/mmcblk0
-::  Are we deploying to an eduroam network [y/N]
-::  Hostname set to sensor-01d43a64
-::  WARNING : This will erase all data on /dev/mmcblk0!
-::  Are you sure? [y/N] y
-::  Writing 352M to /dev/mmcblk0
-::  This will take a while
-::  Finished writing to /dev/mmcblk0
-::  Creating mounting directories
-::  Mounting /dev/mmcblk0 to /mnt/sd/
-::  Moving files
-::  Unmounting /dev/mmcblk0
-::  Install finished
+$ ./prepare-sd.sh
+::    Is this a Node(0) or Bridge(1) [0]
+::    Pi2 and 3 are armhf, Pi0 and Pi1 is armel
+::    Choose either armhf or armel: armel
+::    Listing out available drives
+mmcblk0     179:0    0  3.7G  0 disk
+::    Specifiy drive: /dev/mmcblk0
+::    Are we deploying to an eduroam network [y/N]
+::    Hostname set to sensor-abd44a41
+:: WARNING : This will erase all data on /dev/mmcblk0!
+::    Are you sure? [y/N] y
+::    Writing 352M to /dev/mmcblk0
+::    This may take a while
+:: INFO : Finished writing to /dev/mmcblk0
+:: INFO : Creating mounting directories
+:: INFO : Mounting /dev/mmcblk0p to sd/
+:: INFO : Moving files
+:: INFO : Unmounting /dev/mmcblk0p
+::    Install finished
 $
 .TE
 .bl

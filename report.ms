@@ -658,13 +658,51 @@ is the definition described in 1994 to define a Unix-Like Operating System with 
 ieeestd.1994
 .]
 The shell script will adhere to this specification in order to provide portability between the Unix-like systems.
-.PP
+.bl
 There was a number of different ways this could have been implemented, the use of the utility
 .CW "dialog"
 or
 .CW "ncurses"
 to create an interactive environment that the user could choose options from was a compelling choice as it would lower the barrier to entry significantly.
 However as discussed in the previous section the portability was a more desirable feature and thus it was decided to ensure POSIX compliance, over these tools.
+.bl
+Furthermore, anyone familiar with CLI tools is aware that they usually operate through "flags" or arguements that are passed to the command.
+For example running the
+.CW "git log"
+command would create an output like this
+.bl
+.CW
+.TS
+box centre;
+l.
+.SM
+$ git log
+commit 63701fb155040d0cc1e2152dd19d6b8056f0fe5e (HEAD -> master)
+Author: decantr <theeasterlywood@gmail.com>
+Date:   Thu Apr 25 00:11:24 2019 +0100
+
+    fix heading type
+$
+.TE
+.bl
+.R
+Whereas running the
+.CW "git log"
+with the arguements
+.CW "--no-pager log --oneline -n 1"
+would produce the following.
+.CW
+.TS
+box centre;
+l.
+.SM
+$ git log --no-pager log --oneline -n 1
+63701fb (HEAD -> master) fix heading type
+.TE
+.bl
+.R
+This is the standard way to control the behaviour of a command being run.
+
 .bp
 .NH
 Implementation

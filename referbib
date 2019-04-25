@@ -385,7 +385,6 @@
 %T Installing Ubuntu Server
 %O https://help.ubuntu.com/lts/serverguide/serverguide.pdf,
 %D 2013
-
 %K TheIoTMarketplace2015
 %A The IoT Marketplace
 %T Libelium Smart Water IoT Vertical Kit
@@ -436,3 +435,8 @@
 %O https://www.gnu.org/software/bash/manual/
 %D 2019
 
+%K crontabguru
+%T Crontab Creator
+%A Cronitor.io
+%O https://crontab.guru
+%D 2019

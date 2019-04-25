@@ -1,5 +1,5 @@
-.nr PSINCR 4p
-.nr GROWPS 2
+.nr PSINCR 2p
+.nr GROWPS 4
 .ds LF Shaw Eastwood
 .ds RF %
 .so msacros

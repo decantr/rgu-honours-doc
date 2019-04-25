@@ -665,7 +665,9 @@ or
 .CW "ncurses"
 to create an interactive environment that the user could choose options from was a compelling choice as it would lower the barrier to entry significantly.
 However as discussed in the previous section the portability was a more desirable feature and thus it was decided to ensure POSIX compliance, over these tools.
-.bl
+.SH 3
+Input
+.PP
 Furthermore, anyone familiar with CLI tools is aware that they usually operate through "flags" or arguements that are passed to the command.
 For example running the
 .CW "git log"
@@ -682,7 +684,6 @@ Author: decantr <theeasterlywood@gmail.com>
 Date:   Thu Apr 25 00:11:24 2019 +0100
 
     fix heading type
-$
 .TE
 .bl
 .R
@@ -702,6 +703,39 @@ $ git log --no-pager log --oneline -n 1
 .bl
 .R
 This is the standard way to control the behaviour of a command being run.
+However as the stated objective of this project is a low barrier for entry, an interactive script experience was chosen.
+The user will be prompted for a number of inputs, deciding what type of device we will be deploying and where the SD card is located.
+.SH 3
+Functionality
+.PP
+The remit of the setup scripts is such that it should provide an entirely automated setup experience.
+The user should only be required to input the settings and move the SD Card to the desired device.
+To accomplish this a number of processes need to be handled by the script, such as
+.RS
+.RS
+.IP \[bu]
+Collecting the .deb archive dependencies
+.IP \[bu]
+Collecting the .zip of the Raspbian Lite image
+.IP \[bu]
+Burn the image to the SD Card
+.IP \[bu]
+Enable SSH
+.IP \[bu]
+Assigning a unique hostname for
+.CW "DHCP-DNS"
+.IP \[bu]
+Ensure that B.A.T.M.A.N is setup on startup
+.RE
+.RE
+These functions are integral to the functionality of the project and are tedious and problematic to perform manually.
+.SH 3
+Interface Configuration
+.PP
+Unfortunately, the nature of most Interface settings on Linux is to be stateless, i.e. non persistent through power cycle.
+This requires that we have a "setup" file on the device that is earmarked to run on every boot.
+There are a number of
+
 
 .bp
 .NH
@@ -753,6 +787,8 @@ $
 .R
 There are a number of user required inputs during the process which ask the user for information about the enviroment that it cannot infer.
 These options are as follows:
+.IP \[bu]
+Whether a Node or Bridge is being created.
 .IP \[bu]
 (If "Node" is chosen) ARM architecture that the script is deploying to ensure that the correct binaries are copied over to the device (the
 .B "B.A.T.M.A.N"

@@ -1,15 +1,23 @@
+\# TODO : expand the abstract
+\# TODO : more on the ethics
+\# TODO : ONGOING : keep ToC up to date
+
 .nr PSINCR 2p
 .nr GROWPS 4
 .ds LF Shaw Eastwood
 .ds RF %
 .so msacros
+
 .TL
 Distributed Mesh Sensor Network using Raspberry Pi's
+
 .AU
 Shaw Eastwood
 .AI
 Robert Gordon University
+
 .DA
+
 .AB
 The Internet of Things
 .B "IoT" ) (
@@ -17,6 +25,9 @@ has brought a plethora of low energy, low profile devices to market that are pur
 These devices are notorious for poor security and not receiving proper updates, along with wasting precious CPU cycles on sending excessive telemetry to the designers of the board.
 This project will follow the design and implementation of deployable distributed sensor network for use on Raspberry Pi devices with minimal setup needed.
 .AE
+
+\# Table of Contents
+
 .XS 2
 Report Structure
 .XA 2
@@ -38,9 +49,7 @@ Appendices
 .XE
 .PX
 .bp
-\# TODO : expand the abstract
-\# TODO : more on the ethics
-\# TODO : ONGOING : keep ToC up to date
+
 .NH
 Introduction
 
@@ -56,6 +65,7 @@ Much of this stems from the rise of (Ultra)-Low Power IoT Devices (LPIoTD) that 
 This is commonly used for things such atmospheric control where a number of sensors in a room will allow a central server control temperature and air conditioning to each room individually.
 The use of these LPIoTD is expanding into other areas, such as river monitoring, as described in my literature review, which was previously a manual task performed weekly.
 .bl
+
 By harnessing this technology we can gain a deeper understanding of how variables from different aspects of life can have an affect.
 Unfortunately the majority of these implementations are proprietary.
 Anyone interested in deploying such a network would be required to obtain a bulk purchase of potentially hundreds of Single Board Computers
@@ -141,6 +151,7 @@ A reliable backbone will be essential to providing a useful piece of software an
 Due to the nature of where these sensors are deployed, a robust network is required (allowing for nodes to drop and come back up again) which our choice of B.A.T.M.A.N allows.
 This protocol can even route around a dead node, allowing packets to reach the bridge from any node.
 This is broken down into some simple objectives below.
+
 .RS
 .IP \[bu]
 Create a POSIX complaint script capable of deploying images to SD Cards.
@@ -152,42 +163,55 @@ Create a binary capable of reporting sensor information to the database.
 .IP \[bu]
 A simple User Interface that a user can connect to to view the data being returned.
 .RE
+
 .bp
 .NH
 Literature Review
+
 .PP
 This section will review the literature surrounding establishing a sensor network including the kinds of devices, the network options available and sensors that could be used.
+
 .SH
 Background
+
 .PP
 The current system for monitoring rivers and bodies of water involves building small concrete huts that record and store data locally.
 The cost of building these huts makes them prohibitive and is inefficient with today's technology.
 Some even requiring a person being sent periodically to collect this information manually.
+
 .[
 SEPA Water Level Data FAQ
 .]
+
 Figure I shows one of these monitoring stations found along the River Beauly.
 .IMAGE
+
 In 2005 the WFD reported 285 type 1a and 1b "at risk" bodies of water.
 .[
 SEPA2007
 .]
+
 By'2006 253 stations such as the one pictured in Figure 1 were in place across Scotland representing 10% of the country's total water bodies and 26% of the 989 "at risk" rivers as of 2009.
 .[
 SEPA2009
 .]
+
 .IMAGE
+
 .PP
 The reason for this can be attributed to the cost of these monitoring stations, with the solution proposed in this paper cost could be greatly reduced to a fraction of this.
 .[
 SEPA2016
 .]
+
 Alternatives to this using more modern technology are still highly expensive and cost prohibitive.
 .[
 TheIoTMarketplace2015
 .]
+
 .NH 2
 Open Source
+
 .PP
 Attempts have been made to tackle some of the problems such as flooding
 .[
@@ -206,32 +230,38 @@ that runs many websites from hobby to major company (Apple.com, Adobe.com etc.).
 .[
 W3techs2018
 .]
+
 Further projects such as the Linux kernel, originating from Linus Torvalds has seen a massive adoption, most strikingly in the supercomputing market where it has completely dominated the top 500 supercomputers (ranked by TFlops).
 .[
 Top5002018
 .]
+
 .PP
 The field of environmental monitoring is largely untapped, with much of the current solutions being closed source and expensive.
 .[
 TheIoTMarketplace2015
 .]
-.
+
 There is little interaction from the community and even less interoperability from the technologies deployed.
 There's also the consumer aspect, where environmentally conscious individuals want to help monitor the local environment.
 An attempt was made to crowd source the collection of atmospheric data
 .[
 OKLabStuttgart2015
 .]
- across Europe and beyond with small sensor units developed during workshops.
+across Europe and beyond with small sensor units developed during workshops.
+
 .IMAGE
+
 This model of crowd sourced deployment means anyone can get involved, and it ensures that the data is freely available to all.
 This is also a key principle for this project, and the Open Database License
 .[
 OpenDataCommons2011
 .]
- will ensure the data can be used freely.
+will ensure the data can be used freely.
+
 .SH 2
 Endpoint Devices
+
 .PP
 The Internet of Things
 .B "IoT" ) (
@@ -239,22 +269,28 @@ is a burgeoning field that has seen a massive boom in the Smart Devices market.
 .[
 Lueth2018
 .]
+
 IoT devices are defined by their low cost and low power and their ability to communicate with each other on the same LAN and have a degree of interoperability.
 .[
 Vujovic2014
 .]
+
 With the ever increasing rise of such devices the availability of low cost System On a Chip
 .B "SOC" ) (
 devices increases with it.
+
 Many vendors have begun targeting the SoC devices after the Raspberry Pi Foundation unveiled the Raspberry Pi 1.
 Today there exists a myriad of low cost SoC's with differing qualities for differing use cases.
 .[
 Larabel2018
 .]
+
 Many System On a Chips are available in the current market.
 Two of the largest names include Raspberry Pi from the Non Profit Raspberry Pi Foundation and the Arduino board from Arduino LLC.
+
 .SH 3
 Raspberry Pi
+
 .PP
 The Raspberry Pi Zero W
 .B "RPi0" ), (
@@ -265,13 +301,16 @@ The RPi0 is an excellent fit for our project as at idle it will only draw a maxi
 Alex2017
 .]
 with further tweaks reducing it.
+
 On a relatively low cost battery we can expect this to last a day.
 Many of the current SEPA stations use solar power to power the electronics inside the shed.
 .[
 SEPA2007
 .]
 Our sensors will also be battery powered leveraging a solar panel to ensure charge is maintained.
+
 .IMAGE
+
 The Raspberry Pi 3B+ on the other hand is a much better fit for a server/command and control device.
 .[
 Leccese2014
@@ -281,8 +320,10 @@ With it's more powerful CPU increasing the power draw to an idle of ~500mA
 RaspberryPiFoundation2018
 .]
 powering this from a battery wouldn't be ideal. Instead it should be used to connecting a LTE adapter or Ethernet cable to connect the endpoints to the larger LAN or WAN for sending information back to a central server.
+
 .SH 3
 Arduino
+
 .PP
 The Arduino is a compelling choice as it's Arduino Nano product, pictured below, uses the ATmega328 microcontroller.
 This is a controller with a miniscule power draw of only 19mA.
@@ -294,20 +335,26 @@ This would enable us to run on a minimal power source such as a 9V battery cell 
 .[
 Madcoffee2018
 .]
+
 Further the arduino features a smaller SoC size for both the Nano and the full-size Uno device
 .[
 ArduinoLLC2010
 .]
 making it more versatile.
+
 .IMAGE
+
 .SH 3
 Other
+
 .PP
 Many other SoC's include the ASUS tinker board and BeagleBoard among many others.
 Other SoC's target features found lacking in the Raspberry Pi, namely Gigabit Ethernet and increased RAM or reducing power consumption and SoC size.
 These make them compelling choices in scenario's where size or bandwidth etc. are essential however these other board's are often more expensive and even more difficult to source.
+
 .SH 3
 Comparison
+
 .PP
 .bl
 .TS
@@ -329,12 +376,15 @@ OS & N/A & N/A & Linux & Linux & Linux & TinkerOS
 _
 .TE
 .bl
+
 The advantage afforded to the RPi0 is it's availability, low cost, support but more importantly familiarity.
 It is important to ensure the barrier for entry, both cost and technical ability, is kept to a minimal for anyone who wishes to deploy one or more of these.
 Additionally by using the RPi0 we can leverage technologies already created for the device.
 From the graph above we can see that the pi3 and pi0 fit nicely into the middle of the graph offering good hardware and low power consumption.
+
 .SH 2
 Server
+
 .PP
 A server is defined as a device that can serve one or more "client" devices.
 This will usually be a powerful device that clients can send raw data to and have the server do any computation required before returning a result.
@@ -346,12 +396,14 @@ This is achieved by first stripping the system of as many superfluous systems as
 .[
 Canonical2013
 .]
+
 The configuration is therefore handled primarily though the shell, under Linux this is usually Bash (Bourne Again Shell).
 Windows Server's do not abide by this however and usually a graphical stack is used to perform most configuration.
 .[
 MicrosoftCorporation2017a
 .]
 Due to this, a Linux server is best placed due to its far lower system requirements to run.
+
 .TS
 centre tab(&);
 cccc
@@ -364,6 +416,7 @@ RAM & 128 MB & 384 MB & 512 MB
 Storage & 2 GB & 1.5 GB & 32 GB
 _
 .TE
+
 To ensure that costs are kept low, small SD Cards are ideal which somewhat rules out the Windows option.
 In addition hardware support for Windows on Raspberry Pi is limited to Windows S
 .[
@@ -374,10 +427,13 @@ which would require any software to be written as a UWP
 MicrosoftCorporation2017c
 .]
 which would hinder performance.
+
 .SH 2
 Sensors
+
 .SH 3
 Water Level
+
 .PP
 The collection of the river data will be the trickiest part of the project.
 Currently to collect water level data, a wire is laid across the river and a buoy attached to the middle.
@@ -391,7 +447,9 @@ AravindJayan2016
 .]
 An example of this sensor is shown in the figure below.
 This method has the advantage of being a low physical footprint solution to monitoring.
+
 .IMAGE
+
 .RS
 .RS
 .RS
@@ -401,8 +459,10 @@ MouserElectronics
 .RE
 .RE
 .RE
+
 .SH 3
 pH Sensor
+
 .PP
 The sensing of the pH level is somewhat more difficult and requires a specialist tool.
 The EZO-pH Embedded pH Circuit
@@ -419,6 +479,7 @@ If instead an Arduino is used, this will not be an issue.
 Temperature Sensor
 .PP
 To collect the temperature a wide range of sensors can be used with the only requirement being they are waterproof.
+
 The most accessible of these is the DS18B20
 .[
 AdafruitDS18
@@ -429,8 +490,10 @@ Once connected this can be polled for the current temperature at the sensor.
 .[
 Monk2013
 .]
+
 .SH 2
 Networks
+
 .PP
 .TS
 centre tab(&);
@@ -447,6 +510,7 @@ Range & 100m & 100m & 30m & 15m
 _
 .TE
 .RS
+
 .I
 ZigBee vs. a number of other wireless network
 .[
@@ -458,17 +522,20 @@ RaspberryPiFoundation2017
 .R
 .RE
 .bl
+
 .PP
 The communication methods listed in Table above, all have there advantages and disadvantages.
 ZigBee has a significant advantage in this area as in addition to the above metrics, it has a significantly lower battery usage than the other two protocols .
 .[
 Leccese2014
 .]
+
 However this comes at a cost, both financially and to accessibility, as the ZigBee protocol requires an additional module to be attached to the device used to allow it to communicate.
 Further complicating things is these modules are an additional cost on top of the controller ( SoC ) and sensors required.
 .[
 zigbee2015
 .]
+
 This additional complexity serves to increases the desirability of Wifi and Bluetooth as options.
 .PP
 To connect these devices together, especially if Bluetooth is used, a method of daisy chaining them together is almost essential to keep costs to a minimum.
@@ -476,6 +543,7 @@ This introduces many issues however as one of the main issues facing SEPA with i
 .[
 SEPA2018
 .]
+
 and these sensors could be an attractive target.
 The removal of a device near the start of a chain either through a fault, theft etc. could affect many more sensors further along having a cascading effect.
 This is not ideal and makes Bluetooth a very unattractive option.
@@ -487,27 +555,32 @@ Volume2013
 .[
 Pocero2017
 .]
+
 .SH 2
 Conclusion
+
 .PP
 There are a number of possibilities for the devices that could be used but overall the needs of the sensors used dictate the choice of the endpoint.
 The Arduino suits this role more than the Raspberry Pi Zero in terms of power consumption and having the Analog pins available with no additional modules necessary.
+
 .PP
 In contrast it's clear the lack of computational power on the Arduino Uno makes the Raspberry Pi 3B+ the clear winner for the command and control 'server' for the endpoints to report back to.
 It's increased power consumption can easily be offset if it is placed in a position with a hard line power source which may not be able to reach the other devices.
 Further if Ethernet/ADSL can be used it far better placed to interface with a physical connection.
 Alternatively the additional demands on the hardware of a GSM/LTE adapter and connection will be offset with the more beefy device.
-.PP
+.bl
+
 Network choice is majorly dependant on the topography of the terrain the devices are being deployed in.
 If foliage is a major issue then the already weak WiFi is going to be inoperable and ZigBee will be essential, however if there is little vegetation then WiFi may be viable alternative to keep costs and complexity low.
-.PP
+.bl
+
 The sensors used are entirely determined by the market and what is available. As stated previously this is a niche and thus there are few options.
 
 .bp
 .NH
 Design / Methodology
-.PP
 
+.PP
 This section will detail the design decisions taken to build the various sections of the project.
 The initial plan of how the project would work, prior to any attempted implementation will be discussed first and then contraposed against the final implementation.
 Many items discussed in the Literature Review and technologies that initally appeared promising proved to be either redundant or incompatible with the more core technologies being used, as such many of the decisions taken were interlinked with the restrictions imposed by the core requirements laid out in the previous section.

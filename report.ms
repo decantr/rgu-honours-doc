@@ -74,31 +74,33 @@ Report Structure
 This report details the process required to construct a distributed mesh network of sensors.
 The report will walkthrough the process undertook to create the open source tooling that has been made available with the release of this document.
 
-.XP
+.bl
+.IP
+.B "Introduction"
+- This section, containing the broad overview of the project and the motivation behind it.
+.IP
 .B "Literature Review"
 - The literature review section details the projects done that are in the similar field as this.
-.XP
-.B "Specification"
-- Compiled list of requirements for the project.
-.XP
-.B "Design Methodology"
+.IP
+.B "Design & Methodology"
 - The design methodology section will walkthrough the rational followed in the design of the project.
-.XP
-.B "Issues"
-- Following this the implementation section describes the issues that were encountered and overcome in the building of the final product.
-.XP
-.B "Testing"
+.IP
+.B "Implementation"
+- Naturally, following the design section the implementation seciton will describe what was built with the tools and techniques described in the methodology section.
+.IP
+.B "Testing & Results"
 - This is followed by the testing and results which will describe the testing process overall and the results achieved from this resting.
-.XP
+.IP
 .B "Evaluation"
 - An evaluation of the project as a whole will follow this and cover the implementation and the results of testing.
-.XP
+.IP
 .B "Conclusion"
 - Finally the conclusion which will describe things learned and describe the pitfalls to any future implementations.
-
+.bl
 
 .NH 2
 Motivation
+
 .PP
 My initial experience with IoT devices, as many peoples will likely be, was through a smart assistant device.
 This seemingly innocuous cylinder would light up and respond to questions by using it's name.
@@ -128,8 +130,10 @@ in order to provide a free platform that can be self hosted.
 Mycroft
 .]
 There have been a number of attempts from other academic papers, which I will touch on later, to create a similar implementation for distributed sensor networks, however none have really allowed such a low barrier to entry as this project aims to provide.
+
 .NH 2
 Aims and Objectives
+
 .PP
 The primary aim of this project is to provide an open source and easy to deploy utility for setting up a monitoring system.
 It will provide a framework to allow others use or build a top, opening up the field to a wider range of people from enthusiasts to small business.

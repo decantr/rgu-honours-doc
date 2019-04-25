@@ -652,14 +652,51 @@ and one Sensor from the list above.
 This is in addition to the mandatory power cables, or battery packs and SD Card for the devices.
 Both the server and the clients will run on top of the standard
 .B "Raspbian Lite"
-Linux distribution, this includes no GUI and can only be accessed through SSH (which will be enabled for testing purposes) and through the openened port
+Linux distribution, this includes no GUI and can only be accessed through
+.B "SSH"
+(which will be enabled for testing purposes) and through the openened port
 .CW "8080"
 to access the graphs and port
 .CW "3000"
 to access the API.
 Database will use the popular
 .B "InfluxDB" ,
-a NoSQL Time Series Database because of its low system requirements and easy to use HTTP API.
+a
+.B "NoSQL"
+Time Series Database because of its low system requirements and easy to use
+.B "HTTP API" .
+
+.SH 2
+Mesh Network
+
+.PP
+The choice of implementation discussed in the Literature Review covered a number of potential choices for building the network on.
+The desire for a Mesh implementation seemed to narrow the choice of adapter type to WiFi or Bluetooth.
+However recent advances in the
+.B "B.A.T.M.A.N"
+protocol have enabled it to compile and perform on ARM hardware, thus opening the door to use it.
+The distributed mesh networking can be provided by the newer
+.B "B.A.T.M.A.N Advanced"
+protocol, which now operates on Layer 2 of the OSI stack.
+This change means it no appears to the Linux System as an adapter so any program can send packets to it as if it was a normal adapter (wlan, eth etc.) and
+.B "B.A.T.M.A.N"
+will handle the transmission of the packets.
+This has the added benefits of increased compatibility, high performance with very little overhead, perfect for low powered devices.
+.bl
+
+With this new
+.B "B.A.T.M.A.N Advanced"
+protocol
+.B "DHCP"
+traffic can be traversed through the interface which allows our nodes to request
+configurations from a
+.B "DHCP server"
+anywhere in the network.
+As long as our bridge node is connected to a network with one of these servers, typically running on the router, the nodes inside the mesh will be fully transparent to the wider network and, if it exists, the public internet.
+.bl
+
+Our network will have need to have two "types"
+
 
 .NH 2
 Deploy Scripts
@@ -839,7 +876,7 @@ Appending to this before the exit 0 is not reccomended as the file states at the
 which we can ensure will happen if our script fails.
 Thus for deployment of the scripts the systemd service is the most ideal solution for deployment.
 
-.NH 3
+.SH 3
 Binary deployment
 
 .PP
@@ -847,11 +884,25 @@ In an enviroment where the deployed devices do not have internet it is important
 To ensure this the
 .CW "reporter"
 Golang binary will be deployed by the script as it sets up the other facets of the device.
+It should be possible to push updates to the (potentially) off network node's.
 It is important however that this file is kept updated incase of security updates or functionality changes.
 It is also vital that, especially in the case of a functionality change, that the devices have the
 .B "same"
 version so the database is not being sent differing entry fields, which will cause issues.
 To this end a auto-updater is required to ensure this standard version across the devices, which is managed by the bridge node, as it is required to have internet access.
+This could be performed by using a
+.CW "NFS"
+or
+.CW "HTTP"
+share of the file and its
+.CW "SHA"
+hash on the bridge pi, which the node's periodically check against their own to determine whether an update is needed.
+This implementation is rather noisy, it would be ideal if the bridge could "tell" the nodes they need to update and check on restart if they need to in case an update announcement was made while they were offline.
+However the need for extra dependencies over a simple
+.CW "GET"
+only
+.CW "HTTP/Curl"
+implementation is not ideal either in resource usage or complexity.
 
 
 .bp

@@ -666,7 +666,7 @@ a
 Time Series Database because of its low system requirements and easy to use
 .B "HTTP API" .
 
-.SH 2
+.NH 2
 Mesh Network
 
 .PP
@@ -788,16 +788,21 @@ To accomplish this a number of processes need to be handled by the script, such 
 .IP \[bu]
 Collecting the .deb archive dependencies
 .IP \[bu]
-Collecting the .zip of the Raspbian Lite image
+Collecting the .zip of the
+.I "Raspbian Lite"
+image
 .IP \[bu]
 Burn the image to the SD Card
 .IP \[bu]
-Whether to enable SSH
+Whether to enable
+.B "SSH" .
 .IP \[bu]
 Assigning a unique hostname for
 .CW "DHCP-DNS"
 .IP \[bu]
-Ensure that B.A.T.M.A.N is setup on startup
+Ensure that
+.B "B.A.T.M.A.N"
+is setup on startup
 .bl
 .RE
 .RE

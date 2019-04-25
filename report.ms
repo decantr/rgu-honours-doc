@@ -692,10 +692,8 @@ traffic can be traversed through the interface which allows our nodes to request
 configurations from a
 .B "DHCP server"
 anywhere in the network.
-As long as our bridge node is connected to a network with one of these servers, typically running on the router, the nodes inside the mesh will be fully transparent to the wider network and, if it exists, the public internet.
-.bl
-
-Our network will have need to have two "types"
+As long as a node, typically our bridge node, is connected to a network with one of these servers, typically running on the router, the nodes inside the mesh will be fully transparent to the wider network and, if it exists, the public internet.
+This functionality however may not be desired as the nodes have no need for the internet, besides updates and thus it represents a potential security flaw.
 
 
 .NH 2
@@ -794,7 +792,7 @@ Collecting the .zip of the Raspbian Lite image
 .IP \[bu]
 Burn the image to the SD Card
 .IP \[bu]
-Enable SSH
+Whether to enable SSH
 .IP \[bu]
 Assigning a unique hostname for
 .CW "DHCP-DNS"
@@ -909,6 +907,18 @@ implementation is not ideal either in resource usage or complexity.
 .NH
 Implementation
 .PP
+
+.SH 3
+Network Oddities
+
+.PP
+Some networks however, such as the
+.I "eduroam"
+network on campus, does not correctly assign IP Address' inside the mesh network.
+To account for this our network will have need to have two "types" to handle occasions such as this.
+
+
+
 .NH 2
 Deployment Tools
 .PP

@@ -839,6 +839,19 @@ Appending to this before the exit 0 is not reccomended as the file states at the
 which we can ensure will happen if our script fails.
 Thus for deployment of the scripts the systemd service is the most ideal solution for deployment.
 
+.NH 3
+Binary deployment
+
+.PP
+In an enviroment where the deployed devices do not have internet it is important that they still have functionality.
+To ensure this the
+.CW "reporter"
+Golang binary will be deployed by the script as it sets up the other facets of the device.
+It is important however that this file is kept updated incase of security updates or functionality changes.
+It is also vital that, especially in the case of a functionality change, that the devices have the
+.B "same"
+version so the database is not being sent differing entry fields, which will cause issues.
+To this end a auto-updater is required to ensure this standard version across the devices, which is managed by the bridge node, as it is required to have internet access.
 
 
 .bp

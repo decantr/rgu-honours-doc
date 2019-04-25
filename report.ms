@@ -1,5 +1,7 @@
 .nr PSINCR 4p
 .nr GROWPS 2
+.ds LF Shaw Eastwood
+.ds RF %
 .so msacros
 .TL
 Distributed Mesh Sensor Network using Raspberry Pi's
@@ -34,7 +36,7 @@ Conclusion
 .XA 9
 Appendices
 .XE
-.TC
+.PX
 .bp
 \# TODO : expand the abstract
 \# TODO : more on the ethics

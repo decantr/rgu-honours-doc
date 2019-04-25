@@ -502,21 +502,26 @@ Network choice is majorly dependant on the topography of the terrain the devices
 If foliage is a major issue then the already weak WiFi is going to be inoperable and ZigBee will be essential, however if there is little vegetation then WiFi may be viable alternative to keep costs and complexity low.
 .PP
 The sensors used are entirely determined by the market and what is available. As stated previously this is a niche and thus there are few options.
+
 .bp
-.NH
-Specification
-.PP
 .NH 2
+Specification
+
+.NH 3
 Requirements Analysis
+
 .PP
 As discussed in the Literature Review there are many different approaches to the monitoring remote locations with low powered devices.
 The most common trend takes the form of an Arduino with a ZigBee antenna feeding back to a Raspberry Pi acting as a server to manage all the "clients" or endpoints.
 This causes barriers to entry for anyone wishing to deploy a small scale sensor network as it increases the amount of different devices they need to buy.
 This project shall attempt to do two things; to implement a solid architecture allowing the endpoint and server to communicate and store data and to explore the possibilities of using onboard solutions for wireless transmission.
-.NH 2
+
+.NH 3
 Functional Requirements
+
 .PP
 .B "Endpoint"
+
 .RS
 .IP \[bu]
 The endpoint must be able to communicate with the server over distance
@@ -537,8 +542,10 @@ In the case of weather conditions and the connection is lost, data to be sent sh
 .IP \[bu]
 The endpoint can recover from loss of power, incase of battery discharge
 .RE
+
 .PP
 .B "Server"
+
 .RS
 .IP \[bu]
 The server must be able to communicate with the endpoint
@@ -554,8 +561,10 @@ The mesh network must be able to establish new connections and handle lost conne
 As the endpoints are going to be susceptible to disconnecting and reconnecting, this should not cause an issue
 .RE
 .RE
+
 .PP
 .B "Software"
+
 .RS
 .IP \[bu]
 Clients should sleep periodically to conserve power
@@ -568,8 +577,10 @@ Should communicate of WiFi 2.4 GHz for the enhanced range
 .IP \[bu]
 Server software should be modelled as a RESTful API
 .RE
+
 .PP
 .B "Sensors"
+
 .RS
 .IP \[bu]
 .B "HC SR04"
@@ -594,8 +605,10 @@ Sensor
 Sensor
 .RE
 .RE
+
 .PP
 .B "Non-Functional Requirements"
+
 .RS
 .IP \[bu]
 Software developed should be open source
@@ -612,12 +625,16 @@ Must have scripts for deploying software packages to SD Cards
 .IP \[bu]
 Endpoints and servers should comply with IEEE & IETF standards where possible
 .RE
+
 .NH 2
 Legal and Ethical Requirements
+
 .PP
 This project has no Legal or Ethical ramifications as it collects no personal information.
+
 .NH 2
 Technologies Required
+
 .PP
 This project will require a
 .B "Raspberry Pi 3 B +" ,
@@ -635,9 +652,12 @@ to access the API.
 Database will use the popular
 .B "InfluxDB" ,
 a NoSQL Time Series Database because of its low system requirements and easy to use HTTP API.
+
+
 .bp
 .NH
 Design / Methodology
+
 .PP
 This section will detail the design decisions taken to build the various sections of the project.
 The initial plan of how the project would work, prior to any attempted implementation will be discussed first and then contraposed against the final implementation.

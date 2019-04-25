@@ -781,10 +781,8 @@ l.
 .SM
 [Unit]
 Description=Service Name
-
 [Service]
 ExecStart=/path/to/foo.bar
-
 [Install]
 WantedBy=multi-user.target
 .TE

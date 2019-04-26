@@ -343,7 +343,7 @@ Our sensors will also be battery powered leveraging a solar panel to ensure char
 centre;
 c.
 .I
-Fig 4: Raspberry Pi Zero
+Fig 4: Raspberry Pi Zero W
 .[
 Amos2016
 .]
@@ -620,7 +620,7 @@ Conclusion
 
 .PP
 There are a number of possibilities for the devices that could be used but overall the needs of the sensors used dictate the choice of the endpoint.
-The Arduino suits this role more than the Raspberry Pi Zero in terms of power consumption and having the Analog pins available with no additional modules necessary.
+The Arduino suits this role more than the Raspberry Pi Zero W in terms of power consumption and having the Analog pins available with no additional modules necessary.
 
 .PP
 In contrast it's clear the lack of computational power on the Arduino Uno makes the Raspberry Pi 3B+ the clear winner for the command and control 'server' for the endpoints to report back to.
@@ -779,7 +779,7 @@ Technologies Required
 This project will require a
 .B "Raspberry Pi 3 B +" ,
 one or more
-.B "Raspberry Pi Zero"
+.B "Raspberry Pi Zero W"
 and one Sensor from the list above.
 This is in addition to the mandatory power cables, or battery packs and SD Card for the devices.
 Both the server and the clients will run on top of the standard
@@ -1218,7 +1218,7 @@ The hardware used in for the development of the project are the expected deploym
 The ubiquitous
 .I "Raspberry Pi 3B"
 and it's
-.I "Pi Zero"
+.I "Pi Zero W"
 companion will be used for the Bridge and Node respectively.
 By developing on these devices the functionality of the tooling can be ensured to perform on the most likely candidates for installation, due to their cost and availability.
 Further, the accessibility of the device means that a greater number of libraries for accessing a wider range of sensors and their reliability are for more prevalent.
@@ -1279,7 +1279,9 @@ The setup tools are provided by the primary repository for the code.
 The primary file for the project deployment is the
 .CW "prepare-sd.sh"
 file which provides the setup for the document.
-The output from this depends on the provided options, an example setup for a Raspberry Pi Zero, which uses the ARMv6 architecture, is below.
+The output from this depends on the provided options, an example setup for a
+.B "Raspberry Pi Zero W" ,
+which uses the ARMv6 architecture, is below.
 .bl
 .CW
 .TS

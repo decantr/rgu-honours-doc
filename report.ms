@@ -935,6 +935,31 @@ and
 .I "node-ee"
 are still able to communicate through the remaining two nodes.
 
+.PS
+lineht = lineht/4
+X: circle rad .3 "X"
+move
+move up
+right
+Y: circle rad .3 "Y"
+move down
+move right
+Z: circle rad .3 "Z"
+circle rad 1 dashed "" at X.c
+circle rad 1 dashed "" at Y.c
+circle rad 1 dashed "" at Z.c
+.PE
+.REF "3.3: Layout of three nodes, displaying antenna ranges"
+
+.PP
+The above graph shows the differing ranges between these nodes, demonstrating the limitation of antenna range.
+As described above, the mesh network then allows
+.CW "X"
+to communicate with
+.CW "Z"
+via the connection established with
+.CW "Y" .
+
 .SH 3
 Protocol
 
@@ -1360,6 +1385,48 @@ Out of the hardware options researched the
 are the best suited for this task as they come with the BCM43438 WiFi antenna and a generic 10/100 LAN interface.
 This wireless card is also able to support the Ad-Hoc mode which we require to interface with the mesh network, making it the ideal candidate.
 
+.PS
+lineht = lineht/4
+
+X: circle rad .3 "node x"
+move down
+move left
+Y: circle rad .3 "node y"
+move right
+move down
+right
+Z: circle rad .3 "node z"
+move up
+move right
+N: box "bridge"
+arrow <-> dashed
+box dashed "network"
+
+arrow <-> from X.s to N.w
+arrow <-> from Y.e to N.w
+arrow <-> from Z.n to N.w
+.PE
+.REF "3.10: Network topology of the bridge node"
+
+.SH 3
+Nodes
+
+.PP
+The nodes are a much simpler requiring a minute amount of proccessing power.
+As discussed in the Literature Review an Arduino is a strong choice for the nodes due to its incredibly low power consumption.
+The ability to compile
+.CW "C"
+code for it is also very compelling, as this could be heavily optimised by the
+.CW "Clang"
+or
+.CW "GCC" .
+However the requirement of an extra purchase, the WiFi shield, makes it undesirable in the goal of making the simplest setup for users possible.
+Thus the Raspberry Pi Zero W is the compelling choice.
+The Goland code compiles to a native binary, meaning no abstraction layer is required, increasing the performance.
+Further by using cron to handling scheduling of the program it does not need to run in the background constantly, instead we can use cron to implement the job of a
+.CW "while true, run code & sleep 1m" .
+To demonstrate the networks functionality a number of sensor nodes will be setup to show fucntionality.
+
 .bp
 .NH
 Implementation
@@ -1373,8 +1440,6 @@ Some networks however, such as the
 .I "eduroam"
 network on campus, does not correctly assign IP Address' inside the mesh network.
 To account for this our network will have need to have two "types" to handle occasions such as this.
-
-
 
 .NH 2
 Deployment Tools
@@ -1491,6 +1556,13 @@ These allow the user to get an at a glance view of the information in the databa
 A realworld implementation of this project would expect users to deploy their own interfaces, if at all, as stated earlier the goal of the project is to build the framework.
 .IMAGE
 \# TODO : insert image of the UI
+.NH 2
+Hardware
+.FIG "3.11: Typical Raspberry Pi Zero W with DHT11 attached" "images/raspberrypizerowdht11.eps"
+
+.PP
+This is what a typical sensor node would look like.
+
 .bp
 .NH
 Testing and Results

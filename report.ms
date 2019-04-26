@@ -1140,7 +1140,26 @@ implementation is not ideal either in resource usage or complexity.
 Hardware
 
 .PP
-
+The hardware used in for the development of the project are the expected deployment targets, as discussed before.
+The ubiquitous
+.I "Raspberry Pi 3B"
+and it's
+.I "Pi Zero"
+companion will be used for the Bridge and Node respectively.
+By developing on these devices the functionality of the tooling can be ensured to perform on the most likely candidates for installation, due to their cost and availability.
+Further, the accessibility of the device means that a greater number of libraries for accessing a wider range of sensors and their reliability are for more prevalent.
+The current number of Raspberry Pi related (public) repositories on
+.B "GitHub"
+currently lies at just below 7000
+.[
+githubrasp
+.]
+with projects using the GPIO headers numbering 650.
+.[
+githubgpio
+.]
+With this level of community engagement there is no comparison for support.
+.bl
 
 .bp
 .NH

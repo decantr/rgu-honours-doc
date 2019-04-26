@@ -446,3 +446,15 @@
 %A A. Raniwala and  Tzi-cker Chiueh
 %T Architecture and algorithms for an IEEE 802.1 1 -based multi-channel wireless mesh network
 %D 2005
+
+%K githubrasp
+%A github.com
+%T Topic: Raspberry Pi
+%O https://github.com/topics/raspberry-pi
+%D 2011
+
+%K githubgpio
+%A github.com
+%T Topic: GPIO
+%O https://github.com/topics/gpio
+%D 2017

@@ -205,7 +205,7 @@ By 2006 253 stations such as the one pictured in Figure 1 were in place across S
 SEPA2009
 .]
 
-.PSPIC -C images/monitoring.eps 0.25 .4
+.PSPIC -C images/monitoring.eps 4
 .TS
 centre;
 c.
@@ -269,7 +269,7 @@ OKLabStuttgart2015
 .]
 across Europe and beyond with small sensor units developed during workshops.
 
-.PSPIC -C images/opendatamap.eps 4
+.PSPIC -C images/opendatamap.eps
 .TS
 centre;
 c.
@@ -381,7 +381,7 @@ ArduinoLLC2010
 .]
 making it more versatile.
 
-.PSPIC -C images/rpi0.eps 4
+.PSPIC -C images/rpi3b.eps 4
 .TS
 centre;
 c.
@@ -1199,6 +1199,21 @@ implementation is not ideal either in resource usage or complexity.
 Hardware
 
 .PP
+There are a number of requirements, as described in the literature review, that must be met before a SBV can be considered viable to run the project.
+
+Firstly, the most important is GPIO or I2C capability.
+These are the protocols used to read the information from the pins, which are connected to the sensors.
+Without this there is no way to get said information (unless a USB sensor is used, though this would defeat the purpose).
+Secondly, the WiFi antenna on connected must support the
+.B "ad-hoc"
+mode that enables the use of
+.B "B.A.T.M.A.N" .
+Thirdly, the
+.CW "reporter"
+binaries are only compiled (currently) for the arm architecture, however as long as Golang supports the target architecture (x86, amd64 etc.) then it can be compiled to support it.
+These are the only real restrictions on the hardware that can be used.
+.bl
+
 The hardware used in for the development of the project are the expected deployment targets, as discussed before.
 The ubiquitous
 .I "Raspberry Pi 3B"
@@ -1220,6 +1235,18 @@ githubgpio
 With this level of community engagement there is no comparison for support.
 .bl
 
+A major restricting factor in where the nodes can be deployed is power.
+The
+.B "Raspberry Pi's"
+used run of a 5V power supply and draw ~100 mA at idle.
+This gives the opportunity for easily battery powering them.
+A number of options exist to battery power the
+.B "RPi"
+from jury rigging laptop batteries to using car batteries.
+However the easiest, and thus most likely, configuration is simply a power bank.
+It is important to ensure when using this that the powerpack will deliver 5v and not undergo under and over volting as the charge depletes, a common flaw with cheaper models, as this will cause issues with the weak regulator in the
+.B "RPi"
+ranging from a power cylce to a burnout.
 
 
 .bp

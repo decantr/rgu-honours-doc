@@ -8,7 +8,6 @@
 */*.aux
 
 papers/
-images/
 
 # output
 *.pdf

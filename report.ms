@@ -848,14 +848,7 @@ line <-> from NS.n to NN.s
 line <-> from NS.n to NE.w
 
 .PE
-
-.TS
-centre;
-c.
-.I
-Fig. Mesh Network with four nodes.
-.R
-.TE
+.REF "3.1 Mesh Network with four nodes."
 
 This shows the general layout of a mesh network in that all nodes can, and are communicating with each other.
 This is an atypical mesh network however as in an optimal setup each node would only connect to one other node, though in practice two is ideal, so as not to have overlapping network.
@@ -923,14 +916,7 @@ line <-> from NWW.e to NW.w
 line <-> from NWW.e to NS.w
 
 .PE
-
-.TS
-centre;
-c.
-.I
-Fig. Mesh Network with six nodes.
-.R
-.TE
+.REF "3.2: Mesh Network with six nodes."
 
 In this diagram we can see that the nodes
 .I "node-ww"
@@ -1030,6 +1016,7 @@ Date:   Thu Apr 25 00:11:24 2019 +0100
 
     fix heading type
 .TE
+.REF "3.3: Output of the 'git log' command"
 
 .R
 Whereas running the
@@ -1046,6 +1033,7 @@ l.
 $ git log --no-pager log --oneline -n 1
 63701fb (HEAD -> master) fix heading type
 .TE
+.REF "3.4: Output of the git log command with flag"
 
 .R
 This is the standard way to control the behaviour of a command being run.
@@ -1130,6 +1118,7 @@ ExecStart=/path/to/foo.bar
 WantedBy=multi-user.target
 .TE
 .R
+.REF "3.5: systemd service"
 
 This is somewhat more legible than the archiac but simple crontab layout;
 
@@ -1141,6 +1130,7 @@ l.
 @reboot /path/to/foo.bar
 .TE
 .R
+.REF "3.6: crontab entry"
 
 The flaw, however, with the crontab implementation is the @reboot flag is non standard and it is not garunteed to function the same across installs.
 .[
@@ -1270,6 +1260,7 @@ $ docker exec sensordb du -bsh /var/lib/influxdb/data/main
 $
 .TE
 .R
+.REF "3.8: Row count of InfluxDB vs. size on disk"
 
 However in a production enviroment with many hundreds of sensors this database may need to be stored (physically) on an external Hard Disk Drive
 .B "HDD"
@@ -1342,14 +1333,7 @@ arrow <- lineht .1 from Anchor.s; filter width 1.5 "Influx Query Language";
 arrow lineht .25;
 box "InfluxDB"
 .PE
-
-.TS
-centre;
-c.
-.I
-Fig 14: Interaction between clients and API
-.R
-.TE
+.REF "3.9: Interaction between clients and API"
 
 .PP
 The above Figure 14 shows how a myriad of different clients can interact with the API without needing to know the IQL syntax or handle output of the query.
@@ -1418,6 +1402,7 @@ mmcblk0     179:0    0  3.7G  0 disk
 $
 .TE
 .R
+.REF "4.1: Output from the prepare-sd script"
 
 There are a number of user required inputs during the process which ask the user for information about the enviroment that it cannot infer.
 These options are as follows:

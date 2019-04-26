@@ -13,7 +13,7 @@
 .       KS
 .       PSPIC -C "\\$2" 4
 .       ad c
-.       I "Figure \\$1 \n"
+.       I "Figure \\$1"
 \\$3 \\$4.
 .       KE
 .       ad b
@@ -194,17 +194,10 @@ SEPA Water Level Data FAQ
 .]
 Figure I shows one of these monitoring stations found along the River Beauly.
 
-.PSPIC -C images/wallace.eps 4 4
-.TS
-centre;
-c.
-.I
-Fig 1: SEPA Monitoring Station.
+.FIG "1: SEPA Monitoring Station" "images/wallace.eps"
 .[
 Wallace2012
 .]
-.R
-.TE
 
 In 2005 the WFD reported 285 type 1a and 1b "at risk" bodies of water.
 .[
@@ -216,17 +209,10 @@ By 2006 253 stations such as the one pictured in Figure 1 were in place across S
 SEPA2009
 .]
 
-.PSPIC -C images/monitoring.eps 4
-.TS
-centre;
-c.
-.I
-Fig 2: Monitoring Stations in Scotland.
+.FIG "2: Monitoring Stations in Scotland" "images/monitoring.eps"
 .[
 SEPA2006
 .]
-.R
-.TE
 
 .PP
 The reason for this can be attributed to the cost of these monitoring stations, with the solution proposed in this paper cost could be greatly reduced to a fraction of this.
@@ -280,17 +266,10 @@ OKLabStuttgart2015
 .]
 across Europe and beyond with small sensor units developed during workshops.
 
-.PSPIC -C images/opendatamap.eps
-.TS
-centre;
-c.
-.I
-Fig 3: Air Quality Map
+.FIG "3: Air Quality Map" "images/opendatamap.eps"
 .[
 OKLabStuttgart2018
 .]
-.R
-.TE
 
 This model of crowd sourced deployment means anyone can get involved, and it ensures that the data is freely available to all.
 This is also a key principle for this project, and the Open Database License
@@ -349,17 +328,10 @@ SEPA2007
 .]
 Our sensors will also be battery powered leveraging a solar panel to ensure charge is maintained.
 
-.PSPIC -C images/rpi0.eps 4
-.TS
-centre;
-c.
-.I
-Fig 4: Raspberry Pi Zero W
+.FIG "4: Raspberry Pi Zero W" "images/rpi0.eps"
 .[
 Amos2016
 .]
-.R
-.TE
 
 The Raspberry Pi 3B+ on the other hand is a much better fit for a server/command and control device.
 .[
@@ -392,17 +364,10 @@ ArduinoLLC2010
 .]
 making it more versatile.
 
-.PSPIC -C images/rpi3b.eps 4
-.TS
-centre;
-c.
-.I
-Fig 5: Raspberry Pi 3B+
+.FIG "5: Raspberry Pi 3B+" "images/rpi3b.eps"
 .[
 RaspberryPiFoundation2018a
 .]
-.R
-.TE
 
 .SH 3
 Other
@@ -508,17 +473,10 @@ AravindJayan2016
 An example of this sensor is shown in the figure below.
 This method has the advantage of being a low physical footprint solution to monitoring.
 
-.PSPIC -C images/arduinonano.eps 4
-.TS
-centre;
-c.
-.I
-Fig 6: Arduino Nano
+.FIG "6: Arduino Nano" "images/arduinonano.eps"
 .[
 Mellis2010
 .]
-.R
-.TE
 
 .RS
 .RS

@@ -1340,6 +1340,10 @@ Fig 14: Interaction between clients and API
 .R
 .TE
 
+.PP
+The above Figure 14 shows how a myriad of different clients can interact with the API without needing to know the IQL syntax or handle output of the query.
+This has a number advantages, as mentioned in the previous section, mainly the portability of the data returned, and that it is stateless.
+Any type of client making a request against the API will recieve the same data.
 
 .bp
 .NH

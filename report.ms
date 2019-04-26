@@ -1329,6 +1329,47 @@ Due to this the REST implementation is the clear choice for the project.
 The server running the API will be able to take advantage of the built-in features of the language.
 PHP and Node.js both have very well developed integrations for both HTTP requests and handling of JSON, with Node.js providing the cleanest with the data type.
 
+.bp
+.PS
+define filter {box ht 0.25 rad 0.125}
+lineht = 0.25;
+Top: [
+    right;
+    box width 1.3 "\fBCustom Client\fR" "HTTP";
+    move;
+    box "\fBWeb UI\fR" "HTTP";
+    move;
+    box "\fBCURL\fP" "HTTP";
+    move;
+    box width 1.5 "\fBMobile Application\fP" "HTTP";
+
+    line <- down from 1st box .s; filter "\fBJSON\fP";
+    A: line down;
+    line <- down from 2nd box .s; filter "\fBJSON\fP";
+    B: line down;
+    line <- down from 3rd box .s; filter "\fBJSON\fP";
+    C: line down;
+    line <- down from 4th box .s; filter "\fBJSON\fP";
+    D: line down;
+]
+move down 1 from last [] .s;
+Anchor: box wid 1 ht 0.75 "\fBREST API\fR" "3000";
+arrow from Top.A.end to Anchor.nw;
+arrow from Top.B.end to 1/3 of the way between Anchor.nw and Anchor.ne;
+arrow from Top.C.end to 2/3 of the way between Anchor.nw and Anchor.ne;
+arrow from Top.D.end to Anchor.ne
+arrow <- lineht .1 from Anchor.s; filter width 1.5 "Influx Query Language";
+arrow lineht .25;
+box "InfluxDB"
+.PE
+.TS
+centre;
+c.
+.I
+Fig 14: Interaction between clients and API
+.R
+.TE
+
 
 .bp
 .NH

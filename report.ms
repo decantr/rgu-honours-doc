@@ -1339,7 +1339,26 @@ However in a production enviroment with many hundreds of sensors this database m
 or on a cloud DBMS, such as Amazon's DynamoDB.
 Although again, this is somewhat outwith the remit of the project and would be to the discretion of a user deploying the tools.
 
+.SH 3
+Bridge
 
+.PP
+The Bridge node has to perform the function of creating a bridge between the WLAN or LAN it's attached to and the Mesh-Network that the nodes communicate within.
+There is not actual requirement for a bridge node in a mesh network, however as we want to exfiltrate data from the mesh nodes it is required.
+As it  sits on the outside of the network it is in a prime position to run the InfluxDB server and the API, described earlier.
+
+For it to function in this bridging function however two interfaces are required, one wireless and the other valid interface (LAN, WLAN, IPoAC etc.).
+The setup files will use
+.CW "wlan0"
+as the primary interface for the mesh network, and another most often
+.CW "eth0"
+as the network to bridge to.
+This device needs to be inexpensive and developer friendly to enable easy adoption.
+Although the use of a ZigBee antenna was mentioned in the Literature Review, this additional cost and complexity to setup (for the user) is enough to offset the gains.
+Out of the hardware options researched the
+.B "Raspberry Pi (2, 3, 3B)"
+are the best suited for this task as they come with the BCM43438 WiFi antenna and a generic 10/100 LAN interface.
+This wireless card is also able to support the Ad-Hoc mode which we require to interface with the mesh network, making it the ideal candidate.
 
 .bp
 .NH

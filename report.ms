@@ -1109,7 +1109,7 @@ which we can ensure will happen if our script fails.
 Thus for deployment of the scripts the systemd service is the most ideal solution for deployment.
 
 .SH 3
-Binary deployment
+Binary Deployment
 
 .PP
 In an enviroment where the deployed devices do not have internet it is important that they still have functionality.
@@ -1135,6 +1135,11 @@ However the need for extra dependencies over a simple
 only
 .CW "HTTP/Curl"
 implementation is not ideal either in resource usage or complexity.
+
+.NH 2
+Hardware
+
+.PP
 
 
 .bp

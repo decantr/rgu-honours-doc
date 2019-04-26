@@ -9,5 +9,5 @@ Build
 
 compile with this command
 
-$ refer -PS -e report.ms | groff -me -ms -kejpt -T ps | ps2pdfwr - report.pdf
+$ refer -PS -e report.ms | groff -me -ms -kept -T ps | ps2pdfwr - report.pdf
 

@@ -8,6 +8,17 @@
 .ds RF %
 .so msacros
 
+\# macro to handle figures
+.de FIG
+.       KS
+.       PSPIC -C "\\$2" 4
+.       ad c
+.       I "Figure \\$1 \n"
+\\$3 \\$4.
+.       KE
+.       ad b
+..
+
 .TL
 Distributed Mesh Sensor Network using Raspberry Pi's
 
@@ -1362,6 +1373,7 @@ arrow <- lineht .1 from Anchor.s; filter width 1.5 "Influx Query Language";
 arrow lineht .25;
 box "InfluxDB"
 .PE
+
 .TS
 centre;
 c.

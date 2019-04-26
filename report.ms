@@ -1247,6 +1247,52 @@ However the easiest, and thus most likely, configuration is simply a power bank.
 It is important to ensure when using this that the powerpack will deliver 5v and not undergo under and over volting as the charge depletes, a common flaw with cheaper models, as this will cause issues with the weak regulator in the
 .B "RPi"
 ranging from a power cylce to a burnout.
+.bl
+
+.SH 3
+Storage
+
+.PP
+In the test deployment
+.B "InfluxDB"
+is setup locally on the bridge.
+This is typically not an issue as as shown below, even with over 37K (37 000) entries, the database size is still very managable.
+
+.CW
+.TS
+box centre;
+l.
+.SM
+# number of entries
+# connect to the database
+$ docker exec -it sensordb influx
+    Connected to http://localhost:8086 version 1.7.5
+    InfluxDB shell version: 1.7.5
+    Enter an InfluxQL query
+    > use main
+    Using database main
+    > select (host, water_current) from usage limit 1
+    name: usage
+    host            water_current
+    ----            -------------
+    sensor-a2e7ea02 17
+    > select count(water_current) from usage
+    name: usage
+    time count
+    ---- -----
+    0    37758
+    > exit
+# Size on disk
+$ docker exec sensordb du -bsh /var/lib/influxdb/data/main
+33M     /var/lib/influxdb/data/main
+$
+.TE
+.R
+.bl
+However in a production enviroment with many hundreds of sensors this database may need to be stored (physically) on an external Hard Disk Drive
+.B "HDD"
+or on a cloud DBMS, such as Amazon's DynamoDB.
+Although again, this is somewhat outwith the remit of the project and would be to the discretion of a user deploying the tools.
 
 
 .bp

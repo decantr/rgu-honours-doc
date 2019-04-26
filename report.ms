@@ -6,7 +6,6 @@
 .nr GROWPS 4
 .ds LF Shaw Eastwood
 .ds RF %
-.so msacros
 
 \# macro to handle figures
 .de FIG

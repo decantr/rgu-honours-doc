@@ -83,6 +83,7 @@
 %O http://arxiv.org/abs/1408.2927,
 %D 2014
 
+%K ArduinoLLC2010
 %A ArduinoLLC
 %T Arduino Uno Rev 3
 %O https://store.arduino.cc/arduino-uno-rev3,
@@ -142,6 +143,7 @@
 %O https://www.geograph.org.uk/photo/2754945,
 %D 2012
 
+%K BeagleBoard2017
 %A BeagleBoard
 %T BeagleBone Black Wireless
 %O https://beagleboard.org/black-wireless,
@@ -309,6 +311,7 @@
 %O http://apps.sepa.org.uk/waterlevels/?faq=y,
 %D 2018
 
+%K Asus2017
 %A Asus
 %T Asus TinkerBoard
 %O https://www.asus.com/uk/Single-Board-Computer/Tinker-Board/,
@@ -337,7 +340,7 @@
 %O https://en.m.wikipedia.org/wiki/File:Raspberry-Pi-Zero-FL.jpg,
 %D 2016
 
-%K ArduinoLLC2010
+%K ArduinoLLC2008a
 %A Arduino LLC
 %T Arduno Nano
 %O https://store.arduino.cc/arduino-nano,

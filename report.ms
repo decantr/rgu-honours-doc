@@ -419,6 +419,24 @@ OS & N/A & N/A & Linux & Linux & Linux & TinkerOS
 _
 .TE
 .REF "2.7: Table comparing differing devices"
+.[
+ArduinoLLC2010
+.]
+.[
+ArduinoLLC2008a
+.]
+.[
+RaspberryPiFoundation2018
+.]
+.[
+RaspberryPiFoundation2017
+.]
+.[
+BeagleBoard2017
+.]
+.[
+Asus2017}
+.]
 
 .bl
 

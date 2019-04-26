@@ -1054,7 +1054,7 @@ arrow <- lineht .1 from Anchor.s; filter width 1.5 "Influx Query Language";
 arrow lineht .25;
 box "InfluxDB"
 .PE
-.REF "3.3: Interaction between clients and API"
+.REF "3.4: Interaction between clients and API"
 
 .PP
 The above Figure 14 shows how a myriad of different clients can interact with the API without needing to know the IQL syntax or handle output of the query.
@@ -1113,7 +1113,7 @@ Date:   Thu Apr 25 00:11:24 2019 +0100
 
     fix heading type
 .TE
-.REF "3.4: Output of the 'git log' command"
+.REF "3.5: Output of the 'git log' command"
 
 .R
 Whereas running the
@@ -1130,7 +1130,7 @@ l.
 $ git log --no-pager log --oneline -n 1
 63701fb (HEAD -> master) fix heading type
 .TE
-.REF "3.4: Output of the git log command with flag"
+.REF "3.6: Output of the git log command with flag"
 
 .R
 This is the standard way to control the behaviour of a command being run.
@@ -1215,7 +1215,7 @@ ExecStart=/path/to/foo.bar
 WantedBy=multi-user.target
 .TE
 .R
-.REF "3.6: systemd service"
+.REF "3.7: systemd service"
 
 This is somewhat more legible than the archiac but simple crontab layout;
 
@@ -1227,7 +1227,7 @@ l.
 @reboot /path/to/foo.bar
 .TE
 .R
-.REF "3.7: crontab entry"
+.REF "3.8: crontab entry"
 
 The flaw, however, with the crontab implementation is the @reboot flag is non standard and it is not garunteed to function the same across installs.
 .[

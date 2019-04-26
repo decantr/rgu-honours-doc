@@ -1456,15 +1456,6 @@ into the workflow,
 were able to be used in to raised for bugs, feature and concerns and tracked by marking them with flags.
 In this way I was able to employ an the Agile development approach, by generating a number of issues and then clearing them all in a sprint.
 
-.SH 3
-Network Oddities
-
-.PP
-Some networks however, such as the
-.I "eduroam"
-network on campus, does not correctly assign IP Address' inside the mesh network.
-To account for this our network will have need to have two "types" to handle occasions such as this.
-
 .NH 2
 Deployment Tools
 .PP
@@ -1580,12 +1571,33 @@ These allow the user to get an at a glance view of the information in the databa
 A realworld implementation of this project would expect users to deploy their own interfaces, if at all, as stated earlier the goal of the project is to build the framework.
 .IMAGE
 \# TODO : insert image of the UI
+
 .NH 2
 Hardware
+
+.SH 3
+Sensor
+
+.PP
+The sensor's were deployed on the Raspberry Pi Zero W's as mentioned in the design section.
+This made development very easy as these devices, being fully fledged Linux installs, could be SSH'd in to read system logs to determine faults and prototype fixes in real time.
+
+\# TODO : insert image of RPi0w
 .FIG "3.11: Typical Raspberry Pi Zero W with DHT11 attached" "images/raspberrypizerowdht11.eps"
 
 .PP
 This is what a typical sensor node would look like.
+
+.SH 3
+Network Oddities
+
+.PP
+Some networks however, such as the
+.I "eduroam"
+network on campus, does not correctly assign IP Address' inside the mesh network.
+To account for this our network will have need to have two "types" to handle occasions such as this.
+
+
 
 .bp
 .NH

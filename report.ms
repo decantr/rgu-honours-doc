@@ -1110,6 +1110,7 @@ ExecStart=/path/to/foo.bar
 [Install]
 WantedBy=multi-user.target
 .TE
+.R
 .bl
 
 This is somewhat more legible than the archiac but simple crontab layout;

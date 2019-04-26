@@ -1294,6 +1294,41 @@ However in a production enviroment with many hundreds of sensors this database m
 or on a cloud DBMS, such as Amazon's DynamoDB.
 Although again, this is somewhat outwith the remit of the project and would be to the discretion of a user deploying the tools.
 
+.SH 3
+Database API
+
+.PP
+.B "InfluxDB" 's
+query language, although incredibly powerful, will be abstracted by an API for use in the front end viewer.
+There are a number of ways to structure access to data in an API.
+The most common implementation is Representational State Transfer
+.B "REST" ). (
+REST is a description of an Interface which completely abstracts the Data Layer which is accesses, meaning a client needs no prior knowledge of the API to communicate with it.
+Implementations can use any data structure to communicate in for example XML, CSV etc. however the most common is Javascript Object Notation
+.B "JSON" ) (
+due to it's low boilerplate overhead and ubiquity.
+In layman's terms this is analogous to posting a letter, you put the letter in the post box and the recipient will receive it, there is no need to know the inner workings of the Post Office to communicate through/with it.
+.bl
+
+A popular alternative to this is Simple Object Access Protocol
+.B "SOAP" ) (
+which, as the name states, is a protocol rather than a set of rules.
+Despite both communicating over HTTP, SOAP by contrast is far more cumbersome in both transmission size and implementation.
+The protocol which communicates exclusively through XML and requires a far greater tethering of client and server.
+A client wanting to access a SOAP API uses it more as a gateway to pass commands into the system, meaning far tighter integration and lower portability.
+Because of his it has largely lost traction to the afformentioned REST.
+.bl
+A number of other implementation exist such as Facebook's
+.I "GraphQL"
+or Netflix's
+.I "FALCOR"
+however these are largely bespoke protocols to fit a particular use case, and thus are not ideal for this purpose.
+.bl
+
+Due to this the REST implementation is the clear choice for the project.
+The server running the API will be able to take advantage of the built-in features of the language.
+PHP and Node.js both have very well developed integrations for both HTTP requests and handling of JSON, with Node.js providing the cleanest with the data type.
+
 
 .bp
 .NH

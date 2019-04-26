@@ -13,10 +13,23 @@
 .       PSPIC -C "\\$2" 4
 .       ad c
 .       I "Figure \\$1"
-\\$3 \\$4.
+.shift 2
+\\$*
 .       KE
 .       ad b
 ..
+
+\# macro to handle references
+.de REF
+.       KS
+.       ad c
+.       I "Figure \\$1"
+.shift
+\\$*
+.       KE
+.       ad b
+..
+
 
 .TL
 Distributed Mesh Sensor Network using Raspberry Pi's
@@ -193,7 +206,7 @@ SEPA Water Level Data FAQ
 .]
 Figure I shows one of these monitoring stations found along the River Beauly.
 
-.FIG "1: SEPA Monitoring Station" "images/wallace.eps"
+.FIG "2.1: SEPA Monitoring Station" "images/wallace.eps"
 .[
 Wallace2012
 .]
@@ -208,7 +221,7 @@ By 2006 253 stations such as the one pictured in Figure 1 were in place across S
 SEPA2009
 .]
 
-.FIG "2: Monitoring Stations in Scotland" "images/monitoring.eps"
+.FIG "2.2: Monitoring Stations in Scotland" "images/monitoring.eps"
 .[
 SEPA2006
 .]
@@ -265,7 +278,7 @@ OKLabStuttgart2015
 .]
 across Europe and beyond with small sensor units developed during workshops.
 
-.FIG "3: Air Quality Map" "images/opendatamap.eps"
+.FIG "2.3: Air Quality Map" "images/opendatamap.eps"
 .[
 OKLabStuttgart2018
 .]
@@ -327,7 +340,7 @@ SEPA2007
 .]
 Our sensors will also be battery powered leveraging a solar panel to ensure charge is maintained.
 
-.FIG "4: Raspberry Pi Zero W" "images/rpi0.eps"
+.FIG "2.4: Raspberry Pi Zero W" "images/rpi0.eps"
 .[
 Amos2016
 .]
@@ -341,6 +354,12 @@ With it's more powerful CPU increasing the power draw to an idle of ~500mA
 RaspberryPiFoundation2018
 .]
 powering this from a battery wouldn't be ideal. Instead it should be used to connecting a LTE adapter or Ethernet cable to connect the endpoints to the larger LAN or WAN for sending information back to a central server.
+
+.FIG "2.5: Raspberry Pi 3B+" "images/rpi3b.eps"
+.[
+RaspberryPiFoundation2018a
+.]
+
 
 .SH 3
 Arduino
@@ -363,9 +382,9 @@ ArduinoLLC2010
 .]
 making it more versatile.
 
-.FIG "5: Raspberry Pi 3B+" "images/rpi3b.eps"
+.FIG "2.6: Arduino Nano" "images/arduinonano.eps"
 .[
-RaspberryPiFoundation2018a
+Mellis2010
 .]
 
 .SH 3
@@ -399,6 +418,8 @@ RAM & 32 KB & 32 KB & 1 GB & 512 MB & 512 MB & 2 GB
 OS & N/A & N/A & Linux & Linux & Linux & TinkerOS
 _
 .TE
+.REF "2.7: Table comparing differing devices"
+
 .bl
 
 The advantage afforded to the RPi0 is it's availability, low cost, support but more importantly familiarity.
@@ -440,6 +461,7 @@ RAM & 128 MB & 384 MB & 512 MB
 Storage & 2 GB & 1.5 GB & 32 GB
 _
 .TE
+.REF "2.8: Comparitive Requirements of differing software"
 
 To ensure that costs are kept low, small SD Cards are ideal which somewhat rules out the Windows option.
 In addition hardware support for Windows on Raspberry Pi is limited to Windows S
@@ -472,20 +494,10 @@ AravindJayan2016
 An example of this sensor is shown in the figure below.
 This method has the advantage of being a low physical footprint solution to monitoring.
 
-.FIG "6: Arduino Nano" "images/arduinonano.eps"
-.[
-Mellis2010
-.]
-
-.RS
-.RS
-.RS
+.FIG "2.9: HC SR04 Ultrasonic Sensor" "images/hcsr04spl.eps"
 .[
 MouserElectronics
 .]
-.RE
-.RE
-.RE
 
 .SH 3
 pH Sensor
@@ -538,17 +550,13 @@ _
 .TE
 .RS
 
-.I
-ZigBee vs. a number of other wireless network
+.REF "2.10: ZigBee vs. a number of other wireless network"
 .[
 RaspberryPiFoundation2018
 .]
 .[
 RaspberryPiFoundation2017
 .]
-.R
-.RE
-.bl
 
 .PP
 The communication methods listed in Table above, all have there advantages and disadvantages.

@@ -1,0 +1,13 @@
+rgu honours docs
+==============a
+
+Repository for my dissertation
+
+
+Build
+-----
+
+compile with this command
+
+$ refer -PS -e report.ms | groff -me -ms -kejpt -T ps | ps2pdfwr - report.pdf
+

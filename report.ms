@@ -1426,11 +1426,35 @@ The Goland code compiles to a native binary, meaning no abstraction layer is req
 Further by using cron to handling scheduling of the program it does not need to run in the background constantly, instead we can use cron to implement the job of a
 .CW "while true, run code & sleep 1m" .
 To demonstrate the networks functionality a number of sensor nodes will be setup to show fucntionality.
-
 .bp
+
 .NH
 Implementation
+.NH 2
+Development Practices
 .PP
+When developming this project the
+.B "Agile"
+proccess was opted for.
+This approach is based on the natural, iterative proccess of software development.
+The proccess of design, implementation and redesign is key to this project and through this interative proccess the functionality was refined and edge cases worked out.
+
+The use of the VCS
+.CW "Git"
+by Linus Torvalds has allowed for a rapid development enviroment while undertaking the project.
+The Agile software development approach has complimented this with use of
+.I "branches"
+and being able to move between different code versions quickly and easily.
+As the codebase was developed for the two major sections of code, web accessible repositories were used to ensure a seamless work environment between development locations and provided a backup mechanism incase of a disaster.
+Further, the afformentioned branches allowed a master branch to be kept in a tested-working state at all times while a development branch was used to develop new features and bug fixes.
+This approach is to development is described as a Production / Development branch.
+
+By implementing
+.B "GitHub"
+into the workflow,
+.I "issues"
+were able to be used in to raised for bugs, feature and concerns and tracked by marking them with flags.
+In this way I was able to employ an the Agile development approach, by generating a number of issues and then clearing them all in a sprint.
 
 .SH 3
 Network Oddities

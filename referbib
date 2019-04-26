@@ -54,7 +54,6 @@
 %O https://commons.wikimedia.org/wiki/File:Arduino\_Nano.jpg,
 %D 2010
 
-
 %A Windows IT Pro Center
 %T Windows Server 2016 System Requirements
 %O https://docs.microsoft.com/en-us/windows-server/get-started/system-requirements\#network-adapter-requirements,
@@ -219,6 +218,7 @@
 %O https://iot-analytics.com/state-of-the-iot-update-q1-q2-2018-number-of-iot-devices-now-7b/,
 %D 2018
 
+%K Debian2018
 %A Debian
 %T Debian System Requirments
 %O https://www.debian.org/releases/stable/amd64/ch03s04.html.en,
@@ -393,6 +393,7 @@
 %T Installing Ubuntu Server
 %O https://help.ubuntu.com/lts/serverguide/serverguide.pdf,
 %D 2013
+
 %K TheIoTMarketplace2015
 %A The IoT Marketplace
 %T Libelium Smart Water IoT Vertical Kit

@@ -87,7 +87,6 @@ powered devices becoming more and more prevalent in peoples homes.
 Much of this stems from the rise of (Ultra)-Low Power IoT Devices (LPIoTD) that are used by enterprise to deploy sensors to inform automation systems.
 This is commonly used for things such atmospheric control where a number of sensors in a room will allow a central server control temperature and air conditioning to each room individually.
 The use of these LPIoTD is expanding into other areas, such as river monitoring, as described in my literature review, which was previously a manual task performed weekly.
-.bl
 
 By harnessing this technology we can gain a deeper understanding of how variables from different aspects of life can have an affect.
 Unfortunately the majority of these implementations are proprietary.
@@ -107,7 +106,6 @@ Report Structure
 This report details the process required to construct a distributed mesh network of sensors.
 The report will walkthrough the process undertook to create the open source tooling that has been made available with the release of this document.
 
-.bl
 .IP
 .B "Introduction"
 - This section, containing the broad overview of the project and the motivation behind it.
@@ -129,7 +127,6 @@ The report will walkthrough the process undertook to create the open source tool
 .IP
 .B "Conclusion"
 - Finally the conclusion which will describe things learned and describe the pitfalls to any future implementations.
-.bl
 
 .NH 2
 Motivation
@@ -399,7 +396,6 @@ These make them compelling choices in scenario's where size or bandwidth etc. ar
 Comparison
 
 .PP
-.bl
 .TS
 centre tab(&) expand nowarn;
 lcccccc
@@ -437,8 +433,6 @@ BeagleBoard2017
 .[
 Asus2017}
 .]
-
-.bl
 
 The advantage afforded to the RPi0 is it's availability, low cost, support but more importantly familiarity.
 It is important to ensure the barrier for entry, both cost and technical ability, is kept to a minimal for anyone who wishes to deploy one or more of these.
@@ -480,6 +474,15 @@ Storage & 2 GB & 1.5 GB & 32 GB
 _
 .TE
 .REF "2.8: Comparitive Requirements of differing software"
+.[
+Debian2018
+.]
+.[
+Canonical2013
+.]
+.[
+MicrosoftCorporation2017a
+.]
 
 To ensure that costs are kept low, small SD Cards are ideal which somewhat rules out the Windows option.
 In addition hardware support for Windows on Raspberry Pi is limited to Windows S
@@ -621,11 +624,9 @@ In contrast it's clear the lack of computational power on the Arduino Uno makes 
 It's increased power consumption can easily be offset if it is placed in a position with a hard line power source which may not be able to reach the other devices.
 Further if Ethernet/ADSL can be used it far better placed to interface with a physical connection.
 Alternatively the additional demands on the hardware of a GSM/LTE adapter and connection will be offset with the more beefy device.
-.bl
 
 Network choice is majorly dependant on the topography of the terrain the devices are being deployed in.
 If foliage is a major issue then the already weak WiFi is going to be inoperable and ZigBee will be essential, however if there is little vegetation then WiFi may be viable alternative to keep costs and complexity low.
-.bl
 
 The sensors used are entirely determined by the market and what is available. As stated previously this is a niche and thus there are few options.
 
@@ -964,7 +965,6 @@ This change means it no appears to the Linux System as an adapter so any program
 .B "B.A.T.M.A.N"
 will handle the transmission of the packets.
 This has the added benefits of increased compatibility, high performance with very little overhead, perfect for low powered devices.
-.bl
 
 With this new
 .B "B.A.T.M.A.N Advanced"
@@ -1003,7 +1003,7 @@ is the definition described in 1994 to define a Unix-Like Operating System with 
 ieeestd.1994
 .]
 The shell script will adhere to this specification in order to provide portability between the Unix-like systems.
-.bl
+
 There was a number of different ways this could have been implemented, the use of the utility
 .CW "dialog"
 or
@@ -1018,7 +1018,6 @@ For example running the
 .CW "git log"
 command would create an output like this
 
-.bl
 .CW
 .TS
 box centre;
@@ -1032,7 +1031,6 @@ Date:   Thu Apr 25 00:11:24 2019 +0100
     fix heading type
 .TE
 
-.bl
 .R
 Whereas running the
 .CW "git log"
@@ -1040,7 +1038,6 @@ with the arguements
 .CW "--no-pager log --oneline -n 1"
 would produce the following.
 
-.bl
 .CW
 .TS
 box centre;
@@ -1049,7 +1046,6 @@ l.
 $ git log --no-pager log --oneline -n 1
 63701fb (HEAD -> master) fix heading type
 .TE
-.bl
 
 .R
 This is the standard way to control the behaviour of a command being run.
@@ -1066,7 +1062,6 @@ To accomplish this a number of processes need to be handled by the script, such 
 
 .RS
 .RS
-.bl
 .IP \[bu]
 Collecting the .deb archive dependencies
 .IP \[bu]
@@ -1085,7 +1080,6 @@ Assigning a unique hostname for
 Ensure that
 .B "B.A.T.M.A.N"
 is setup on startup
-.bl
 .RE
 .RE
 
@@ -1123,7 +1117,6 @@ The tool is very flexible and allows for running commands at defined times and p
 This functionality is slowly being phased out in most distributions in favour of the far more flexible Systemd Servies, although Raspbian does ship with crontab by default.
 A simple systemd service merely requires six lines for basic setup, as described.
 
-.bl
 .CW
 .TS
 box centre;
@@ -1137,11 +1130,9 @@ ExecStart=/path/to/foo.bar
 WantedBy=multi-user.target
 .TE
 .R
-.bl
 
 This is somewhat more legible than the archiac but simple crontab layout;
 
-.bl
 .CW
 .TS
 box centre;
@@ -1150,7 +1141,6 @@ l.
 @reboot /path/to/foo.bar
 .TE
 .R
-.bl
 
 The flaw, however, with the crontab implementation is the @reboot flag is non standard and it is not garunteed to function the same across installs.
 .[
@@ -1207,7 +1197,6 @@ Thirdly, the
 .CW "reporter"
 binaries are only compiled (currently) for the arm architecture, however as long as Golang supports the target architecture (x86, amd64 etc.) then it can be compiled to support it.
 These are the only real restrictions on the hardware that can be used.
-.bl
 
 The hardware used in for the development of the project are the expected deployment targets, as discussed before.
 The ubiquitous
@@ -1228,7 +1217,6 @@ with projects using the GPIO headers numbering 650.
 githubgpio
 .]
 With this level of community engagement there is no comparison for support.
-.bl
 
 A major restricting factor in where the nodes can be deployed is power.
 The
@@ -1242,7 +1230,6 @@ However the easiest, and thus most likely, configuration is simply a power bank.
 It is important to ensure when using this that the powerpack will deliver 5v and not undergo under and over volting as the charge depletes, a common flaw with cheaper models, as this will cause issues with the weak regulator in the
 .B "RPi"
 ranging from a power cylce to a burnout.
-.bl
 
 .SH 3
 Storage
@@ -1283,7 +1270,7 @@ $ docker exec sensordb du -bsh /var/lib/influxdb/data/main
 $
 .TE
 .R
-.bl
+
 However in a production enviroment with many hundreds of sensors this database may need to be stored (physically) on an external Hard Disk Drive
 .B "HDD"
 or on a cloud DBMS, such as Amazon's DynamoDB.
@@ -1303,7 +1290,6 @@ Implementations can use any data structure to communicate in for example XML, CS
 .B "JSON" ) (
 due to it's low boilerplate overhead and ubiquity.
 In layman's terms this is analogous to posting a letter, you put the letter in the post box and the recipient will receive it, there is no need to know the inner workings of the Post Office to communicate through/with it.
-.bl
 
 A popular alternative to this is Simple Object Access Protocol
 .B "SOAP" ) (
@@ -1312,13 +1298,12 @@ Despite both communicating over HTTP, SOAP by contrast is far more cumbersome in
 The protocol which communicates exclusively through XML and requires a far greater tethering of client and server.
 A client wanting to access a SOAP API uses it more as a gateway to pass commands into the system, meaning far tighter integration and lower portability.
 Because of his it has largely lost traction to the afformentioned REST.
-.bl
+
 A number of other implementation exist such as Facebook's
 .I "GraphQL"
 or Netflix's
 .I "FALCOR"
 however these are largely bespoke protocols to fit a particular use case, and thus are not ideal for this purpose.
-.bl
 
 Due to this the REST implementation is the clear choice for the project.
 The server running the API will be able to take advantage of the built-in features of the language.
@@ -1404,7 +1389,7 @@ file which provides the setup for the document.
 The output from this depends on the provided options, an example setup for a
 .B "Raspberry Pi Zero W" ,
 which uses the ARMv6 architecture, is below.
-.bl
+
 .CW
 .TS
 box centre;
@@ -1432,8 +1417,8 @@ mmcblk0     179:0    0  3.7G  0 disk
 ::    Install finished
 $
 .TE
-.bl
 .R
+
 There are a number of user required inputs during the process which ask the user for information about the enviroment that it cannot infer.
 These options are as follows:
 .IP \[bu]
@@ -1484,7 +1469,7 @@ instance being used is being deployed through the
 container provided by the official builds.
 This allows us to abstract the most vulnerable part of the bridge nodes exposed side (the DB) to a container.
 If a security flaw was exposed it would not affect the node itself.
-.bl
+
 The database is a NoSQL database and thus does not have a strict database layout, however the hostname of the device reporting back is marked as a "tag" for indexing purposes.
 This acts as a fast way for the Influx Query Language to find the things searched for.
 .NH 2

@@ -963,6 +963,78 @@ anywhere in the network.
 As long as a node, typically our bridge node, is connected to a network with one of these servers, typically running on the router, the nodes inside the mesh will be fully transparent to the wider network and, if it exists, the public internet.
 This functionality however may not be desired as the nodes have no need for the internet, besides updates and thus it represents a potential security flaw.
 
+.SH 3
+Database API
+
+.PP
+.B "InfluxDB" 's
+query language, although incredibly powerful, will be abstracted by an API for use in the front end viewer.
+There are a number of ways to structure access to data in an API.
+The most common implementation is Representational State Transfer
+.B "REST" ). (
+REST is a description of an Interface which completely abstracts the Data Layer which is accesses, meaning a client needs no prior knowledge of the API to communicate with it.
+Implementations can use any data structure to communicate in for example XML, CSV etc. however the most common is Javascript Object Notation
+.B "JSON" ) (
+due to it's low boilerplate overhead and ubiquity.
+In layman's terms this is analogous to posting a letter, you put the letter in the post box and the recipient will receive it, there is no need to know the inner workings of the Post Office to communicate through/with it.
+
+A popular alternative to this is Simple Object Access Protocol
+.B "SOAP" ) (
+which, as the name states, is a protocol rather than a set of rules.
+Despite both communicating over HTTP, SOAP by contrast is far more cumbersome in both transmission size and implementation.
+The protocol which communicates exclusively through XML and requires a far greater tethering of client and server.
+A client wanting to access a SOAP API uses it more as a gateway to pass commands into the system, meaning far tighter integration and lower portability.
+Because of his it has largely lost traction to the afformentioned REST.
+
+A number of other implementation exist such as Facebook's
+.I "GraphQL"
+or Netflix's
+.I "FALCOR"
+however these are largely bespoke protocols to fit a particular use case, and thus are not ideal for this purpose.
+
+Due to this the REST implementation is the clear choice for the project.
+The server running the API will be able to take advantage of the built-in features of the language.
+PHP and Node.js both have very well developed integrations for both HTTP requests and handling of JSON, with Node.js providing the cleanest with the data type.
+
+.bp
+.PS
+define filter {box ht 0.25 rad 0.125}
+lineht = 0.25;
+Top: [
+    right;
+    box width 1.3 "\fBCustom Client\fR" "HTTP";
+    move;
+    box "\fBWeb UI\fR" "HTTP";
+    move;
+    box "\fBCURL\fP" "HTTP";
+    move;
+    box width 1.5 "\fBMobile Application\fP" "HTTP";
+
+    line <- down from 1st box .s; filter "\fBJSON\fP";
+    A: line down;
+    line <- down from 2nd box .s; filter "\fBJSON\fP";
+    B: line down;
+    line <- down from 3rd box .s; filter "\fBJSON\fP";
+    C: line down;
+    line <- down from 4th box .s; filter "\fBJSON\fP";
+    D: line down;
+]
+move down 1 from last [] .s;
+Anchor: box wid 1 ht 0.75 "\fBREST API\fR" "3000";
+arrow from Top.A.end to Anchor.nw;
+arrow from Top.B.end to 1/3 of the way between Anchor.nw and Anchor.ne;
+arrow from Top.C.end to 2/3 of the way between Anchor.nw and Anchor.ne;
+arrow from Top.D.end to Anchor.ne
+arrow <- lineht .1 from Anchor.s; filter width 1.5 "Influx Query Language";
+arrow lineht .25;
+box "InfluxDB"
+.PE
+.REF "3.3: Interaction between clients and API"
+
+.PP
+The above Figure 14 shows how a myriad of different clients can interact with the API without needing to know the IQL syntax or handle output of the query.
+This has a number advantages, as mentioned in the previous section, mainly the portability of the data returned, and that it is stateless.
+Any type of client making a request against the API will recieve the same data.
 
 .NH 2
 Deploy Scripts
@@ -1016,7 +1088,7 @@ Date:   Thu Apr 25 00:11:24 2019 +0100
 
     fix heading type
 .TE
-.REF "3.3: Output of the 'git log' command"
+.REF "3.4: Output of the 'git log' command"
 
 .R
 Whereas running the
@@ -1118,7 +1190,7 @@ ExecStart=/path/to/foo.bar
 WantedBy=multi-user.target
 .TE
 .R
-.REF "3.5: systemd service"
+.REF "3.6: systemd service"
 
 This is somewhat more legible than the archiac but simple crontab layout;
 
@@ -1130,7 +1202,7 @@ l.
 @reboot /path/to/foo.bar
 .TE
 .R
-.REF "3.6: crontab entry"
+.REF "3.7: crontab entry"
 
 The flaw, however, with the crontab implementation is the @reboot flag is non standard and it is not garunteed to function the same across installs.
 .[
@@ -1260,85 +1332,14 @@ $ docker exec sensordb du -bsh /var/lib/influxdb/data/main
 $
 .TE
 .R
-.REF "3.8: Row count of InfluxDB vs. size on disk"
+.REF "3.9: Row count of InfluxDB vs. size on disk"
 
 However in a production enviroment with many hundreds of sensors this database may need to be stored (physically) on an external Hard Disk Drive
 .B "HDD"
 or on a cloud DBMS, such as Amazon's DynamoDB.
 Although again, this is somewhat outwith the remit of the project and would be to the discretion of a user deploying the tools.
 
-.SH 3
-Database API
 
-.PP
-.B "InfluxDB" 's
-query language, although incredibly powerful, will be abstracted by an API for use in the front end viewer.
-There are a number of ways to structure access to data in an API.
-The most common implementation is Representational State Transfer
-.B "REST" ). (
-REST is a description of an Interface which completely abstracts the Data Layer which is accesses, meaning a client needs no prior knowledge of the API to communicate with it.
-Implementations can use any data structure to communicate in for example XML, CSV etc. however the most common is Javascript Object Notation
-.B "JSON" ) (
-due to it's low boilerplate overhead and ubiquity.
-In layman's terms this is analogous to posting a letter, you put the letter in the post box and the recipient will receive it, there is no need to know the inner workings of the Post Office to communicate through/with it.
-
-A popular alternative to this is Simple Object Access Protocol
-.B "SOAP" ) (
-which, as the name states, is a protocol rather than a set of rules.
-Despite both communicating over HTTP, SOAP by contrast is far more cumbersome in both transmission size and implementation.
-The protocol which communicates exclusively through XML and requires a far greater tethering of client and server.
-A client wanting to access a SOAP API uses it more as a gateway to pass commands into the system, meaning far tighter integration and lower portability.
-Because of his it has largely lost traction to the afformentioned REST.
-
-A number of other implementation exist such as Facebook's
-.I "GraphQL"
-or Netflix's
-.I "FALCOR"
-however these are largely bespoke protocols to fit a particular use case, and thus are not ideal for this purpose.
-
-Due to this the REST implementation is the clear choice for the project.
-The server running the API will be able to take advantage of the built-in features of the language.
-PHP and Node.js both have very well developed integrations for both HTTP requests and handling of JSON, with Node.js providing the cleanest with the data type.
-
-.bp
-.PS
-define filter {box ht 0.25 rad 0.125}
-lineht = 0.25;
-Top: [
-    right;
-    box width 1.3 "\fBCustom Client\fR" "HTTP";
-    move;
-    box "\fBWeb UI\fR" "HTTP";
-    move;
-    box "\fBCURL\fP" "HTTP";
-    move;
-    box width 1.5 "\fBMobile Application\fP" "HTTP";
-
-    line <- down from 1st box .s; filter "\fBJSON\fP";
-    A: line down;
-    line <- down from 2nd box .s; filter "\fBJSON\fP";
-    B: line down;
-    line <- down from 3rd box .s; filter "\fBJSON\fP";
-    C: line down;
-    line <- down from 4th box .s; filter "\fBJSON\fP";
-    D: line down;
-]
-move down 1 from last [] .s;
-Anchor: box wid 1 ht 0.75 "\fBREST API\fR" "3000";
-arrow from Top.A.end to Anchor.nw;
-arrow from Top.B.end to 1/3 of the way between Anchor.nw and Anchor.ne;
-arrow from Top.C.end to 2/3 of the way between Anchor.nw and Anchor.ne;
-arrow from Top.D.end to Anchor.ne
-arrow <- lineht .1 from Anchor.s; filter width 1.5 "Influx Query Language";
-arrow lineht .25;
-box "InfluxDB"
-.PE
-.REF "3.9: Interaction between clients and API"
-
-.PP
-The above Figure 14 shows how a myriad of different clients can interact with the API without needing to know the IQL syntax or handle output of the query.
-This has a number advantages, as mentioned in the previous section, mainly the portability of the data returned, and that it is stateless.
-Any type of client making a request against the API will recieve the same data.
 
 .bp
 .NH

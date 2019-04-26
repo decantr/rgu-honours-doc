@@ -182,7 +182,8 @@ Some even requiring a person being sent periodically to collect this information
 SEPA Water Level Data FAQ
 .]
 Figure I shows one of these monitoring stations found along the River Beauly.
-.IMAGE
+
+.PSPIC -C images/wallace.eps 4 4
 .TS
 centre;
 c.
@@ -199,12 +200,12 @@ In 2005 the WFD reported 285 type 1a and 1b "at risk" bodies of water.
 SEPA2007
 .]
 
-By'2006 253 stations such as the one pictured in Figure 1 were in place across Scotland representing 10% of the country's total water bodies and 26% of the 989 "at risk" rivers as of 2009.
+By 2006 253 stations such as the one pictured in Figure 1 were in place across Scotland representing 10% of the country's total water bodies and 26% of the 989 "at risk" rivers as of 2009.
 .[
 SEPA2009
 .]
 
-.IMAGE
+.PSPIC -C images/monitoring.eps 0.25 .4
 .TS
 centre;
 c.
@@ -268,7 +269,7 @@ OKLabStuttgart2015
 .]
 across Europe and beyond with small sensor units developed during workshops.
 
-.IMAGE
+.PSPIC -C images/opendatamap.eps 4
 .TS
 centre;
 c.
@@ -337,7 +338,7 @@ SEPA2007
 .]
 Our sensors will also be battery powered leveraging a solar panel to ensure charge is maintained.
 
-.IMAGE
+.PSPIC -C images/rpi0.eps 4
 .TS
 centre;
 c.
@@ -380,7 +381,7 @@ ArduinoLLC2010
 .]
 making it more versatile.
 
-.IMAGE
+.PSPIC -C images/rpi0.eps 4
 .TS
 centre;
 c.
@@ -496,7 +497,7 @@ AravindJayan2016
 An example of this sensor is shown in the figure below.
 This method has the advantage of being a low physical footprint solution to monitoring.
 
-.IMAGE
+.PSPIC -C images/arduinonano.eps 4
 .TS
 centre;
 c.

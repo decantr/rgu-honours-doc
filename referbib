@@ -48,7 +48,8 @@
 %V 1
 %D 2004
 
-%A Mellis, David
+%K Mellis2010
+%A David Mellis
 %T Arduino Nano
 %O https://commons.wikimedia.org/wiki/File:Arduino\_Nano.jpg,
 %D 2010
@@ -135,6 +136,7 @@
 %O http://w3techs.com/technologies/details/os-unix/all/all,
 %D 2012
 
+%K Wallace2012
 %A Wallace, Craig
 %T SEPA gauging station by the River Beauly
 %O https://www.geograph.org.uk/photo/2754945,
@@ -159,7 +161,7 @@
 %V 2
 %D 2006
 
-%K RaspberryPiFoundation2018
+%K RaspberryPiFoundation2018a
 %A Raspberry Pi Foundation
 %T Raspberry Pi 3 Model B+
 %O https://static.raspberrypi.org/files/product-briefs/Raspberry-Pi-Model-Bplus-Product-Brief.pdf,
@@ -272,6 +274,7 @@
 %O https://www.raspberrypi.org/products/raspberry-pi-zero-w/,
 %D 2017
 
+%K SEPA2006
 %A SEPA
 %T WFD Operational and Surveillance RIver Monitoring Points in Scotland
 %D 2006
@@ -328,7 +331,8 @@
 %O https://docs.microsoft.com/en-gb/windows-server/get-started/getting-started-with-nano-server,
 %D 2017
 
-%A Amos, Evan
+%K Amos2016
+%A Evan Amos
 %T Raspberry Pi Zero W
 %O https://en.m.wikipedia.org/wiki/File:Raspberry-Pi-Zero-FL.jpg,
 %D 2016
@@ -357,6 +361,7 @@
 %O http://deutschland.maps.luftdaten.info/\#8/51.980/6.581,
 %D 2018
 
+%K OKLabStuttgart2018
 %A OK Lab Stuttgart
 %T luftdaten
 %O https://luftdaten.info/en/home-en/,

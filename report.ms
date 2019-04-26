@@ -178,13 +178,21 @@ Background
 The current system for monitoring rivers and bodies of water involves building small concrete huts that record and store data locally.
 The cost of building these huts makes them prohibitive and is inefficient with today's technology.
 Some even requiring a person being sent periodically to collect this information manually.
-
 .[
 SEPA Water Level Data FAQ
 .]
-
 Figure I shows one of these monitoring stations found along the River Beauly.
 .IMAGE
+.TS
+centre;
+c.
+.I
+Fig 1: SEPA Monitoring Station.
+.[
+Wallace2012
+.]
+.R
+.TE
 
 In 2005 the WFD reported 285 type 1a and 1b "at risk" bodies of water.
 .[
@@ -197,6 +205,16 @@ SEPA2009
 .]
 
 .IMAGE
+.TS
+centre;
+c.
+.I
+Fig 2: Monitoring Stations in Scotland.
+.[
+SEPA2006
+.]
+.R
+.TE
 
 .PP
 The reason for this can be attributed to the cost of these monitoring stations, with the solution proposed in this paper cost could be greatly reduced to a fraction of this.
@@ -251,6 +269,16 @@ OKLabStuttgart2015
 across Europe and beyond with small sensor units developed during workshops.
 
 .IMAGE
+.TS
+centre;
+c.
+.I
+Fig 3: Air Quality Map
+.[
+OKLabStuttgart2018
+.]
+.R
+.TE
 
 This model of crowd sourced deployment means anyone can get involved, and it ensures that the data is freely available to all.
 This is also a key principle for this project, and the Open Database License
@@ -310,6 +338,16 @@ SEPA2007
 Our sensors will also be battery powered leveraging a solar panel to ensure charge is maintained.
 
 .IMAGE
+.TS
+centre;
+c.
+.I
+Fig 4: Raspberry Pi Zero
+.[
+Amos2016
+.]
+.R
+.TE
 
 The Raspberry Pi 3B+ on the other hand is a much better fit for a server/command and control device.
 .[
@@ -343,6 +381,16 @@ ArduinoLLC2010
 making it more versatile.
 
 .IMAGE
+.TS
+centre;
+c.
+.I
+Fig 5: Raspberry Pi 3B+
+.[
+RaspberryPiFoundation2018a
+.]
+.R
+.TE
 
 .SH 3
 Other
@@ -449,6 +497,16 @@ An example of this sensor is shown in the figure below.
 This method has the advantage of being a low physical footprint solution to monitoring.
 
 .IMAGE
+.TS
+centre;
+c.
+.I
+Fig 6: Arduino Nano
+.[
+Mellis2010
+.]
+.R
+.TE
 
 .RS
 .RS
@@ -1160,6 +1218,8 @@ githubgpio
 .]
 With this level of community engagement there is no comparison for support.
 .bl
+
+
 
 .bp
 .NH

@@ -1733,7 +1733,7 @@ db = InfluxDBClient(host="foo.com", database=bar)
 
 # JSON message
 msg = [{
-  'measurement': 'test',
+  'measurement': 'usage',
   'tags': {
     'host': sensor
   },'fields': {
@@ -1840,8 +1840,8 @@ Since the only traffic moving on the network is HTTP we can firewall other types
 HTTP is also a very lightweight protocol and does not require much overhead in the packet.
 .KE
 
-.NH 3
-Database Structure
+.NH 2
+Database
 .PP
 The
 .B "InfluxDB"
@@ -1849,9 +1849,84 @@ instance being used is being deployed through the
 .B "Docker"
 container provided by the official builds.
 This allows us to abstract the most vulnerable part of the bridge nodes exposed side (the DB) to a container.
-If a security flaw was exposed it would not affect the node itself.
-The database is a NoSQL database and thus does not have a strict database layout, however the hostname of the device reporting back is marked as a "tag" for indexing purposes.
+If a security flaw was exposed it would not affect the bridge node itself, allowing an administrator to simply discard the comprimised container and pull the patched version.
+The database is a NoSQL database and thus does not have a strict database layout, however tags are used to index the database.
 This acts as a fast way for the Influx Query Language to find the things searched for.
+Because of this it is imperative that the node's inserting information into the database follow the correct syntax.
+
+Our database uses the hostname of the device reporting back is marked as a "tag" for indexing purposes.
+By doing this when our API queries the database the results can be
+.CW "GROUP" [ed]
+.CW "BY"
+the hostname specfified and the user can select which sensors results to view,
+or to group by and average of results from all hosts in a specified amount of time.
+
+.SH 3
+Data Structure
+.PP
+The data schema returned by the database when a query is made, at its simplest is described in the following diagram
+
+
+.CW
+.SM
+.TS
+tab(') box centre;
+l.
+{
+    "results": [
+        {
+            "statement_id": 0,
+            "series": [
+                {
+                    "name": "usage",
+                    "columns": [
+                        "time",
+                        "host",
+                        "water_current",
+                        "water_level",
+                        "water_purity",
+                        "water_temp"
+                    ],
+                    "values": [
+                        [
+                            "2019-04-24T00:04:42.505817478Z",
+                            "sensor-a2e7ea02",
+                            17,
+                            4,
+                            4,
+                            14
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}
+.TE
+.R
+.REF "4.9: Standard output returned by the HTTP API"
+
+This data schema is very verbose, with a number of useless fields.
+Hence in the next seciton, the API, this will be sginificantly reduced for data being returned by the API.
+When a query is made for a single entry with all fields against out test database, 219 bytes are transmitted for the non prettyfied version compared to 806 with spacing included.
+This proccess is commenly known as "minifying" and is used in a number on interpreted languages such as javascript, denoted by the
+.CW ".min"
+in the file path, i.e.
+.CW "jquery.min.js" .
+
+.CW
+.SM
+.TS
+box centre;
+l.
+$ curl -s "foo.com:8086/query?pretty=true&db=bar&" -d "q=select * from usage limit 1" > query.pretty
+$ curl -s "foo.com:8086/query?&db=bar&" -d "q=select * from usage limit 1" > query.ugly
+$ du -bsh query.*
+806     query.pretty
+219     query.ugly
+.TE
+.R
+.REF "4.10: The comparative sizes of the response show above"
 
 .NH 2
 API

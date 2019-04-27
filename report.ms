@@ -1467,6 +1467,10 @@ file which provides the setup for the document.
 The output from this depends on the provided options, an example setup for a
 .B "Raspberry Pi Zero W" ,
 which uses the ARMv6 architecture, is below.
+The script will obtain and install the latest version of the
+.CW "Raspbian Lite"
+image from
+.CW "raspberrypi.org" .
 
 .CW
 .TS
@@ -1526,6 +1530,28 @@ Whether or not SSH should be enabled on the device
 A final confirmation before writing to the selected disk, this option defaults to no.
 .PP
 This allows a multitude of differing options to be provided with the minimal amount of requirements for running the script.
+
+.SH 3
+Network
+
+.PP
+Some networks, such as the
+.I "eduroam"
+network on campus, does not correctly assign IP Address' inside the mesh network.
+To account for this our network will have need to have two "types" to handle occasions such as this, hence the user is prompted if they are deploying to such a network.
+If this option is slected then the script will assign a Static IP address to the device.
+It is worth nothing that inside the mesh network nodes can still commmunicate with each other using the self assigned IP address
+.CW "169.254.16.8" ' '
+for example, however this is not predictable and thus nodes could not be contacted programmatically.
+Further complicating things, if there is no DHCP server then it unlikely a localDNS server, and thus hostname communication is impossible.
+A daemon such as Avahi could be used however it extremely unreliable in testing and far too slow to be used in such a dynamic network.
+
+For this reason the first task of the script is to obtain the dependencies needed for the pi's after they have been setup.
+This way there is no need for a node to require internet as it already has everything it needs.
+Further, with the bridge node setup to provide updates to the nodes inside the network, nodes never need to connect to the internet directly.
+
+
+
 .NH 2
 Node Software
 .PP
@@ -1540,6 +1566,7 @@ Golang was chosen as it does not require any dependencies to run once compiled.
 In addition it has the ability to
 .I "cross-compile"
 to other architectures, meaning the device building code does not need to be the same architecture of the device running it.
+
 .NH 3
 Database Structure
 .PP
@@ -1550,21 +1577,23 @@ instance being used is being deployed through the
 container provided by the official builds.
 This allows us to abstract the most vulnerable part of the bridge nodes exposed side (the DB) to a container.
 If a security flaw was exposed it would not affect the node itself.
-
 The database is a NoSQL database and thus does not have a strict database layout, however the hostname of the device reporting back is marked as a "tag" for indexing purposes.
 This acts as a fast way for the Influx Query Language to find the things searched for.
+
 .NH 2
 API
 .PP
 The API is in the form of a RESTful HTTP API written in Node.Js.
 Incoming GET Requests are handled by the express server and query the database directly based on the paramaters sent.
 The results from the database are then parsed and turned into a JSON Object that can then be parsed by the front end.
+
 .NH 2
 Web Client
 .PP
 The web interface is a simple implementation of two D3 libraries, Cubism and Parallel.
 These allow the user to get an at a glance view of the information in the database, without needing to do any querying directly.
 A realworld implementation of this project would expect users to deploy their own interfaces, if at all, as stated earlier the goal of the project is to build the framework.
+
 .IMAGE
 \# TODO : insert image of the UI
 
@@ -1583,17 +1612,6 @@ This made development very easy as these devices, being fully fledged Linux inst
 
 .PP
 This is what a typical sensor node would look like.
-
-.SH 3
-Network Oddities
-
-.PP
-Some networks however, such as the
-.I "eduroam"
-network on campus, does not correctly assign IP Address' inside the mesh network.
-To account for this our network will have need to have two "types" to handle occasions such as this.
-
-
 
 .bp
 .NH

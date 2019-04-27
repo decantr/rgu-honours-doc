@@ -44,8 +44,8 @@ Robert Gordon University
 .AB
 The Internet of Things
 .B "IoT" ) (
-has brought a plethora of low energy, low profile devices to market that are purpose built for a single purpose.
-These devices are notorious for poor security and not receiving proper updates, along with wasting precious CPU cycles on sending excessive telemetry to the designers of the board.
+has brought a plethora of low energy, low profile devices to market that are purpose built for a single function.
+These devices are synonymous with poor security, abscence of proper upstream updates, along with spending CPU cycles on sending useless telemetry to the manufacturer of the device.
 This project will follow the design and implementation of deployable distributed sensor network for use on Raspberry Pi devices with minimal setup needed.
 .AE
 
@@ -88,8 +88,7 @@ Much of this stems from the rise of (Ultra)-Low Power IoT Devices (LPIoTD) that 
 This is commonly used for things such atmospheric control where a number of sensors in a room will allow a central server control temperature and air conditioning to each room individually.
 The use of these LPIoTD is expanding into other areas, such as river monitoring, as described in my literature review, which was previously a manual task performed weekly.
 
-By harnessing this technology we can gain a deeper understanding of how variables from different aspects of life can have an affect.
-Unfortunately the majority of these implementations are proprietary.
+By harnessing this technology we can better minitor the many variables in any given environment, unfortunately the majority of these implementations are proprietary.
 Anyone interested in deploying such a network would be required to obtain a bulk purchase of potentially hundreds of Single Board Computers
 .B "SBC" ) (
 which are purpose built for the task and pay licensing fees.
@@ -104,7 +103,7 @@ Report Structure
 
 .PP
 This report details the process required to construct a distributed mesh network of sensors.
-The report will walkthrough the process undertook to create the open source tooling that has been made available with the release of this document.
+The report will walkthrough the steps taken to create the open source tooling that has been made available with the release of this document.
 
 .IP
 .B "Introduction"
@@ -623,7 +622,7 @@ The Arduino suits this role more than the Raspberry Pi Zero W in terms of power 
 In contrast it's clear the lack of computational power on the Arduino Uno makes the Raspberry Pi 3B+ the clear winner for the command and control 'server' for the endpoints to report back to.
 It's increased power consumption can easily be offset if it is placed in a position with a hard line power source which may not be able to reach the other devices.
 Further if Ethernet/ADSL can be used it far better placed to interface with a physical connection.
-Alternatively the additional demands on the hardware of a GSM/LTE adapter and connection will be offset with the more beefy device.
+Alternatively the additional demands on the hardware of a GSM/LTE adapter and connection will be offset with the more powerful device.
 
 Network choice is majorly dependant on the topography of the terrain the devices are being deployed in.
 If foliage is a major issue then the already weak WiFi is going to be inoperable and ZigBee will be essential, however if there is little vegetation then WiFi may be viable alternative to keep costs and complexity low.

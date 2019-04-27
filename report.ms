@@ -1431,7 +1431,7 @@ To demonstrate the networks functionality a number of sensor nodes will be setup
 .NH
 Implementation
 .NH 2
-Development Practices
+Development Practices & Tools
 .PP
 When developming this project the
 .B "Agile"
@@ -1455,13 +1455,7 @@ into the workflow,
 .I "issues"
 were able to be used in to raised for bugs, feature and concerns and tracked by marking them with flags.
 In this way I was able to employ an the Agile development approach, by generating a number of issues and then clearing them all in a sprint.
-
-.NH 2
-Deployment Tools
-.PP
-This project has relied heavily on Git to provide a versioning of the code.
-As previously stated the project is divided across different Repositories, this allows seperate releases to be produced, which the setup script can pull (if not building from source).
-\# TODO : Expand
+Using the release functionality allowed seperate releases to be produced, which the setup script can pull or alternatively for a build from source options.
 
 .NH 2
 Setup Tools
@@ -1526,6 +1520,8 @@ For example if
 is the IP then the sensor would be
 .CW "sensor-22" .
 .RE
+.IP \[bu]
+Whether or not SSH should be enabled on the device
 .IP \[bu]
 A final confirmation before writing to the selected disk, this option defaults to no.
 .PP

@@ -1767,6 +1767,7 @@ Thus a medium of using Go to handle the reading of the GPIO pins and its built i
 
 .KS
 In its most basic form in Go, a HTTP request takes the following form.
+
 .CW
 .SM
 .TS
@@ -1804,6 +1805,7 @@ During the testing of this code, test data was generated from Go's
 method, to be supplied to the database.
 By using this, I was able to test the network infrastructure and setup script reliablity very easily without the need for the sensors, throwing an additional variable into the mix.
 
+.KS
 .CW
 .TS
 box centre;
@@ -1834,7 +1836,9 @@ res.Body.Close()
 
 The above simplified code shows the steps taken to submit information through the HTTP API of InfluxDB using the default http package provided by Go, as desribed.
 Using HTTP to perform the query has a number of advantages.
-
+Since the only traffic moving on the network is HTTP we can firewall other types to increase security.
+HTTP is also a very lightweight protocol and does not require much overhead in the packet.
+.KE
 
 .NH 3
 Database Structure

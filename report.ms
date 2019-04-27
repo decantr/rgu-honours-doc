@@ -1604,6 +1604,66 @@ dd if=foo.img of=/dev/bar	8m 18s
 .R
 .REF "4.2: Comparative burn times for tee vs dd, timed with 'time'"
 
+.SH 3
+Software
+.PP
+The software depends on the type of device being created, be it a node or bridge.
+For a bridge the
+.CW "batctl"
+software is required, along with the
+.CW "bridge-utils"
+package which allows the bridge to be created.
+
+Initially it was envisaged to use the far newer
+.CW "ip"
+package tools which are intended to replace
+.CW "ifconfig"
+and
+.CW "bridge-utils"
+to perform the bridging, however when attempting implement this on the RPi's it would cause constant errors.
+This was very unfortunate as it required the need to install the
+.CW "bridge-utils"
+package, causing an extra layer of complexity.
+The package provides the two commands run in the
+.CW "setup.sh"
+script that is deployed to the devices.
+These are the
+.CW "brctl addbr"
+which we create the bridge with and
+.CW "brctl addif"
+to add our interfaces to it.
+
+.bl
+.CW
+.TS
+box centre;
+l.
+.SM
+$ brctl addbr foo
+$ brctl addif foo bar0
+$ brctl addif foo bar1
+.TE
+.REF "4.3: using batctl to create a bridge"
+
+.PP
+The
+.CW "batctl"
+package also has issues.
+The most current version of batctl is 2019.0 which is provided from the Debian repositories.
+The current available version of batctl from the Raspbian repositories is 2016.5.
+However, as the open-mesh website requires 2017.3 for kernel version 4.14 (running on the Raspbian) or higher.
+As the source is provided from their repo or (batctl-2017.3.tar.gz) could be shipped and compiled on the nodes.
+Though this would have added an additional dependencies (libnl-3 and libnl-genl).
+
+Installing batctl version 2019.0-1 from the Debian Sid repository works as expected on both the Raspberry Pi 3B and the Pi Zero W.
+However attempting to run any batctl command on the Pi Zero W  with this version will result in a segmentation fault error, but will work on the Raspberry Pi3B.
+Version's 2016.5 (from the Raspbian repo) and 2017.3 (compiled) do not share this issue.
+To create a further problem, batctl 2016.5 in the Raspbian repository causes the bridge node (running on a Raspberry Pi 3) to become unreachable despite still passing traffic into and out of the mesh network.
+Compiling is not ideal as serpate
+.CW "dev"
+packages must be provided to the Pi's and compiling from source takes over five minutes.
+Thus, seperate versions must be provided depending on the type of device we are creating.
+
 .NH 2
 Node Software
 .PP

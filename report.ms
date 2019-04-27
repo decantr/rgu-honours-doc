@@ -1682,8 +1682,14 @@ In addition it has the ability to
 .I "cross-compile"
 to other architectures, meaning the device building code does not need to be the same architecture of the device running it.
 
-In its most basic form in Go, a http request takes the following form.
+A number of tools are made available to insert data into an InfluxDB instance.
+InfluxDB provides and maintains a Go, along with python, JS and other language, client library that handles database connection management and query injection protection.
+Influx also has a HTTP API that is accessible, by default, through port
+.CW "8086" .
+This allows encoding of data in the URL or in the HTTP Form.
 
+.KS
+In its most basic form in Go, a HTTP request takes the following form.
 .CW
 .TS
 box centre;
@@ -1694,7 +1700,8 @@ request,  _ := http.NewRequest( "GET" , "foo.com/bar" , nil )
 response, _ := client.Do( req )
 .TE
 .R
-.REF "4.4: Simple HTTP Reqeust"
+.REF "4.4: Simple HTTP Reqeust in Go"
+.KE
 
 Initially the Client from the "http" package is created.
 Then a "NewRequest" is created which contains the type of request,
@@ -1745,9 +1752,10 @@ res, _ := cln.Do(req)
 res.Body.Close()
 .TE
 .R
-.REF "4.4: Simplified Go code for submitting a database entry"
+.REF "4.5: Simplified Go code for submitting a database entry"
 
-The above simplified code shows the steps taken to submit information through the HTTP API of InfluxDB using the default http package provided by Go.
+The above simplified code shows the steps taken to submit information through the HTTP API of InfluxDB using the default http package provided by Go, as desribed.
+Using HTTP to perform the query has a number of advantages.
 
 
 .NH 3

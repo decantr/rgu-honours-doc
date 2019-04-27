@@ -1946,6 +1946,20 @@ A realworld implementation of this project would expect users to deploy their ow
 \# TODO : insert image of the UI
 
 .NH 2
+Security
+
+.PP
+Security is not a big a concern as with most projects as the data being transmitted is in no way sensitive.
+By ensuring that Uncomplicated Fire Wall
+.B "UFW" ), (
+a common simple but effective firewall implementation for Unix systems, is deployed on the bridge node and only the port 8080 for the interface is accessible to the Wide Area Network
+.CW "WAN" ,
+the mesh in kept safe.
+Equally, by blocking access to
+.CW "8086" ,
+the InfluxDB port, from the WAN side and only allowing access from inside the mesh network the dataabse cannot be queried or inserted into directly, forcing all operations through Interface.
+
+.NH 2
 Hardware
 
 .SH 3

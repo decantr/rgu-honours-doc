@@ -1550,7 +1550,18 @@ For this reason the first task of the script is to obtain the dependencies neede
 This way there is no need for a node to require internet as it already has everything it needs.
 Further, with the bridge node setup to provide updates to the nodes inside the network, nodes never need to connect to the internet directly.
 
-
+When determining the name of the device, a number of considerations must be taken into account.
+Collisions must be avoided within the network, so a large namespace will be required however, these will be stored with every database row so the name shouldn't be too long.
+With this in mind two paths where chosen, if the IP adress is defined, simply affix the IP address to "sensor" to get, for example
+.CW "sensor-122" .
+When using DHCP however this cannot be known, nor can we be sure the IP wont change.
+To this end, a function is used to generate a unique name, the current date as a string is hashed using md5, then the first 8 characters of that are taken with
+.CW "date | md5sum | cut -c1-8" .
+This gives us a predictable, repeatable way of generating names with increadibly low overhead while providing a huge namespace.
+From this we can suffix those 8 chars to the name to get
+.CW "sensor-adb44a41" .
+This proccess however is not requried for the bridge node as there should only be one in any given mesh, and thus the name will be generated as
+.CW "sensor-bridge" .
 
 .NH 2
 Node Software

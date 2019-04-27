@@ -1959,6 +1959,15 @@ Equally, by blocking access to
 .CW "8086" ,
 the InfluxDB port, from the WAN side and only allowing access from inside the mesh network the dataabse cannot be queried or inserted into directly, forcing all operations through Interface.
 
+Further, use of HTTP over TLS
+.B "HTTPS"
+could be implemented if the Web UI was intended to be viewed over the internet, and would be mandatory if the database was being deployed to a cloud or Virtual Private Server
+.B "VPS" ) (
+instance.
+
+Finally, the "WiFi" network created that carries the mesh network is not password protected.
+However this is a misleading as the network is not
+
 .NH 2
 Hardware
 

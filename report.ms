@@ -1687,20 +1687,69 @@ InfluxDB provides and maintains a Go, along with python, JS and other language, 
 Influx also has a HTTP API that is accessible, by default, through port
 .CW "8086" .
 This allows encoding of data in the URL or in the HTTP Form.
+In it's simplest form to insert data into a database a number of steps must be performed.
 
-.KS
-In its most basic form in Go, a HTTP request takes the following form.
+
 .CW
 .TS
 box centre;
 l.
 .SM
+#!/bin/env python2.7
+
+from influxdb import InfluxDBClient
+
+# Database connection
+db = InfluxDBClient(host="foo.com", database=bar)
+
+# JSON message
+msg = [{
+  'measurement': 'test',
+  'tags': {
+    'host': sensor
+  },'fields': {
+    'variable': 10,
+}}]
+
+# write to db
+db.write_points(msg)
+.TE
+.REF "4.4: Simple InfluxClient in Python"
+.R
+This is a very verbose implementation with many working parts.
+It also requires us to use the InfluxDB language to move the data.
+The alternative to this however is far simpler and can be implemented in CURL, in a single line.
+
+.CW
+.SM
+.TS
+box centre;
+l.
+$ curl "foo.com:8086/write?db=bar&test,host=sensor variable=10"
+.TE
+.NL
+.R
+.REF "4.5: Insert data using CURL"
+
+This method is far less verbose and far more portable.
+CURL is a Unix utility found in all major Operating Systems and is incredibly powerful.
+The reporting to the database could be implemented in CURL however there are no implementations for GPIO reading in BASH.
+Thus a medium of using Go to handle the reading of the GPIO pins and its built in HTTP library to interface with InfluxDB's HTTP API.
+
+.KS
+In its most basic form in Go, a HTTP request takes the following form.
+.CW
+.SM
+.TS
+box centre;
+l.
 client      := &http.Client{}
 request,  _ := http.NewRequest( "GET" , "foo.com/bar" , nil )
 response, _ := client.Do( req )
 .TE
+.NL
 .R
-.REF "4.4: Simple HTTP Reqeust in Go"
+.REF "4.6: Simple HTTP Reqeust in Go"
 .KE
 
 Initially the Client from the "http" package is created.

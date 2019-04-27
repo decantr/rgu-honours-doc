@@ -1666,17 +1666,89 @@ Thus, seperate versions must be provided depending on the type of device we are 
 .NH 2
 Node Software
 .PP
-The nodes have a go binary deployed on them by the
+The nodes have a Golang
+.B "Go" ) (
+binary deployed to them by the
 .CW "prepare-sd.sh"
-script which reports the information from the sensor attached to the
+script.
+This program reports the information from the sensor attached, to the
 .CW "HTTP API"
 of the
 .B "InfluxDB"
-instance running on the bridge Pi.
-Golang was chosen as it does not require any dependencies to run once compiled.
+instance running on the bridge.
+Golang was chosen as it does not require any dependencies to run once compiled, meaning no further dependencies need to be deployed to the Node to run it.
+It also allowed me to explore an entirely new language which has been gaining traction in the past few years.
 In addition it has the ability to
 .I "cross-compile"
 to other architectures, meaning the device building code does not need to be the same architecture of the device running it.
+
+In its most basic form in Go, a http request takes the following form.
+
+.CW
+.TS
+box centre;
+l.
+.SM
+client      := &http.Client{}
+request,  _ := http.NewRequest( "GET" , "foo.com/bar" , nil )
+response, _ := client.Do( req )
+.TE
+.R
+.REF "4.4: Simple HTTP Reqeust"
+
+Initially the Client from the "http" package is created.
+Then a "NewRequest" is created which contains the type of request,
+.CW "GET" ,
+.CW "POST" ,
+.CW "DELETE"
+etc. followed by the URL or IP Address of the target and finally the content of in the request.
+This request is then passed to the http.Client initally created which then "Do[es]" the request defined previously.
+This returns a http.Response which which contains a
+.CW "Head" ,
+with the headers and a
+.CW "Body"
+containing the actual content.
+Content returned could be in the form of a HTML docuement to be displayed or a JSON string to be parsed and converted into Data.
+The response can be read if desired as the API may return a succcess or failure string in either the header as a
+.CW "403"
+code for example, or in the Body as a JSON string
+.CW "error: true" .
+
+During the testing of this code, test data was generated from Go's
+.CW "rand.Intn()"
+method, to be supplied to the database.
+By using this, I was able to test the network infrastructure and setup script reliablity very easily without the need for the sensors, throwing an additional variable into the mix.
+
+.CW
+.TS
+box centre;
+l.
+.SM
+// client to used to connect with
+const url = "http://sensor-bridge.local:8086/write?db=main&"
+cln := http.Client{}
+
+// test data
+lvl := strconv.Itoa(rand.Intn(12))
+
+jss := "usage,host=sensor-foo water_level=" + lvl
+jsb := []byte(jss)
+
+// create the post request and set the content type
+req, _ := http.NewRequest("POST", url, bytes.NewBuffer(jsb))
+
+req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+// attach the request to the client and send
+res, _ := cln.Do(req)
+
+res.Body.Close()
+.TE
+.R
+.REF "4.4: Simplified Go code for submitting a database entry"
+
+The above simplified code shows the steps taken to submit information through the HTTP API of InfluxDB using the default http package provided by Go.
+
 
 .NH 3
 Database Structure

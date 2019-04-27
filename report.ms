@@ -1550,6 +1550,10 @@ For this reason the first task of the script is to obtain the dependencies neede
 This way there is no need for a node to require internet as it already has everything it needs.
 Further, with the bridge node setup to provide updates to the nodes inside the network, nodes never need to connect to the internet directly.
 
+.SH 3
+Naming
+
+.PP
 When determining the name of the device, a number of considerations must be taken into account.
 Collisions must be avoided within the network, so a large namespace will be required however, these will be stored with every database row so the name shouldn't be too long.
 With this in mind two paths where chosen, if the IP adress is defined, simply affix the IP address to "sensor" to get, for example
@@ -1562,6 +1566,43 @@ From this we can suffix those 8 chars to the name to get
 .CW "sensor-adb44a41" .
 This proccess however is not requried for the bridge node as there should only be one in any given mesh, and thus the name will be generated as
 .CW "sensor-bridge" .
+
+.SH 3
+Burning
+
+.PP
+Because this script is aimed to be used by a wide range of users, the usability of the script across a number of install configurations must be ensured.
+Further,
+.CW "unzip"
+is opted for as not only does it save extracting the file (saving time and disk space) it means the date prefix of the .img does not need to be considered.
+To this end, a number of checks are made.
+A typical Linux distribution will have
+.CW "unzip"
+installed which allows us to unzip the archive directly onto the sd card using
+.CW "tee" .
+
+Alternatively if the user does not have a
+.CW "unzip"
+installed (as
+.CW "tee"
+is POSIX)
+then the img file will be dd instead.
+Although it is common for dd to be used to burn images it is far slower than simply using cat.
+
+.CW
+.TS
+centre;
+l|c.
+.R
+.B
+Command	Time (Real)
+.CW
+_
+unzip foo.zip | tee /dev/bar	5m 4s
+dd if=foo.img of=/dev/bar	8m 18s
+.TE
+.R
+.REF "4.2: Comparative burn times for tee vs dd, timed with 'time'"
 
 .NH 2
 Node Software

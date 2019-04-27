@@ -1499,6 +1499,7 @@ mmcblk0     179:0    0  3.7G  0 disk
 $
 .TE
 .R
+.NL
 .REF "4.1: Output from the prepare-sd script"
 
 There are a number of user required inputs during the process which ask the user for information about the enviroment that it cannot infer.
@@ -1529,6 +1530,34 @@ Whether or not SSH should be enabled on the device
 A final confirmation before writing to the selected disk, this option defaults to no.
 .PP
 This allows a multitude of differing options to be provided with the minimal amount of requirements for running the script.
+When prompting the user for input a default option will always be highlighted (if available) for example when asking
+.CW "Are you sure? [y/N]"
+the capitalised
+.B "N"
+indicates that is the default option.
+If no text is entered, the default option is assumed.
+If at any point an invalid response is entered then the user is reprompted for an appropriate value.
+
+.CW
+.SM
+.TS
+box centre;
+l.
+::    Listing out available drives
+mmcblk0     179:0    0  3.7G  0 disk
+::    Specifiy drive: /dev/mmc
+:: ERROR : Invalid Device
+::    Specifiy drive: /dev/nvme
+:: ERROR : Invalid Device
+::    Specifiy drive: /dev/mmcblk0
+::    Are we deploying to an eduroam network [y/N]
+.TE
+.R
+.NL
+.REF "4.2: Reprompting user for valid device"
+This provides the best possible user experience.
+If erroneous user input could not be reenterd, in the case of if the last input in were to be invalid, then the entire script would exit and the user would have to reenter all of the options.
+The only exception to this is the final prompt before writing as this change initiates the burning proccess.
 
 .SH 3
 Network
@@ -1601,7 +1630,7 @@ unzip foo.zip | tee /dev/bar	5m 4s
 dd if=foo.img of=/dev/bar	8m 18s
 .TE
 .R
-.REF "4.2: Comparative burn times for tee vs dd, timed with 'time'"
+.REF "4.3: Comparative burn times for tee vs dd, timed with 'time'"
 
 .SH 3
 Software
@@ -1642,7 +1671,7 @@ $ brctl addbr foo
 $ brctl addif foo bar0
 $ brctl addif foo bar1
 .TE
-.REF "4.3: using batctl to create a bridge"
+.REF "4.4: using batctl to create a bridge"
 
 .PP
 The
@@ -1714,7 +1743,7 @@ msg = [{
 # write to db
 db.write_points(msg)
 .TE
-.REF "4.4: Simple InfluxClient in Python"
+.REF "4.5: Simple InfluxClient in Python"
 .R
 This is a very verbose implementation with many working parts.
 It also requires us to use the InfluxDB language to move the data.
@@ -1729,7 +1758,7 @@ $ curl "foo.com:8086/write?db=bar&test,host=sensor variable=10"
 .TE
 .NL
 .R
-.REF "4.5: Insert data using CURL"
+.REF "4.6: Insert data using CURL"
 
 This method is far less verbose and far more portable.
 CURL is a Unix utility found in all major Operating Systems and is incredibly powerful.
@@ -1749,7 +1778,7 @@ response, _ := client.Do( req )
 .TE
 .NL
 .R
-.REF "4.6: Simple HTTP Reqeust in Go"
+.REF "4.7: Simple HTTP Reqeust in Go"
 .KE
 
 Initially the Client from the "http" package is created.
@@ -1801,7 +1830,7 @@ res, _ := cln.Do(req)
 res.Body.Close()
 .TE
 .R
-.REF "4.5: Simplified Go code for submitting a database entry"
+.REF "4.8: Simplified Go code for submitting a database entry"
 
 The above simplified code shows the steps taken to submit information through the HTTP API of InfluxDB using the default http package provided by Go, as desribed.
 Using HTTP to perform the query has a number of advantages.

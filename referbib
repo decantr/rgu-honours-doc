@@ -467,3 +467,9 @@
 %T Topic: GPIO
 %O https://github.com/topics/gpio
 %D 2017
+
+%K expressdesc
+%A Node.JS
+%T About express.js
+%O https://expressjs.com
+%D 2019

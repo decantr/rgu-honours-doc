@@ -1932,6 +1932,30 @@ $ du -bsh query.*
 API
 .PP
 The API is in the form of a RESTful HTTP API written in Node.Js.
+Since the Go ginary is handling all of the inputs into the database, this API only needs to handle data retrieval.
+To this end only the
+.CW "GET"
+requests need to be handled.
+This simplifies the code greatly.
+Node.JS has a number of ways to implement a HTTP server however the simeplest and most featured is "Express.js".
+Express.js is provided by the Node.JS foundation and thus could be considered the defacto standard.
+The website described it as
+
+.nr LL 5i
+.RS
+.RS
+.KS
+.I "Express is a minimal and flexible Node.js web application framework
+that provides a robust set of features for web and mobile applications."
+.[
+expressdesc
+.]
+.KE
+.RE
+.RE
+.nr LL 6i
+
+.LP
 Incoming GET Requests are handled by the express server and query the database directly based on the paramaters sent.
 The results from the database are then parsed and turned into a JSON Object that can then be parsed by the front end.
 

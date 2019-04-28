@@ -1903,6 +1903,7 @@ l.
     ]
 }
 .TE
+.NL
 .R
 .REF "4.9: Standard output returned by the HTTP API"
 
@@ -1916,15 +1917,17 @@ in the file path, i.e.
 
 .CW
 .SM
+.SM
 .TS
 box centre;
 l.
-$ curl -s "foo.com:8086/query?pretty=true&db=bar&" -d "q=select * from usage limit 1" > query.pretty
 $ curl -s "foo.com:8086/query?&db=bar&" -d "q=select * from usage limit 1" > query.ugly
+$ cat query.ugly | json_reformat > query.pretty
 $ du -bsh query.*
 806     query.pretty
 219     query.ugly
 .TE
+.NL
 .R
 .REF "4.10: The comparative sizes of the response show above"
 
@@ -1945,11 +1948,8 @@ The website described it as
 .RS
 .RS
 .KS
-.LG
-"
-.NL
-.I "Express is a minimal and flexible Node.js web application framework
-that provides a robust set of features for web and mobile applications."
+.I
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 .[
 expressdesc
 .]
@@ -1960,7 +1960,7 @@ expressdesc
 
 .LP
 Incoming GET Requests are handled by the express server and query the database directly based on the paramaters sent.
-The results from the database are then parsed and turned into a JSON Object that can then be parsed by the front end.
+The results from the database are then parsed and turned into a JSON Object that is a slimmed down version of the data object shown earlier.
 
 .NH 2
 Web Client
@@ -1969,7 +1969,57 @@ The web interface is a simple implementation of two D3 libraries, Cubism and Par
 These allow the user to get an at a glance view of the information in the database, without needing to do any querying directly.
 A realworld implementation of this project would expect users to deploy their own interfaces, if at all, as stated earlier the goal of the project is to build the framework.
 
-.IMAGE
+From the data layout discussed above, we can make a number of improvements when returning it from the database.
+.CW
+.TS
+box centre;
+l.
+.SM
+[
+    {
+        "host": "sensor-a2e7ea02",
+        "fields": {
+            "water_current": [
+                17
+            ],
+            "water_level": [
+                4
+            ],
+            "water_purity": [
+                4
+            ],
+            "water_temp": [
+                14
+            ]
+        }
+    }
+]
+.TE
+.R
+.REF "4.11: JSON Array returned by Pi."
+By reforming the data into an array of objects with this data schema we can reduce the size of the transmitted data almsot in half, from
+.CW "219"
+bytes for a single entry of a single sesnor to only
+.CW "116" .
+However this new format is far more efficient when more hosts and entries are added.
+
+.CW
+.SM
+.TS
+box centre;
+l.
+$ curl -s "sensor-bridge:3000/data?type=mean&time=1h" > api.ugly
+$ cat api.ugly | json_reformat > api.pretty
+$ du -bsh api.*
+332     api.pretty
+116     api.ugly
+.TE
+.NL
+.R
+.REF "4.12: Comparitive sizes of the API result"
+
+From this we can assume that for each
+
 \# TODO : insert image of the UI
 
 .NH 2

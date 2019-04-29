@@ -2190,13 +2190,13 @@ If the user does not wish to use the Bridge mode (i.e "eduroam" or non-DHCP mode
 Further, if a Raspberry Pi 3B+ is used with a Power over Ethernet
 .B "PoE" ) (
 hat, the sensor will only need a single cable to be connected to the network and receive power.
-This can also be done for a Pi Zero (W) using a custom built header, however this is outwith the remit of this project.
+This can also be done for a Pi Zero (W) using a custom built header, however this is out with the remit of this project.
 .[
 nodezeropoe
 .]
 If deploy a Pi for use in a production or high traffic environment, the use of  a Pi3B+ (plus) is recommended due to the replacement of the
 .CW "10/100"
-interace with a
+interface with a
 .CW "10/100/1000"
 or
 .B "Gigabit"
@@ -2210,7 +2210,79 @@ The reason for this is due to the USB 2.0 controller that the Ethernet Link is a
 .NH
 Testing and Results
 .PP
-\# TODO : Do some testing
+The goal of this project was to develop an automated way to create and deploy a sensor network quickly and reliably to the users specification.
+To this end in this section will be included logs from setups that have been run through to deploy differing kinds of bridge and sensor configurations.
+.SH 2
+Bridge
+.PP
+Initially a Bridge will be created intended to be deployed for on a non-DHCP network, such as eduroam.
+
+.CW
+.TS
+box centre;
+l.
+.SM
+./prepare-sd.sh
+::    Is this a Node(0) or Bridge(1) [0] 1
+::    Listing out available drives
+mmcblk0     179:0    0  7.4G  0 disk
+::    Specifiy drive: /dev/mmcblk0
+::    Are we deploying to an eduroam network [y/N] y
+::    As this is the bridge setting to 172.16.0.1
+::    Should SSH on port 22 be enabled? [Y/n]
+::    Hostname set to sensor-bridge
+:: WARNING : This will erase all data on /dev/mmcblk0!
+::    Are you sure? [y/N] y
+::    Writing 352M to /dev/mmcblk0
+::    This may take a while
+:: INFO : Finished writing to /dev/mmcblk0
+:: INFO : Creating mounting directories
+:: INFO : Mounting /dev/mmcblk0p to sd/
+:: INFO : Moving files
+:: INFO : Unmounting /dev/mmcblk0p
+::    Install finished
+$
+.TE
+.R
+.REF "5.1: Creating a bridge for eduroam"
+
+Upon mounting this and waiting for it to complete, we can access it through the assigned IP address on the LAN or WLAN interface to the network, or alternatively though the hostname
+.CW "sensor-bridge.local" .
+By loading the webpage at
+.CW "sensor-bridge.local:8080"
+we can see that we do infact have a working network.
+
+.SM
+.CW
+.TS
+box centre;
+l.
+$ if curl sensor-bridge.local:8080 -s &>/dev/null; then
+>    echo "Success!";
+> else
+>    echo "Something went wrong";
+> fi
+Success!
+.TE
+.R
+.REF "5.2: If statement used"
+This if statement will be used to ensure the existence of the webpage being hosted on the Bridge.
+If curl gets a
+.CW "404"
+when trying to retrieve the page it returns exit code
+.CW "1" .
+This causes the if to fail and
+.I "Something went wrong"
+will be printed.
+A successful request will return exit code 0 which is understood as true.
+An alternative would be to
+.CW "ping"
+the hostname however this would not ensure that the setup script had completed successfully.
+
+
+.SH 2
+Sensor
+
 .bp
 .NH
 Evaluation
@@ -2221,10 +2293,12 @@ One
 .PP
 .NH 2
 Two
+
 .bp
 .NH
 Conclusion
 .PP
+
 .bp
 .NH
 Appendices

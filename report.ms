@@ -1539,7 +1539,7 @@ $
 .TE
 .R
 .NL
-.REF "4.1: Output from the prepare-sd script"
+.REF "4.3: Output from the prepare-sd script"
 
 There are a number of user required inputs during the process which ask the user for information about the enviroment that it cannot infer.
 These options are as follows:
@@ -1593,7 +1593,7 @@ mmcblk0     179:0    0  3.7G  0 disk
 .TE
 .R
 .NL
-.REF "4.2: Reprompting user for valid device"
+.REF "4.4: Reprompting user for valid device"
 This provides the best possible user experience.
 If erroneous user input could not be reenterd, in the case of if the last input in were to be invalid, then the entire script would exit and the user would have to reenter all of the options.
 The only exception to this is the final prompt before writing as this change initiates the burning proccess.
@@ -1669,7 +1669,7 @@ unzip foo.zip | tee /dev/bar	5m 4s
 dd if=foo.img of=/dev/bar	8m 18s
 .TE
 .R
-.REF "4.3: Comparative burn times for tee vs dd, timed with 'time'"
+.REF "4.5: Comparative burn times for tee vs dd, timed with 'time'"
 
 .SH 3
 Software
@@ -1710,7 +1710,7 @@ $ brctl addbr foo
 $ brctl addif foo bar0
 $ brctl addif foo bar1
 .TE
-.REF "4.4: using batctl to create a bridge"
+.REF "4.6: using batctl to create a bridge"
 
 .PP
 The
@@ -1782,7 +1782,7 @@ msg = [{
 # write to db
 db.write_points(msg)
 .TE
-.REF "4.5: Simple InfluxClient in Python"
+.REF "4.7: Simple InfluxClient in Python"
 .R
 This is a very verbose implementation with many working parts.
 It also requires us to use the InfluxDB language to move the data.
@@ -1797,7 +1797,7 @@ $ curl "foo.com:8086/write?db=bar&test,host=sensor variable=10"
 .TE
 .NL
 .R
-.REF "4.6: Insert data using CURL"
+.REF "4.8: Insert data using CURL"
 
 This method is far less verbose and far more portable.
 CURL is a Unix utility found in all major Operating Systems and is incredibly powerful.
@@ -1818,7 +1818,7 @@ response, _ := client.Do( req )
 .TE
 .NL
 .R
-.REF "4.7: Simple HTTP Reqeust in Go"
+.REF "4.9: Simple HTTP Reqeust in Go"
 .KE
 
 Initially the Client from the "http" package is created.
@@ -1871,7 +1871,7 @@ res, _ := cln.Do(req)
 res.Body.Close()
 .TE
 .R
-.REF "4.8: Simplified Go code for submitting a database entry"
+.REF "4.10: Simplified Go code for submitting a database entry"
 
 The above simplified code shows the steps taken to submit information through the HTTP API of InfluxDB using the default http package provided by Go, as desribed.
 Using HTTP to perform the query has a number of advantages.
@@ -1944,7 +1944,7 @@ l.
 .TE
 .NL
 .R
-.REF "4.9: Standard output returned by the HTTP API"
+.REF "4.11: Standard output returned by the HTTP API"
 
 This data schema is very verbose, with a number of useless fields.
 Hence in the next seciton, the API, this will be sginificantly reduced for data being returned by the API.
@@ -1968,7 +1968,7 @@ $ du -bsh query.*
 .TE
 .NL
 .R
-.REF "4.10: The comparative sizes of the response show above"
+.REF "4.12: The comparative sizes of the response show above"
 
 .NH 2
 API
@@ -2028,7 +2028,7 @@ l.
 ]
 .TE
 .R
-.REF "4.11: JSON Array returned by Pi."
+.REF "4.13: JSON Array returned by Pi."
 By reforming the data into an array of objects with this data schema we can reduce the size of the transmitted data almsot in half, from
 .CW "219"
 bytes for a single entry of a single sesnor to only
@@ -2054,7 +2054,7 @@ $ du -bsh api.*
 .TE
 .NL
 .R
-.REF "4.12: Comparative sizes of the finalized data schema from the API"
+.REF "4.14: Comparative sizes of the finalized data schema from the API"
 
 From this we can extrapolate a saving of approximately
 .CW "100"

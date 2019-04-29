@@ -1847,10 +1847,10 @@ By using this, I was able to test the network infrastructure and setup script re
 .KS
 .CW
 .TS
-box centre;
+nowarn box centre;
 l.
 .SM
-// client to used to connect with
+// client used to connect with
 const url = "http://sensor-bridge.local:8086/write?db=main&"
 cln := http.Client{}
 
@@ -2212,9 +2212,56 @@ Testing and Results
 .PP
 The goal of this project was to develop an automated way to create and deploy a sensor network quickly and reliably to the users specification.
 To this end in this section will be included logs from setups that have been run through to deploy differing kinds of bridge and sensor configurations.
+Initially the input validation will be tested to ensure erroneous entries are caught.
+
+.SH 2
+Input Validation
+.PP
+This is easily tested, as touched on lightly previously by simply entering undefined values when prompted, the console output from this test is attached below.
+
+.CW
+.TS
+box centre;
+l.
+.SM
+$ ./prepare-sd.sh
+::    Is this a Node(0) or Bridge(1) [0] a
+::    Please choose Node(0) or Bridge(1)
+$ ./prepare-sd.sh
+::    Is this a Node(0) or Bridge(1) [0]
+::    Pi2 and 3 are armhf, Pi0 and Pi1 is armel
+::    Choose either armhf or armel: arma
+:: ERROR : Invalid Architecture
+::    Choose either armhf or armel: armelel
+:: ERROR : Invalid Architecture
+::    Choose either armhf or armel: armel
+::    Listing out available drives
+mmcblk0     179:0    0  7.4G  0 disk
+::    Specify drive: /dev/sda
+:: ERROR : Invalid Device
+::    Specify drive: /dev/
+:: ERROR : Invalid Device
+::    Specify drive: /dev/mmcblk0
+::    Are we deploying to an eduroam network [y/N] a
+::    Are we deploying to an eduroam network [y/N]
+::    Should SSH on port 22 be enabled? [Y/n] j
+:: ERROR : Invalid
+::    Should SSH on port 22 be enabled? [Y/n]
+::    Hostname set to sensor-91541705
+:: WARNING : This will erase all data on /dev/mmcblk0!
+::    Are you sure? [y/N]
+#### END ####
+.TE
+.R
+.REF "5.1: Log from trying differing invalid inputs"
+This shows that the script effectively input validates at each stage, except the first, without kicking the user from the script.
+Two benefits are provided by this.
+The primary function is to ensure the validity of the data being input, for example with drive selection writing to the root disk (/, /home etc.) would destroy the users install and files.
+Hence it is important that this is checked.
+Secondly, used experience is improved hugely, as if something is entered in error the whole list of inputs does not have to be re-input.
+
 .SH 2
 Bridge
-
 .SH 3
 Eduroam
 .PP
@@ -2247,7 +2294,7 @@ mmcblk0     179:0    0  7.4G  0 disk
 $
 .TE
 .R
-.REF "5.1: Creating a bridge for eduroam"
+.REF "5.2: Creating a bridge for eduroam"
 
 Upon mounting this and waiting for it to complete, we can access it through the assigned IP address on the LAN or WLAN interface to the network, or alternatively though the hostname
 .CW "sensor-bridge.local" .
@@ -2269,7 +2316,7 @@ Success!
 .TE
 .NL
 .R
-.REF "5.2: If statement used"
+.REF "5.3: If statement used"
 This if statement will be used to ensure the existence of the webpage being hosted on the Bridge.
 If curl gets a
 .CW "404"
@@ -2282,7 +2329,6 @@ A successful request will return exit code 0 which is understood as true.
 An alternative would be to
 .CW "ping"
 the hostname however this would not ensure that the setup script had completed successfully.
-
 
 
 .SH 2

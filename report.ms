@@ -2064,6 +2064,15 @@ In this instance we reduce network load by roughly ~70%. This is especially usef
 .CW "12" MBps
 (MBytes per second) through its Ethernet Adapter, and serving more than 20 clients large requests would begin to throttle.
 
+The API has two current modes of querying which will be discussed in aggregate.
+Each type, which is selected by the
+.CW "&type=foo"
+URL paramater, returns the same JSON structure, only with the
+.CW "mean"
+path there is only ever one element in each of the hosts object.
+By choosing to return the same object, code duplication can be reduced and any code implementing data returned from the API only need to parse once data schema, regardless of the type of data being retrieved.
+
+
 .NH 2
 Web Client
 .PP
@@ -2096,6 +2105,10 @@ Further, use of HTTP over TLS
 could be implemented if the Web UI was intended to be viewed over the internet, and would be mandatory if the database was being deployed to a cloud or Virtual Private Server
 .B "VPS" ) (
 instance.
+However, as previously discussed the HTTP server hosting the WebUI is the only interface publicly accessible.
+This server is
+.CW "GET"
+only (in that it only ever returns data) and thus it is entirely uni-directional and thus does not expose the device, nor the user accessing it in any meaningful way.
 
 Finally, the "WiFi" network created that carries the mesh network is not password protected.
 However this is a misleading as the network is not

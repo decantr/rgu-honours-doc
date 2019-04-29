@@ -2067,11 +2067,15 @@ In this instance we reduce network load by roughly ~70%. This is especially usef
 .NH 2
 Web Client
 .PP
-The web interface is a simple implementation of two D3 libraries, Cubism and Parallel.
+The web interface is a simple implementation of two D3 libraries, Cubism and Parallel that queries the API explained in the previous section.
+The Cubism UI makes use of AJAX requests to the Node.JS API adding new entries as it comes in.
+By contrast the Parallel UI queries the API for the mean of each of the hosts going back by the user defined amount, controlled by a drop down menu.
 These allow the user to get an at a glance view of the information in the database, without the need to query the database directly.
 A real world implementation of this project would expect users to deploy their own interfaces, if at all, as stated earlier the goal of the project is to build the framework.
 
 .FIG "4.12 : View of the Parallel Web UI" "images/parallel.eps"
+This figure shows the Parallel view with a number of sensors feeding into the database.
+This graph shows the mean for the last hours results.
 
 .NH 2
 Security

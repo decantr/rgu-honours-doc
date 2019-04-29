@@ -2060,17 +2060,18 @@ From this we can extrapolate a saving of approximately
 .CW "100"
 bytes.
 This saving becomes more apparent when multiple entries per host are being sent (for rendering a cubism graph for example) where a thousand records are being transmitted.
-In this instance we reduce network load by roughly ~70%.
+In this instance we reduce network load by roughly ~70%. This is especially useful given the Raspberry Pi3B only has a maximum network throughput of
+.CW "12" MBps
+(MBytes per second) through its Ethernet Adapter, and serving more than 20 clients large requests would begin to throttle.
 
 .NH 2
 Web Client
 .PP
 The web interface is a simple implementation of two D3 libraries, Cubism and Parallel.
-These allow the user to get an at a glance view of the information in the database, without needing to do any querying directly.
+These allow the user to get an at a glance view of the information in the database, without the need to query the database directly.
 A real world implementation of this project would expect users to deploy their own interfaces, if at all, as stated earlier the goal of the project is to build the framework.
 
 .FIG "4.12 : View of the Parallel Web UI" "images/parallel.eps"
-
 
 .NH 2
 Security

@@ -2072,7 +2072,6 @@ URL paramater, returns the same JSON structure, only with the
 path there is only ever one element in each of the hosts object.
 By choosing to return the same object, code duplication can be reduced and any code implementing data returned from the API only need to parse once data schema, regardless of the type of data being retrieved.
 
-
 .NH 2
 Web Client
 .PP
@@ -2082,7 +2081,7 @@ By contrast the Parallel UI queries the API for the mean of each of the hosts go
 These allow the user to get an at a glance view of the information in the database, without the need to query the database directly.
 A real world implementation of this project would expect users to deploy their own interfaces, if at all, as stated earlier the goal of the project is to build the framework.
 
-.FIG "4.12 : View of the Parallel Web UI" "images/parallel.eps"
+.FIG "4.15 : View of the Parallel Web UI" "images/parallel.eps"
 This figure shows the Parallel view with a number of sensors feeding into the database.
 This graph shows the mean for the last hours results.
 
@@ -2123,11 +2122,89 @@ Sensor
 The sensor's were deployed on the Raspberry Pi Zero W's as mentioned in the design section.
 This made development very easy as these devices, being fully fledged Linux installs, could be SSH'd in to read system logs to determine faults and prototype fixes in real time.
 
-\# TODO : insert image of RPi0w
-.FIG "3.11: Typical Raspberry Pi Zero W with DHT11 attached" "images/raspberrypizerowdht11.eps"
+.FIG "4.16: Sensor-bridge next to a bank of Pi Zero's with DHT11's attached" "images/3pluszeros.eps"
+
+Above is a combination of a bank of six Raspberry Pi Zero W's acting as sensors with DHT11's.
+This is what a typical sensor node could look like when deployed en masse.
+Sensors could be placed inside of a protective housing for extra protection, though this would be at the discretion of the user deploying them and the environment being deployed to.
+From this stage the sensors could either be plugged into a power source using a standard USB Micro B connector, either to 230V Socket or USB Type A, or alternatively into a battery pack for remote deployments.
+As discussed in the design phase, this could take the form of a cheap single cell or battery.
+
+When connecting a sensor to the GPIO headers, care must be taken to ensure the pins are connected to the correct corresponding headers on the Pi.
+In the case of the DHT11, pictured above, there are three pins to be connected.
+
+.FIG "4.17: DHT11 Plugged into a Raspberry Pi Zero W" "images/pizeropinout.eps"
+
+The image about shows the connected pins close up, as can bee seen.
+.TS
+tab(&) centre;
+lc
+l|r.
+.B
+Label	&Pin
+.R
+_
+Vcc (+) &	2
+Data (out) &	7
+Ground (-) &	6
+.TE
+.REF "4.18: Label on DHT11 to GPIO pin"
+
+Connecting the pins as shown will allow the sensor to be read from.
+The pin layout will vary from sensor to sensor however this information is easily available from the manufacturer.
+
+Finally as desribed in the Requirements section power management is a priority in the event the sensors are deployed on battery.
+To accomplish this a number of services were disabled using the
+.CW "/boot/config.txt"
+file, and an entry into the
+.CW "/etc/rc.local"
+file to disable the HDMI output.
+
+
+.CW
+.TS
+box centre;
+l.
+.SM
+# /boot/config.txt
+dtoverlay=pi3-disable-bt
+dtparam=act_led_trigger=none
+dtparam=act_led_activelow=on
+dtparam=audio=off
+.TE
+.R
+.REF "4.19: Entries into the config.txt"
+
+Making these changes makes a combined 30mA saving, bringing the power consumption to
+.CW "100" mA. ~
+
+.SH 3
+Bridge
 
 .PP
-This is what a typical sensor node would look like.
+The bridge deployment is far simpler only requiring a single unit.
+For testing a Raspberry Pi 3B was used, pictured in Figure 4.16 above on the left.
+This device merely needs Ethernet (or an additional wifi adapter) and the internal WiFi adapter.
+If the user does not wish to use the Bridge mode (i.e "eduroam" or non-DHCP mode), then the bridge will not be created and the Ethernet cable (or second interface) can be removed after the initial setup of Node.js and Docker.
+
+Further, if a Raspberry Pi 3B+ is used with a Power over Ethernet
+.B "PoE" ) (
+hat, the sensor will only need a single cable to be connected to the network and receive power.
+This can also be done for a Pi Zero (W) using a custom built header, however this is outwith the remit of this project.
+.[
+nodezeropoe
+.]
+If deploy a Pi for use in a production or high traffic environment, the use of  a Pi3B+ (plus) is recommended due to the replacement of the
+.CW "10/100"
+interace with a
+.CW "10/100/1000"
+or
+.B "Gigabit"
+interface which improves throughput to closer to around
+.CW "60" MBps
+with no USB devices.
+The reason for this is due to the USB 2.0 controller that the Ethernet Link is attached to, limiting throughput to USB 2.0 speeds
+.CW "480Mbps" ). (
 
 .bp
 .NH

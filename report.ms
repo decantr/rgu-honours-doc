@@ -45,7 +45,7 @@ Robert Gordon University
 The Internet of Things
 .B "IoT" ) (
 has brought a plethora of low energy, low profile devices to market that are purpose built for a single function.
-These devices are synonymous with poor security, abscence of proper upstream updates, along with spending CPU cycles on sending useless telemetry to the manufacturer of the device.
+These devices are synonymous with poor security, absence of proper upstream updates, along with spending CPU cycles on sending useless telemetry to the manufacturer of the device.
 This project will follow the design and implementation of deployable distributed sensor network for use on Raspberry Pi devices with minimal setup needed.
 .AE
 
@@ -88,7 +88,7 @@ Much of this stems from the rise of (Ultra)-Low Power IoT Devices (LPIoTD) that 
 This is commonly used for things such atmospheric control where a number of sensors in a room will allow a central server control temperature and air conditioning to each room individually.
 The use of these LPIoTD is expanding into other areas, such as river monitoring, as described in my literature review, which was previously a manual task performed weekly.
 
-By harnessing this technology we can better minitor the many variables in any given environment, unfortunately the majority of these implementations are proprietary.
+By harnessing this technology we can better monitor the many variables in any given environment, unfortunately the majority of these implementations are proprietary.
 Anyone interested in deploying such a network would be required to obtain a bulk purchase of potentially hundreds of Single Board Computers
 .B "SBC" ) (
 which are purpose built for the task and pay licensing fees.
@@ -116,7 +116,7 @@ The report will walkthrough the steps taken to create the open source tooling th
 - The design methodology section will walkthrough the rational followed in the design of the project.
 .IP
 .B "Implementation"
-- Naturally, following the design section the implementation seciton will describe what was built with the tools and techniques described in the methodology section.
+- Naturally, following the design section the implementation section will describe what was built with the tools and techniques described in the methodology section.
 .IP
 .B "Testing & Results"
 - This is followed by the testing and results which will describe the testing process overall and the results achieved from this resting.
@@ -303,7 +303,7 @@ Vujovic2014
 .]
 
 With the ever increasing rise of such devices the availability of low cost System On a Chip
-.B "SOC" ) (
+.B "SoC" ) (
 devices increases with it.
 
 Many vendors have begun targeting the SoC devices after the Raspberry Pi Foundation unveiled the Raspberry Pi 1.
@@ -362,7 +362,7 @@ Arduino
 
 .PP
 The Arduino is a compelling choice as it's Arduino Nano product, pictured below, uses the ATmega328 microcontroller.
-This is a controller with a miniscule power draw of only 19mA.
+This is a controller with a minuscule power draw of only 19mA.
 .[
 ArduinoLLC2010
 .]
@@ -372,7 +372,7 @@ This would enable us to run on a minimal power source such as a 9V battery cell 
 Madcoffee2018
 .]
 
-Further the arduino features a smaller SoC size for both the Nano and the full-size Uno device
+Further the Arduino features a smaller SoC size for both the Nano and the full-size Uno device
 .[
 ArduinoLLC2010
 .]
@@ -404,7 +404,7 @@ _
 _
 Cost (£) & 15 & 15 & 35 & 15 & 50 & 55
 Power Draw Idle & 0.225 W & 0.01 W & 2 W & 0.5 W & 1.75 W & 2 W
-WiFI & N/A & N/A & 802.11 b/g/n & 802.11 b/g/n & 802.11 b/g/n & 802.11 b/g/n
+WiFi & N/A & N/A & 802.11 b/g/n & 802.11 b/g/n & 802.11 b/g/n & 802.11 b/g/n
 Bluetooth & N/A & N/A & 4.2 & 4.1 & 4.1 & 4.0
 CPU Arch & AVR & AVR & ARMv8 & ARMv6 & ARMv8 & ARMv7
 Clock Speed & 16 MHz & 16 Mhz & 1.4 GHz & 1 GHz & 1 GHz & 1.8 GHz
@@ -971,7 +971,7 @@ protocol have enabled it to compile and perform on ARM hardware, thus opening th
 The distributed mesh networking can be provided by the newer
 .B "B.A.T.M.A.N Advanced"
 protocol, which now operates on Layer 2 of the OSI stack.
-This change means it no appears to the Linux System as an adapter so any program can send packets to it as if it was a normal adapter (wlan, eth etc.) and
+This change means it no appears to the Linux System as an adapter so any program can send packets to it as if it was a normal adapter (WLAN, Eth etc.) and
 .B "B.A.T.M.A.N"
 will handle the transmission of the packets.
 This has the added benefits of increased compatibility, high performance with very little overhead, perfect for low powered devices.
@@ -1008,7 +1008,7 @@ which, as the name states, is a protocol rather than a set of rules.
 Despite both communicating over HTTP, SOAP by contrast is far more cumbersome in both transmission size and implementation.
 The protocol which communicates exclusively through XML and requires a far greater tethering of client and server.
 A client wanting to access a SOAP API uses it more as a gateway to pass commands into the system, meaning far tighter integration and lower portability.
-Because of his it has largely lost traction to the afformentioned REST.
+Because of his it has largely lost traction to the aforementioned REST.
 
 A number of other implementation exist such as Facebook's
 .I "GraphQL"
@@ -1058,7 +1058,7 @@ box "InfluxDB"
 .PP
 The above Figure 14 shows how a myriad of different clients can interact with the API without needing to know the IQL syntax or handle output of the query.
 This has a number advantages, as mentioned in the previous section, mainly the portability of the data returned, and that it is stateless.
-Any type of client making a request against the API will recieve the same data.
+Any type of client making a request against the API will receive the same data.
 
 .NH 2
 Deploy Scripts
@@ -1095,7 +1095,7 @@ However as discussed in the previous section the portability was a more desirabl
 .SH 3
 Input
 .PP
-Furthermore, anyone familiar with CLI tools is aware that they usually operate through "flags" or arguements that are passed to the command.
+Furthermore, anyone familiar with CLI tools is aware that they usually operate through "flags" or arguments that are passed to the command.
 For example running the
 .CW "git log"
 command would create an output like this
@@ -1117,7 +1117,7 @@ Date:   Thu Apr 25 00:11:24 2019 +0100
 .R
 Whereas running the
 .CW "git log"
-with the arguements
+with the arguments
 .CW "--no-pager log --oneline -n 1"
 would produce the following.
 
@@ -1183,7 +1183,7 @@ flag which will run the command provided on startup.
 
 .IP
 .B "systemd"
-- Systemd is the init system for most Linux disribution and the creation of "Service" can run functions at intervels, or on startup.
+- Systemd is the init system for most Linux distribution and the creation of "Service" can run functions at intervals, or on startup.
 
 .IP
 .B "rc.local"
@@ -1191,14 +1191,14 @@ flag which will run the command provided on startup.
 
 .IP
 .B "other"
-- There are other ways to run something at differing stages of start, for example .xinitrc for the init stage of x, or .bashrc for shell initilisation, however these are too late in the boot stage.
+- There are other ways to run something at differing stages of start, for example .xinitrc for the init stage of x, or .bashrc for shell initialisation, however these are too late in the boot stage.
 
 .PP
 From this list there are number of good contesters emerge.
 Crontab is the easiest to use of them all, a user unique file inside
 .CW "/var/spool/cron/crontabs/" .
 The tool is very flexible and allows for running commands at defined times and periods up to monthly.
-This functionality is slowly being phased out in most distributions in favour of the far more flexible Systemd Servies, although Raspbian does ship with crontab by default.
+This functionality is slowly being phased out in most distributions in favour of the far more flexible Systemd Services, although Raspbian does ship with crontab by default.
 A simple systemd service merely requires six lines for basic setup, as described.
 
 .CW
@@ -1216,7 +1216,7 @@ WantedBy=multi-user.target
 .R
 .REF "3.7: systemd service"
 
-This is somewhat more legible than the archiac but simple crontab layout;
+This is somewhat more legible than the archaic but simple crontab layout;
 
 .CW
 .TS
@@ -1228,12 +1228,12 @@ l.
 .R
 .REF "3.8: crontab entry"
 
-The flaw, however, with the crontab implementation is the @reboot flag is non standard and it is not garunteed to function the same across installs.
+The flaw, however, with the crontab implementation is the @reboot flag is non standard and it is not guaranteed to function the same across installs.
 .[
 crontabguru
 .]
 The other alternative mentioned is a rc.local file.
-Appending to this before the exit 0 is not reccomended as the file states at the top
+Appending to this before the exit 0 is not recommended as the file states at the top
 .I "Make sure that the script will exit 0" ' '
 which we can ensure will happen if our script fails.
 Thus for deployment of the scripts the systemd service is the most ideal solution for deployment.
@@ -1242,7 +1242,7 @@ Thus for deployment of the scripts the systemd service is the most ideal solutio
 Binary Deployment
 
 .PP
-In an enviroment where the deployed devices do not have internet it is important that they still have functionality.
+In an environment where the deployed devices do not have internet it is important that they still have functionality.
 To ensure this the
 .CW "reporter"
 Golang binary will be deployed by the script as it sets up the other facets of the device.
@@ -1324,7 +1324,7 @@ Storage
 In the test deployment
 .B "InfluxDB"
 is setup locally on the bridge.
-This is typically not an issue as as shown below, even with over 37K (37 000) entries, the database size is still very managable.
+This is typically not an issue as as shown below, even with over 37K (37 000) entries, the database size is still very manageable.
 
 .CW
 .TS
@@ -1358,7 +1358,7 @@ $
 .R
 .REF "3.9: Row count of InfluxDB vs. size on disk"
 
-However in a production enviroment with many hundreds of sensors this database may need to be stored (physically) on an external Hard Disk Drive
+However in a production environment with many hundreds of sensors this database may need to be stored (physically) on an external Hard Disk Drive
 .B "HDD"
 or on a cloud DBMS, such as Amazon's DynamoDB.
 Although again, this is somewhat outwith the remit of the project and would be to the discretion of a user deploying the tools.
@@ -1411,7 +1411,7 @@ arrow <-> from Z.n to N.w
 Nodes
 
 .PP
-The nodes are a much simpler requiring a minute amount of proccessing power.
+The nodes are a much simpler requiring a minute amount of processing power.
 As discussed in the Literature Review an Arduino is a strong choice for the nodes due to its incredibly low power consumption.
 The ability to compile
 .CW "C"
@@ -1421,10 +1421,10 @@ or
 .CW "GCC" .
 However the requirement of an extra purchase, the WiFi shield, makes it undesirable in the goal of making the simplest setup for users possible.
 Thus the Raspberry Pi Zero W is the compelling choice.
-The Goland code compiles to a native binary, meaning no abstraction layer is required, increasing the performance.
+The Golang code compiles to a native binary, meaning no abstraction layer is required, increasing the performance.
 Further by using cron to handling scheduling of the program it does not need to run in the background constantly, instead we can use cron to implement the job of a
 .CW "while true, run code & sleep 1m" .
-To demonstrate the networks functionality a number of sensor nodes will be setup to show fucntionality.
+To demonstrate the networks functionality a number of sensor nodes will be setup to show functionality.
 .bp
 
 .NH
@@ -1432,20 +1432,20 @@ Implementation
 .NH 2
 Development Practices & Tools
 .PP
-When developming this project the
+When developing this project the
 .B "Agile"
-proccess was opted for.
-This approach is based on the natural, iterative proccess of software development.
-The proccess of design, implementation and redesign is key to this project and through this interative proccess the functionality was refined and edge cases worked out.
+process was opted for.
+This approach is based on the natural, iterative process of software development.
+The process of design, implementation and redesign is key to this project and through this iterative process the functionality was refined and edge cases worked out.
 
 The use of the VCS
 .CW "Git"
-by Linus Torvalds has allowed for a rapid development enviroment while undertaking the project.
+by Linus Torvalds has allowed for a rapid development environment while undertaking the project.
 The Agile software development approach has complimented this with use of
 .I "branches"
 and being able to move between different code versions quickly and easily.
 As the codebase was developed for the two major sections of code, web accessible repositories were used to ensure a seamless work environment between development locations and provided a backup mechanism incase of a disaster.
-Further, the afformentioned branches allowed a master branch to be kept in a tested-working state at all times while a development branch was used to develop new features and bug fixes.
+Further, the aforementioned branches allowed a master branch to be kept in a tested-working state at all times while a development branch was used to develop new features and bug fixes.
 This approach is to development is described as a Production / Development branch.
 
 By implementing
@@ -1453,8 +1453,8 @@ By implementing
 into the workflow,
 .I "issues"
 were able to be used in to raised for bugs, feature and concerns and tracked by marking them with flags.
-In this way I was able to employ an the Agile development approach, by generating a number of issues and then clearing them all in a sprint.
-Using the release functionality allowed seperate releases to be produced, which the setup script can pull or alternatively for a build from source options.
+In this way I was able to employ and the Agile development approach, by generating a number of issues and then clearing them all in a sprint.
+Using the release functionality allowed separate releases to be produced, which the setup script can pull or alternatively for a build from source options.
 
 The campus network, where the testing network was deployed with the bridge connected via Ethernet, does not allow port forwarding.
 This made remote development very difficult as prototyping would have to be performed on site.
@@ -1521,7 +1521,7 @@ $ ./prepare-sd.sh
 ::    Choose either armhf or armel: armel
 ::    Listing out available drives
 mmcblk0     179:0    0  3.7G  0 disk
-::    Specifiy drive: /dev/mmcblk0
+::    Specify drive: /dev/mmcblk0
 ::    Are we deploying to an eduroam network [y/N]
 ::    Should SSH on port 22 be enabled? [Y/n]
 ::    Hostname set to sensor-abd44a41
@@ -1531,9 +1531,9 @@ mmcblk0     179:0    0  3.7G  0 disk
 ::    This may take a while
 :: INFO : Finished writing to /dev/mmcblk0
 :: INFO : Creating mounting directories
-:: INFO : Mounting /dev/mmcblk0p to sd/
+:: INFO : Mounting /dev/mmcblk0 to sd/
 :: INFO : Moving files
-:: INFO : Unmounting /dev/mmcblk0p
+:: INFO : Unmounting /dev/mmcblk0
 ::    Install finished
 $
 .TE
@@ -1541,7 +1541,7 @@ $
 .NL
 .REF "4.3: Output from the prepare-sd script"
 
-There are a number of user required inputs during the process which ask the user for information about the enviroment that it cannot infer.
+There are a number of user required inputs during the process which ask the user for information about the environment that it cannot infer.
 These options are as follows:
 .IP \[bu]
 Whether a Node or Bridge is being created.
@@ -1575,7 +1575,7 @@ the capitalised
 .B "N"
 indicates that is the default option.
 If no text is entered, the default option is assumed.
-If at any point an invalid response is entered then the user is reprompted for an appropriate value.
+If at any point an invalid response is entered then the user is re-prompted for an appropriate value.
 
 .CW
 .SM
@@ -1584,19 +1584,19 @@ box centre;
 l.
 ::    Listing out available drives
 mmcblk0     179:0    0  3.7G  0 disk
-::    Specifiy drive: /dev/mmc
+::    Specify drive: /dev/mmc
 :: ERROR : Invalid Device
-::    Specifiy drive: /dev/nvme
+::    Specify drive: /dev/nvme
 :: ERROR : Invalid Device
-::    Specifiy drive: /dev/mmcblk0
+::    Specify drive: /dev/mmcblk0
 ::    Are we deploying to an eduroam network [y/N]
 .TE
 .R
 .NL
-.REF "4.4: Reprompting user for valid device"
+.REF "4.4: Re-prompting user for valid device"
 This provides the best possible user experience.
-If erroneous user input could not be reenterd, in the case of if the last input in were to be invalid, then the entire script would exit and the user would have to reenter all of the options.
-The only exception to this is the final prompt before writing as this change initiates the burning proccess.
+If erroneous user input could not be re-entered, in the case of if the last input in were to be invalid, then the entire script would exit and the user would have to re-enter all of the options.
+The only exception to this is the final prompt before writing as this change initiates the burning process.
 
 .SH 3
 Network
@@ -1606,14 +1606,14 @@ Some networks, such as the
 .I "eduroam"
 network on campus, does not correctly assign IP Address' inside the mesh network.
 To account for this our network will have need to have two "types" to handle occasions such as this, hence the user is prompted if they are deploying to such a network.
-If this option is slected then the script will assign a Static IP address to the device.
-It is worth nothing that inside the mesh network nodes can still commmunicate with each other using the self assigned IP address
+If this option is selected then the script will assign a Static IP address to the device.
+It is worth nothing that inside the mesh network nodes can still communicate with each other using the self assigned IP address
 .CW "169.254.16.8" ' '
 for example, however this is not predictable and thus nodes could not be contacted programmatically.
-Further complicating things, if there is no DHCP server then it unlikely a localDNS server, and thus hostname communication is impossible.
+Further complicating things, if there is no DHCP server then it unlikely a local DNS server, and thus hostname communication is impossible.
 A daemon such as Avahi could be used however it extremely unreliable in testing and far too slow to be used in such a dynamic network.
 
-For this reason the first task of the script is to obtain the dependencies needed for the pi's after they have been setup.
+For this reason the first task of the script is to obtain the dependencies needed for the Pi's after they have been setup.
 This way there is no need for a node to require internet as it already has everything it needs.
 Further, with the bridge node setup to provide updates to the nodes inside the network, nodes never need to connect to the internet directly.
 
@@ -1622,16 +1622,16 @@ Naming
 
 .PP
 When determining the name of the device, a number of considerations must be taken into account.
-Collisions must be avoided within the network, so a large namespace will be required however, these will be stored with every database row so the name shouldn't be too long.
-With this in mind two paths where chosen, if the IP adress is defined, simply affix the IP address to "sensor" to get, for example
+Collisions must be avoided within the network, so a large name space will be required however, these will be stored with every database row so the name shouldn't be too long.
+With this in mind two paths where chosen, if the IP address is defined, simply affix the IP address to "sensor" to get, for example
 .CW "sensor-122" .
 When using DHCP however this cannot be known, nor can we be sure the IP wont change.
-To this end, a function is used to generate a unique name, the current date as a string is hashed using md5, then the first 8 characters of that are taken with
+To this end, a function is used to generate a unique name, the current date as a string is hashed using MD5, then the first 8 characters of that are taken with
 .CW "date | md5sum | cut -c1-8" .
-This gives us a predictable, repeatable way of generating names with increadibly low overhead while providing a huge namespace.
+This gives us a predictable, repeatable way of generating names with incredibly low overhead while providing a huge name space.
 From this we can suffix those 8 chars to the name to get
 .CW "sensor-adb44a41" .
-This proccess however is not requried for the bridge node as there should only be one in any given mesh, and thus the name will be generated as
+This process however is not required for the bridge node as there should only be one in any given mesh, and thus the name will be generated as
 .CW "sensor-bridge" .
 
 .SH 3
@@ -1719,17 +1719,17 @@ package also has issues.
 The most current version of batctl is 2019.0 which is provided from the Debian repositories.
 The current available version of batctl from the Raspbian repositories is 2016.5.
 However, as the open-mesh website requires 2017.3 for kernel version 4.14 (running on the Raspbian) or higher.
-As the source is provided from their repo or (batctl-2017.3.tar.gz) could be shipped and compiled on the nodes.
+As the source is provided from their repository or (batctl-2017.3.tar.gz) could be shipped and compiled on the nodes.
 Though this would have added an additional dependencies (libnl-3 and libnl-genl).
 
 Installing batctl version 2019.0-1 from the Debian Sid repository works as expected on both the Raspberry Pi 3B and the Pi Zero W.
 However attempting to run any batctl command on the Pi Zero W  with this version will result in a segmentation fault error, but will work on the Raspberry Pi3B.
 Version's 2016.5 (from the Raspbian repo) and 2017.3 (compiled) do not share this issue.
 To create a further problem, batctl 2016.5 in the Raspbian repository causes the bridge node (running on a Raspberry Pi 3) to become unreachable despite still passing traffic into and out of the mesh network.
-Compiling is not ideal as serpate
+Compiling is not ideal as separate
 .CW "dev"
 packages must be provided to the Pi's and compiling from source takes over five minutes.
-Thus, seperate versions must be provided depending on the type of device we are creating.
+Thus, separate versions must be provided depending on the type of device we are creating.
 
 .NH 2
 Node Software
@@ -1827,14 +1827,14 @@ Then a "NewRequest" is created which contains the type of request,
 .CW "POST" ,
 .CW "DELETE"
 etc. followed by the URL or IP Address of the target and finally the content of in the request.
-This request is then passed to the http.Client initally created which then "Do[es]" the request defined previously.
+This request is then passed to the http.Client initially created which then "Do[es]" the request defined previously.
 This returns a http.Response which which contains a
 .CW "Head" ,
 with the headers and a
 .CW "Body"
 containing the actual content.
-Content returned could be in the form of a HTML docuement to be displayed or a JSON string to be parsed and converted into Data.
-The response can be read if desired as the API may return a succcess or failure string in either the header as a
+Content returned could be in the form of a HTML document to be displayed or a JSON string to be parsed and converted into Data.
+The response can be read if desired as the API may return a success or failure string in either the header as a
 .CW "403"
 code for example, or in the Body as a JSON string
 .CW "error: true" .
@@ -1842,7 +1842,7 @@ code for example, or in the Body as a JSON string
 During the testing of this code, test data was generated from Go's
 .CW "rand.Intn()"
 method, to be supplied to the database.
-By using this, I was able to test the network infrastructure and setup script reliablity very easily without the need for the sensors, throwing an additional variable into the mix.
+By using this, I was able to test the network infrastructure and setup script reliability very easily without the need for the sensors, throwing an additional variable into the mix.
 
 .KS
 .CW
@@ -1873,7 +1873,7 @@ res.Body.Close()
 .R
 .REF "4.10: Simplified Go code for submitting a database entry"
 
-The above simplified code shows the steps taken to submit information through the HTTP API of InfluxDB using the default http package provided by Go, as desribed.
+The above simplified code shows the steps taken to submit information through the HTTP API of InfluxDB using the default http package provided by Go, as described.
 Using HTTP to perform the query has a number of advantages.
 Since the only traffic moving on the network is HTTP we can firewall other types to increase security.
 HTTP is also a very lightweight protocol and does not require much overhead in the packet.
@@ -1888,7 +1888,7 @@ instance being used is being deployed through the
 .B "Docker"
 container provided by the official builds.
 This allows us to abstract the most vulnerable part of the bridge nodes exposed side (the DB) to a container.
-If a security flaw was exposed it would not affect the bridge node itself, allowing an administrator to simply discard the comprimised container and pull the patched version.
+If a security flaw was exposed it would not affect the bridge node itself, allowing an administrator to simply discard the compromised container and pull the patched version.
 The database is a NoSQL database and thus does not have a strict database layout, however tags are used to index the database.
 This acts as a fast way for the Influx Query Language to find the things searched for.
 Because of this it is imperative that the node's inserting information into the database follow the correct syntax.
@@ -1897,7 +1897,7 @@ Our database uses the hostname of the device reporting back is marked as a "tag"
 By doing this when our API queries the database the results can be
 .CW "GROUP" [ed]
 .CW "BY"
-the hostname specfified and the user can select which sensors results to view,
+the hostname specified and the user can select which sensors results to view,
 or to group by and average of results from all hosts in a specified amount of time.
 
 .SH 3
@@ -1947,9 +1947,9 @@ l.
 .REF "4.11: Standard output returned by the HTTP API"
 
 This data schema is very verbose, with a number of useless fields.
-Hence in the next seciton, the API, this will be sginificantly reduced for data being returned by the API.
-When a query is made for a single entry with all fields against out test database, 219 bytes are transmitted for the non prettyfied version compared to 806 with spacing included.
-This proccess is commenly known as "minifying" and is used in a number on interpreted languages such as javascript, denoted by the
+Hence in the next section, the API, this will be significantly reduced for data being returned by the API.
+When a query is made for a single entry with all fields against out test database, 219 bytes are transmitted for the non prettified version compared to 806 with spacing included.
+This process is commonly known as "minifying" and is used in a number on interpreted languages such as Javascript, denoted by the
 .CW ".min"
 in the file path, i.e.
 .CW "jquery.min.js" .
@@ -1974,13 +1974,13 @@ $ du -bsh query.*
 API
 .PP
 The API is in the form of a RESTful HTTP API written in Node.Js.
-Since the Go ginary is handling all of the inputs into the database, this API only needs to handle data retrieval.
+Since the Go binary is handling all of the inputs into the database, this API only needs to handle data retrieval.
 To this end only the
 .CW "GET"
 requests need to be handled.
 This simplifies the code greatly.
-Node.JS has a number of ways to implement a HTTP server however the simeplest and most featured is "Express.js".
-Express.js is provided by the Node.JS foundation and thus could be considered the defacto standard.
+Node.JS has a number of ways to implement a HTTP server however the simplest and most featured is "Express.js".
+Express.js is provided by the Node.JS foundation and thus could be considered the de facto standard.
 The website described it as
 
 .nr LL 5i
@@ -1998,7 +1998,7 @@ expressdesc
 .nr LL 6i
 
 .LP
-Incoming GET Requests are handled by the express server and query the database directly based on the paramaters sent.
+Incoming GET Requests are handled by the express server and query the database directly based on the parameters sent.
 The results from the database are then parsed and turned into a JSON Object that is a slimmed down version of the data object shown earlier.
 From the data layout discussed above, we can make a number of improvements when returning it from the database.
 
@@ -2029,9 +2029,9 @@ l.
 .TE
 .R
 .REF "4.13: JSON Array returned by Pi."
-By reforming the data into an array of objects with this data schema we can reduce the size of the transmitted data almsot in half, from
+By reforming the data into an array of objects with this data schema we can reduce the size of the transmitted data almost in half, from
 .CW "219"
-bytes for a single entry of a single sesnor to only
+bytes for a single entry of a single sensor to only
 .CW "116" .
 However this new format is far more efficient when more hosts and entries are added.
 This is achieved by only sending the hostname once (as the object header), thus reducing the total packet size by
@@ -2067,7 +2067,7 @@ In this instance we reduce network load by roughly ~70%. This is especially usef
 The API has two current modes of querying which will be discussed in aggregate.
 Each type, which is selected by the
 .CW "&type=foo"
-URL paramater, returns the same JSON structure, only with the
+URL parameter, returns the same JSON structure, only with the
 .CW "mean"
 path there is only ever one element in each of the hosts object.
 By choosing to return the same object, code duplication can be reduced and any code implementing data returned from the API only need to parse once data schema, regardless of the type of data being retrieved.
@@ -2153,7 +2153,7 @@ Ground (-) &	6
 Connecting the pins as shown will allow the sensor to be read from.
 The pin layout will vary from sensor to sensor however this information is easily available from the manufacturer.
 
-Finally as desribed in the Requirements section power management is a priority in the event the sensors are deployed on battery.
+Finally as described in the Requirements section power management is a priority in the event the sensors are deployed on battery.
 To accomplish this a number of services were disabled using the
 .CW "/boot/config.txt"
 file, and an entry into the
@@ -2184,7 +2184,7 @@ Bridge
 .PP
 The bridge deployment is far simpler only requiring a single unit.
 For testing a Raspberry Pi 3B was used, pictured in Figure 4.16 above on the left.
-This device merely needs Ethernet (or an additional wifi adapter) and the internal WiFi adapter.
+This device merely needs Ethernet (or an additional WiFi adapter) and the internal WiFi adapter.
 If the user does not wish to use the Bridge mode (i.e "eduroam" or non-DHCP mode), then the bridge will not be created and the Ethernet cable (or second interface) can be removed after the initial setup of Node.js and Docker.
 
 Further, if a Raspberry Pi 3B+ is used with a Power over Ethernet
@@ -2214,6 +2214,9 @@ The goal of this project was to develop an automated way to create and deploy a 
 To this end in this section will be included logs from setups that have been run through to deploy differing kinds of bridge and sensor configurations.
 .SH 2
 Bridge
+
+.SH 3
+Eduroam
 .PP
 Initially a Bridge will be created intended to be deployed for on a non-DHCP network, such as eduroam.
 
@@ -2226,7 +2229,7 @@ l.
 ::    Is this a Node(0) or Bridge(1) [0] 1
 ::    Listing out available drives
 mmcblk0     179:0    0  7.4G  0 disk
-::    Specifiy drive: /dev/mmcblk0
+::    Specify drive: /dev/mmcblk0
 ::    Are we deploying to an eduroam network [y/N] y
 ::    As this is the bridge setting to 172.16.0.1
 ::    Should SSH on port 22 be enabled? [Y/n]
@@ -2237,9 +2240,9 @@ mmcblk0     179:0    0  7.4G  0 disk
 ::    This may take a while
 :: INFO : Finished writing to /dev/mmcblk0
 :: INFO : Creating mounting directories
-:: INFO : Mounting /dev/mmcblk0p to sd/
+:: INFO : Mounting /dev/mmcblk0 to sd/
 :: INFO : Moving files
-:: INFO : Unmounting /dev/mmcblk0p
+:: INFO : Unmounting /dev/mmcblk0
 ::    Install finished
 $
 .TE
@@ -2250,7 +2253,7 @@ Upon mounting this and waiting for it to complete, we can access it through the 
 .CW "sensor-bridge.local" .
 By loading the webpage at
 .CW "sensor-bridge.local:8080"
-we can see that we do infact have a working network.
+we can see that we do in fact have a working network.
 
 .SM
 .CW
@@ -2264,6 +2267,7 @@ $ if curl sensor-bridge.local:8080 -s &>/dev/null; then
 > fi
 Success!
 .TE
+.NL
 .R
 .REF "5.2: If statement used"
 This if statement will be used to ensure the existence of the webpage being hosted on the Bridge.
@@ -2278,6 +2282,7 @@ A successful request will return exit code 0 which is understood as true.
 An alternative would be to
 .CW "ping"
 the hostname however this would not ensure that the setup script had completed successfully.
+
 
 
 .SH 2
@@ -2303,4 +2308,4 @@ Conclusion
 .NH
 Appendices
 .SH 2
-All of the other headnings
+All of the other headings

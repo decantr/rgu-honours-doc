@@ -1456,6 +1456,45 @@ were able to be used in to raised for bugs, feature and concerns and tracked by 
 In this way I was able to employ an the Agile development approach, by generating a number of issues and then clearing them all in a sprint.
 Using the release functionality allowed seperate releases to be produced, which the setup script can pull or alternatively for a build from source options.
 
+The campus network, where the testing network was deployed with the bridge connected via Ethernet, does not allow port forwarding.
+This made remote development very difficult as prototyping would have to be performed on site.
+To combat this and allow remote development, a Secure Shell
+.B "SSH" ) (
+reverse tunnel was setup to a secure server outside of the firewall using a Public Key Authentication.
+Local port
+.CW "22"
+was forwarded to port
+.CW "9999"
+on the remote server using the following command.
+
+.CW
+.TS
+box centre;
+l.
+.SM
+$ ssh -NR 9999:localhost:22 bar@foo.uk.to
+.TE
+.R
+.REF "4.1: Reverse SSH Tunnel setup command"
+
+This should be done from a
+.CW "screen"
+instance to avoid locking a tty or ssh session or by affixing
+.CW "&"
+to make it a background job.
+The bridge can then be accessed from anywhere by simply running the following command.
+
+.CW
+.TS
+box centre;
+l.
+.SM
+$ ssh -tt bar@foo.uk.to ssh localhost -p 9999
+.TE
+.R
+.REF "4.2: Connect to the bridge, through the reverse tunnel"
+This ensured that changes could be deployed to the development boards or sensors restarted manually from outwith the campus, where they were located.
+
 .NH 2
 Setup Tools
 .PP

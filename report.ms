@@ -1961,15 +1961,8 @@ expressdesc
 .LP
 Incoming GET Requests are handled by the express server and query the database directly based on the paramaters sent.
 The results from the database are then parsed and turned into a JSON Object that is a slimmed down version of the data object shown earlier.
-
-.NH 2
-Web Client
-.PP
-The web interface is a simple implementation of two D3 libraries, Cubism and Parallel.
-These allow the user to get an at a glance view of the information in the database, without needing to do any querying directly.
-A realworld implementation of this project would expect users to deploy their own interfaces, if at all, as stated earlier the goal of the project is to build the framework.
-
 From the data layout discussed above, we can make a number of improvements when returning it from the database.
+
 .CW
 .TS
 box centre;
@@ -2002,7 +1995,9 @@ By reforming the data into an array of objects with this data schema we can redu
 bytes for a single entry of a single sesnor to only
 .CW "116" .
 However this new format is far more efficient when more hosts and entries are added.
-This is achieved by only sending the hostname once (as the object header), thus reducing the total packet size by 15 bytes per entry after the first.
+This is achieved by only sending the hostname once (as the object header), thus reducing the total packet size by
+.CW "15"
+bytes per entry after the first.
 Further improvements have been made by building arrays of each element.
 This however could cause an issue in a malformed database if an entry was manually entered that did not match the schema.
 However due to the tightly controlled pipeline, this is highly unlikely and a missing element (incase of a sensor missing a sensor) the API simply returns a null value.
@@ -2020,13 +2015,23 @@ $ du -bsh api.*
 .TE
 .NL
 .R
-.REF "4.12: Comparitive sizes of the API result"
+.REF "4.12: Comparative sizes of the finalized data schema from the API"
 
-From this we can extrapolate a saving of approximately 100 bytes.
+From this we can extrapolate a saving of approximately
+.CW "100"
+bytes.
 This saving becomes more apparent when multiple entries per host are being sent (for rendering a cubism graph for example) where a thousand records are being transmitted.
 In this instance we reduce network load by roughly ~70%.
 
-\# TODO : insert image of the UI
+.NH 2
+Web Client
+.PP
+The web interface is a simple implementation of two D3 libraries, Cubism and Parallel.
+These allow the user to get an at a glance view of the information in the database, without needing to do any querying directly.
+A real world implementation of this project would expect users to deploy their own interfaces, if at all, as stated earlier the goal of the project is to build the framework.
+
+.FIG "4.12 : View of the Parallel Web UI" "images/parallel.eps"
+
 
 .NH 2
 Security
@@ -2040,7 +2045,7 @@ a common simple but effective firewall implementation for Unix systems, is deplo
 the mesh in kept safe.
 Equally, by blocking access to
 .CW "8086" ,
-the InfluxDB port, from the WAN side and only allowing access from inside the mesh network the dataabse cannot be queried or inserted into directly, forcing all operations through Interface.
+the InfluxDB port, from the WAN side and only allowing access from inside the mesh network the database cannot be queried or inserted into directly, forcing all operations through Interface.
 
 Further, use of HTTP over TLS
 .B "HTTPS"

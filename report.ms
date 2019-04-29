@@ -2243,7 +2243,10 @@ mmcblk0     179:0    0  7.4G  0 disk
 :: ERROR : Invalid Device
 ::    Specify drive: /dev/mmcblk0
 ::    Are we deploying to an eduroam network [y/N] a
-::    Are we deploying to an eduroam network [y/N]
+::    Are we deploying to an eduroam network [y/N] y
+::    Select an IP Address: 172.16.0.a
+::    not a valid ip
+::    Select an IP Address: 172.16.0.111
 ::    Should SSH on port 22 be enabled? [Y/n] j
 :: ERROR : Invalid
 ::    Should SSH on port 22 be enabled? [Y/n]
@@ -2317,6 +2320,7 @@ Success!
 .NL
 .R
 .REF "5.3: If statement used"
+
 This if statement will be used to ensure the existence of the webpage being hosted on the Bridge.
 If curl gets a
 .CW "404"
@@ -2330,9 +2334,96 @@ An alternative would be to
 .CW "ping"
 the hostname however this would not ensure that the setup script had completed successfully.
 
+.SH 3
+DHCP
+.PP
+To create a device for DHCP we follow the same steps however choose either "N"/"n"/or simply press return when prompted.
+
+.CW
+.TS
+box centre;
+l.
+.SM
+#### cut ####
+::    Specify drive: /dev/mmcblk0
+::    Are we deploying to an eduroam network [y/N] n
+::    Should SSH on port 22 be enabled? [Y/n] n
+#### cut ####
+.TE
+.R
+.REF "5.4: Choosing No to eduroam"
+The rest of the steps are identical and thus omitted.
+When running our check against this device we can see that it is indeed up and running.
+.SM
+.CW
+.TS
+box centre;
+l.
+$ if curl sensor-bridge.local:8080 -s &>/dev/null; then
+>    echo "Success!";
+> else
+>    echo "Something went wrong";
+> fi
+Success!
+.TE
+.NL
+.R
+.REF "5.5: If statement used"
+This demonstrates the DHCP method working successfully.
 
 .SH 2
 Sensor
+.PP
+The sensor setup is almost identical again to the Bridge network except with an extra step at the begging to determine the Architecture of the device being created.
+
+.CW
+.TS
+box centre;
+l.
+.SM
+$ ./prepare-sd.sh
+::    Is this a Node(0) or Bridge(1) [0]
+::    Pi2 and 3 are armhf, Pi0 and Pi1 is armel
+::    Choose either armhf or armel: armhf
+::    Listing out available drives
+mmcblk0     179:0    0  7.4G  0 disk
+::    Specify drive: /dev/mmcblk0
+::    Are we deploying to an eduroam network [y/N] n
+#### cut ####
+::    Hostname set to sensor-de0a9fe1
+#### cut ####
+.TE
+.R
+.REF "5.6: Creating a Sensor Node"
+This it the pertinent section of the Sensor node creator.
+The user is asked which type of device is being created although its recommended that a Pi Zero W is used for simplicity, any armel or armhf device will work.
+
+To test this device, we cannot poll the HTTP API, either connect to the webpage and view the devices connected or alternatively SSH in and query the API from
+.CW "localhost:3000" .
+
+
+.CW
+.TS
+box centre;
+l.
+.SM
+# ssh pi@sensor-bridge.local
+$ curl 'localhost:3000/data?type=mean&time=1h'
+[]
+##### plug in the sensor and wait for boot
+$ curl 'localhost:3000/data?type=mean&time=1h'
+[{"host":"sensor-de0a9fe1","fields": { "variable": [10] } }]
+$
+.TE
+.R
+.REF "5.7: Successfully connected and reporting"
+This shows an initial empty array being returned as no objects existed in the database, then after the sensor was up and running the database was receiving data and the API was able to retrieve it.
+
+.NH 2
+Table of Compliance
+.PP
+Below are the requirements listen before along with whether or not they were passed or not, and if not a description why.
+
 
 .bp
 .NH

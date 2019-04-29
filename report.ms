@@ -2002,6 +2002,10 @@ By reforming the data into an array of objects with this data schema we can redu
 bytes for a single entry of a single sesnor to only
 .CW "116" .
 However this new format is far more efficient when more hosts and entries are added.
+This is achieved by only sending the hostname once (as the object header), thus reducing the total packet size by 15 bytes per entry after the first.
+Further improvements have been made by building arrays of each element.
+This however could cause an issue in a malformed database if an entry was manually entered that did not match the schema.
+However due to the tightly controlled pipeline, this is highly unlikely and a missing element (incase of a sensor missing a sensor) the API simply returns a null value.
 
 .CW
 .SM
@@ -2018,7 +2022,9 @@ $ du -bsh api.*
 .R
 .REF "4.12: Comparitive sizes of the API result"
 
-From this we can assume that for each
+From this we can extrapolate a saving of approximately 100 bytes.
+This saving becomes more apparent when multiple entries per host are being sent (for rendering a cubism graph for example) where a thousand records are being transmitted.
+In this instance we reduce network load by roughly ~70%.
 
 \# TODO : insert image of the UI
 

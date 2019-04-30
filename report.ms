@@ -2609,5 +2609,114 @@ _
 13;22/05/2019;N/A;Final Draft & Poster Demo
 14;29/05/2019;N/A;Submission
 .TE
+
+.NH 2
+Source Code
+.SH 3
+Main
+.PP
+github.com/decantr/rgu-honours
+
+.TS
+expand tab(;);
+cs
+l|x.
+.LR
+.B
+Commit Log
+.R
+.NL
+_
+492d56d;(HEAD -> master, origin/master, origin/HEAD) fix spelling mistake
+577ee3c;prompt for eduroam if bad input
+ca3aeb1;powersaving
+5e8a8b9;curl oneliner
+471e071;bridge will now always be .1
+fa4216d;change ip add to ifconfig
+cd285af;/etc/hosts is filled with dhcp
+2e12a7b;ask if ssh should be enabled
+91bdbeb;fix inverted test
+5bd0fe0;fix formatting
+6e2785e;change "echo -n" to printf
+c02bb80;ask in the script for node or bridge
+eeabdd9;Merge pull request #14 from decantr/posix
+69910ec;(origin/posix, posix) make the script posix
+ba36bed;only use dhclient if need to get ip
+27c4c6e;log the name of the device to a file
+61fe816;fix the ip exsits check
+4daf309;remove uneeded curl flag
+3d03797;ensure network before getting docker
+72de178;closes #12 add the sensor-bridge IP to /etc/hosts
+56a7819;syntax error in curl
+b1c03b0;make the output of the setup script more legible
+ce2400e;set the hostname. closes #8
+8d6910a;Merge pull request #10 from decantr/eduroam-test
+5a69e74;(origin/eduroam-test, eduroam-test) add the reporter file as a cron task
+fc5ecab;fix the if statement and get docker before setting ip
+1afa3fd;check if ip is being set otherwise follow dhcp route
+50827a1;ask user for a password
+644af7f;wait for docker to finish starting the container before attempting to create the database
+ddd7eb8;remove http encoding from filename
+32bf326;run the reporter on startup
+d4566ab;copy over the file
+ae4cc70;check for architecture for choosing which build
+d1023bf;look for the correct filename
+5484e93;add database setup on the bridge pi for local testing
+5bae548;remove root check in favour of using sudo
+831af50;add in downloading of raspbian file
+ca66621;quieten the output of getting deps
+4f1dcc5;script will now download the .deb files needed
+a2c1679;select batctl version based on host or node
+2de48aa;add gitignore
+d7fdcba;change iwconfig to ifconfig for bringing interfaces back up
+9fc0868;Merge pull request #1 from decantr/dhcp
+f2ab326;(origin/dhcp) will now create bridge and request dhcp
+9df9637;change ip request to node/bridge check
+eb3c21f;move commands to i[w/f]config
+a6304ae;require static ip
+78522fe;change name of setup script
+9f3c008;add setup script
+e29c1d4;populate prepare-sd with sd card setup script
+56f8559;create
+682cd02;Initial commit
+.TE
+
+.SH 3
+Reporter
+.PP
+github.com/decantr/rgu-honours-report
+
+.TS
+expand tab(;);
+cs
+l|x.
+.LR
+.B
+Commit Log
+.R
+.NL
+_
+4139178;(HEAD -> master, origin/master) change database to the correct one
+82b9bc5;add error reporting back in
+c72896f;change to hostname
+e739db6;add build instructions to README
+6b85e13;change ip of endpoint
+ba9be70;reformat the code and add comments
+768775d;add in more fields to give to the database
+cf441de;using random int's for testing
+36d678d;get the hostname programmatically
+fcfe173;post to db with http working
+f5f1cdf;going to encode the string into the url instead
+785fcf8;cannot add multidimensional values into url Values
+81a1cc2;add skeleton git file
+062a54d;first commit
+.TE
+
+.SH 3
+Docs
+.PP
+github.com/decantr/rgu-honours-doc
+
+
 .bp
 

@@ -1208,7 +1208,19 @@ Crontab is the easiest to use of them all, a user unique file inside
 .CW "/var/spool/cron/crontabs/" .
 The tool is very flexible and allows for running commands at defined times and periods up to monthly.
 This functionality is slowly being phased out in most distributions in favour of the far more flexible Systemd Services, although Raspbian does ship with crontab by default.
-A simple systemd service merely requires six lines for basic setup, as described.
+Because of this the simple crontab entry will serve to handle the restarting service.
+
+
+.CW
+.TS
+box centre;
+l.
+.SM
+$ (crontab -l 2>/dev/null; echo "* * * * * /foo.bar") | crontab -
+.TE
+.R
+.REF "3.7.1: Crontab example"
+This example shows a service that will run minutely, as stated above changing the five starts to "@reboot" will run on reboot.
 
 .CW
 .TS
@@ -1223,7 +1235,7 @@ ExecStart=/path/to/foo.bar
 WantedBy=multi-user.target
 .TE
 .R
-.REF "3.7: systemd service"
+.REF "3.7.2: systemd service"
 
 This is somewhat more legible than the archaic but simple crontab layout;
 
@@ -1242,10 +1254,10 @@ The flaw, however, with the crontab implementation is the @reboot flag is non st
 crontabguru
 .]
 The other alternative mentioned is a rc.local file.
-Appending to this before the exit 0 is not recommended as the file states at the top
+Appending to this before the exit 0 is not recommended if we cannot be sure our script exits correctly, i.e. 0,  the file states at the top
 .I "Make sure that the script will exit 0" ' '
-which we can ensure will happen if our script fails.
-Thus for deployment of the scripts the systemd service is the most ideal solution for deployment.
+which we can ensure will happen as long as our errors are caught.
+Thus during development of the scripts the rc.local is the most ideal solution for deployment.
 
 .SH 3
 Binary Deployment

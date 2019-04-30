@@ -4,6 +4,7 @@
 *.blg
 *.log
 *.synctex.gz
+sig.*
 
 */*.aux
 

@@ -49,25 +49,34 @@ These devices are synonymous with poor security, absence of proper upstream upda
 This project will follow the design and implementation of deployable distributed sensor network for use on Raspberry Pi devices with minimal setup needed.
 .AE
 
-\# Table of Contents
+.SH
+Declaration
+.XP
+I confirm that the work contained in this Honours Project has been composed by myself and has not been accepted in any previous application for a degree.
+All sources of information have been specifically acknowledged and all verbatim extracts are distinguished.
 
+.XP
+Signed
+.PSPIC -L "images/sig.eps" 2
+.XP
+Date : 30th April 2019
+
+\# Table of Contents
 .XS 2
-Report Structure
-.XA 2
 Introduction
-.XA 3
-Literature Review
 .XA 4
+Literature Review
+.XA 13
 Design / Methodology
-.XA 5
+.XA 24
 Implementation
-.XA 6
+.XA 37
 Testing and Results
-.XA 7
+.XA 42
 Evaluation
-.XA 8
+.XA 43
 Conclusion
-.XA 9
+.XA 44
 Appendices
 .XE
 .PX

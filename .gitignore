@@ -11,3 +11,6 @@ papers/
 
 # output
 *.pdf
+
+# parts
+!parts/*

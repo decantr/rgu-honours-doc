@@ -2651,7 +2651,9 @@ Commit Log
 .R
 .NL
 _
-492d56d;(HEAD -> master, origin/master, origin/HEAD) fix spelling mistake
+55d3276;(HEAD -> master, origin/master, origin/HEAD) add updater
+a797cad;add in the server
+492d56d;fix spelling mistake
 577ee3c;prompt for eduroam if bad input
 ca3aeb1;powersaving
 5e8a8b9;curl oneliner
@@ -2751,6 +2753,13 @@ Commit Log
 .R
 .NL
 _
+3805cd8;(HEAD -> master, origin/master, origin/HEAD) change to rc.local and crontab
+450f2eb;remove import for ethics
+f3374c2;rewording
+2d81863;fix toc
+1e10f3b;add missing parts and images
+57063e0;layout
+4408c32;docs log
 60a92f5;add commit logs
 c337abe;page break before refs
 927c584;semseter 2

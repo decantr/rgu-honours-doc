@@ -2868,5 +2868,20 @@ f705cf7;update gitignore
 c6423ac;add gitignore
 .TE
 
+.NH 2
+Poster
+.XP
+.PDFPIC parts/poster.pdf
+
+.NH 2
+Ethics Form
+.XP
+.PDFPIC parts/ethics.pdf
+
+.NH 2
+Project Specification
+.XP
+.PDFPIC parts/projspec.pdf
+
 .bp
 

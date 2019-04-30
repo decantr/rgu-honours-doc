@@ -2451,7 +2451,7 @@ Endpoint
 Requirement	Met	How
 _
 Communicate with the server over distance	Y
-Sensors must work	Y
+Sensors must work	N	Only using test data
 Sensor readings must work	Y
 Relay that information to the server	Y
 Compress data being sent	N	Tested implementation caused issues with the server
@@ -2538,13 +2538,12 @@ However, its not unexpected as 4.14 is an Long Term Support
 .B "LTS" ) (
 release.
 
-The project, despite accomplishing the primary goal set out to achieve, has many more improvements and features to add and expand.
+The project success in accomplishing the primary goal set out, naturally suggests there are many opportunities for improvements and features to add and expand.
 The API should be rewritten in a concurrent and thread safe language with high performance, good candidates for this are Go and C.
 The currently implementation in Node.JS is serviceable but visibly lags when querying a thousand records, as shown in section 5.1, this would be an obvious point of improvement for further work.
 Additionally, the option to deploy the database and API to a separate device, or indeed VPS, as the bridging node would be essential for any production deployment of this software.
 
-Finally the WebUI experience would benefit greatly from being expanded.
-Currently it is a neglected area of the project and serves to demonstrate the possibilities.
+Similarly the WebUI experience suggests huge potential for expansion as it currently serves to demonstrate the possibilities.
 Further work into creating a far more expansive set of graphs and data reporting along with location mapping of the physical device location.
 Command and Control of the sensors from the WebUI would add convenience for the administrator, however this someone contradicts the philosophy of the project as that is more the realm of a Enterprise grade implementation.
 
@@ -2552,16 +2551,20 @@ Command and Control of the sensors from the WebUI would add convenience for the 
 .NH
 Conclusion
 .PP
-This project began as an exploration into the feasibility of replacing water monitors along remote rivers.
-When researching the field initially it was very clear that the implementations being developed had researchers being caught spending time in the same development stages.
+What began as an exploration of the feasibility of offering an alternative to the current method of manually monitoring river data.
+Initial research in the field of IoT monitoring suggested similar efforts had been hampered by the limited availability of the necessary tooling to either reinvent the well or to rely on proprietary software.
 As testing continued and the tooling developed to support grew so the goals of the project were adapted.
 When attempting to deploy a large number of sensors I encountered the same issue I saw in my research, there was no available tooling, outside of proprietary solutions, that could aid in the rapid spin up of these devices.
-It was this that drove the design of the project as tooling for any further exploration into the field. The code for this has also been made publicly available in following with the requirement of being open source.
 
-As the development of Operating Systems such as Fedora Atom and Ubuntu Core become more mature, I imagine this problem will fade.
+Addressing the issue of the lack of basic tooling drove the design of the project and implementation teased out further issues around compatibility and scaling.
+Consistent with the aims of this project, laid out in the requirements, and my personal philosophy all code produced is provided and Open Source.
+
+It was this revelation that drove the design of the project as tooling for any further exploration into the field.
+The code for this has also been made publicly available in following with the requirement of being open source.
+
+Looking ahead, the development of Operating Systems such as Fedora Atom and Ubuntu Core become more mature, I imagine this problem will fade.
 Canonical's Snap architecture is gaining tracking and allows a way of deploying software familiar to anyone who has published Node packages to npm.
-It is very unfortunate that the software used in this project is simply not available, B.A.T.M.A.N, to utilize the advantages it brings.
-However it serves to show the interest in the field of IoT and LPIoT Devices and the myriad of applications they have.
+Though it is unfortunate that the software that is central to this project is simply not available, B.A.T.M.A.N, it never the less however, serves to illustrate the growing interest in the field of IoT and LPIoT Devices and the myriad of applications they have.
 
 
 .bp

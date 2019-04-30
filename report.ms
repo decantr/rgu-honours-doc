@@ -2717,6 +2717,156 @@ Docs
 .PP
 github.com/decantr/rgu-honours-doc
 
+.TS
+expand tab(;);
+cs
+l|x.
+.LR
+.B
+Commit Log
+.R
+.NL
+_
+60a92f5;add commit logs
+c337abe;page break before refs
+927c584;semseter 2
+b831dfd;semester one log
+864272f;evaluation
+863d97a;table of compliance
+0b7fe63;table of compliance
+ba4501b;add in sensor
+9738569;add input checking
+bf1f5be;spelling
+2fc7e86;first test
+bd5d0ee;sensor and bridge sections
+8114f60;reword and justify no tls
+65ce21c;explain graph
+6d8c11f;link speed
+4de3230;change fig nums
+79505f4;reverse ssh
+6d0490d;formatting and web client img
+f773ef8;evaluate JSON packet size
+0212b50;add in new data format
+edf44ea;quotes
+716e3f0;introduce express
+173c920;security
+10dcfb5;begin security
+021bd80;database response structure
+4f60be8;http
+df0b838;erroneous input validation
+413d377;justify go http
+406eceb;justifying HTTP API over Go Client
+4331d5f;go http request
+e4c8cc9;slight rewording
+e56fe80;dependency issues
+1696fa8;burning section and time table
+7dbc4ad;naming
+245fae9;network section
+469598f;remove duplicate section
+8bc81c8;sensors section
+43c77b4;agile
+716eb9a;fix numbering
+56afae2;range graph
+157dec9;section on the bridge node
+770e748;move the api section
+ca4aeb8;add fig text to figures
+4ef3581;formatting work
+f475f0d;fig 2.7 missing refs
+5c43c2e;more reference work
+708bb59;api postscript
+0a6719e;add missing regular
+aaea548;remove ".IMAGE" placeholder macro
+3e671e0;convert to new method for figures
+fc719a6;new way to do images
+6bae257;add api graph
+5ee90f3;fix formatting
+ba165df;fix compile command
+4628d3d;database api
+34d0a47;add storage section
+0130c5f;change instances of pi zero to zero w
+e082c35;hardware
+0919f6c;add readme with build instructions
+4ea1170;replace image with pspic
+0d606f6;add all image refs in lit review
+21d9e7f;remove images from gitignore
+7c8c009;add images
+b9666e4;number of public rpi repos
+46967fe;capitalisation
+c4c9c40;second diagram
+4adf731;mesh network diagram
+c16d284;change formatting
+6d81d08;add ssh output
+a687763;Mesh Network is now heading
+be895ac;network oddities
+1549ab6;mesh network section
+a9399db;disccuss binary deployment
+ad497d5;change header settings for legibility
+fec4d3c;move requirements inside design
+3f803b2;add in spacing
+a09aefb;reformat the introduction
+31fb4f8;move structure into intro
+a12dfed;add page numbering
+f410027;remove nl
+6245ebe;section on init of choice
+ad2236c;add cron to refer
+5a5b3b2;begin interface configuration
+0f327d5;replace command output
+64e8e38;add in command output exmaples
+63701fb;fix heading type
+cfc5396;work on the design section
+234333b;add new refs
+6dcf8c4;move the implementation section to the implementation heading
+4449abf;add conclusion
+382741c;add networks
+12644e7;sensors
+35f0971;spaces
+3e4e1ac;server section
+41fdd45;add referbib
+54e7afe;endpoint section
+ba3abf3;fix some cites
+16bdc06;add lit background
+806d265;describe the options
+4a4dd77;tidy up code snippet
+566f0b1;centre box instead of expand
+05c1cc3;add in output from pi zero create
+e5e9f30;add brainlet tier macros  file for image spaces
+bcca50a;deisgn introduction
+5d13800;change quotes
+b1b1beb;specification section
+1208573;add breakpoints in the pages
+8ffa163;aims and objectives
+4430657;finish motivation
+fa8f839;add page break
+56e04bc;start the motivation section
+b45ae68;add the intro from the poster with formatting
+69ed380;rewrite structure
+14dac15;add in page breaks
+203bb53;remove the poster-sections.ms
+dcef7a9;update gitignore
+54e8c45;layout figure
+39bdf65;project plan start
+0331e65;grammatical errors
+4d39c51;finish introduction
+d491c2c;poster headings
+056fe60;fill out more sections
+cd91566;add table of contents
+cc96dde;create the bare structure of the report
+6f48333;update the gitignore to include the compiled pdf
+6c4f180;remove pdf as its in releases
+28ac37e;move lit to folder
+762fc54;more tidying and adding conclusion
+c0687a2;add network and update others
+0b39807;finished with sensors
+d7dcf87;add more to sensors
+5bbd23e;finished os bit
+af55321;finished open source section
+fc86691;adding a part about open source
+6d56f62;latest
+6d2e923;more work on lit
+5a34b7a;starting point
+f705cf7;update gitignore
+c6423ac;add gitignore
+.TE
 
 .bp
 

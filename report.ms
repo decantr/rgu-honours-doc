@@ -2538,13 +2538,61 @@ Finally the WebUI experience would benefit greatly from being expanded.
 Currently it is a neglected area of the project and serves to demonstrate the possibilities.
 Further work into creating a far more expansive set of graphs and data reporting along with location mapping of the physical device location.
 Command and Control of the sensors from the WebUI would add convenience for the administrator, however this someone contradicts the philosophy of the project as that is more the realm of a Enterprise grade implementation.
+
 .bp
 .NH
 Conclusion
 .PP
+This project began as an exploration into the feasibility of replacing water monitors along remote rivers.
+When researching the field initially it was very clear that the implementations being developed had researchers being caught spending time in the same development stages.
+As testing continued and the tooling developed to support grew so the goals of the project were adapted.
+When attempting to deploy a large number of sensors I encountered the same issue I saw in my research, there was no available tooling, outside of proprietary solutions, that could aid in the rapid spin up of these devices.
+It was this that drove the design of the project as tooling for any further exploration into the field. The code for this has also been made publicly available in following with the requirement of being open source.
+
+As the development of Operating Systems such as Fedora Atom and Ubuntu Core become more mature, I imagine this problem will fade.
+Canonical's Snap architecture is gaining tracking and allows a way of deploying software familiar to anyone who has published Node packages to npm.
+It is very unfortunate that the software used in this project is simply not available, B.A.T.M.A.N, to utilize the advantages it brings.
+However it serves to show the interest in the field of IoT and LPIoT Devices and the myriad of applications they have.
+
 
 .bp
 .NH
 Appendices
-.SH 2
-All of the other headings
+.NH 2
+Project Log
+.PP
+.TS
+centre expand tab(;);
+css
+llx.
+Semester 1
+Week;Beginning;Activity
+1;24/09/2018;Developed Ethics Form
+2;1/10/2018;
+3;8/10/2018;Began research for literature Review
+4;14/10/2018;
+5;22/10/2018;Begin writing Literature Review
+6;29/10/2018;
+7;5/11/2018;Submitted Literature Review
+8;12/11/2018;Began drafting Project Requirements
+9;19/11/2018;Completed drafting Project Requirements
+10;26/11/2018;Submitted Project Requirements
+.TE
+.TS
+centre expand tab(;);
+css
+llx.
+Semester 2
+Week;Beginning;Activity
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+

@@ -11,3 +11,6 @@ compile with this command
 
 $ refer -PS -e report.ms | groff -ms -kept -T ps | ps2pdfwr - report-img.pdf
 
+attach the ethics form with
+$ pdfunite report-img.pdf parts/ethics.pdf final-report.pdf
+

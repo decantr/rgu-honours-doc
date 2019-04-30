@@ -2885,15 +2885,5 @@ Poster
 .XP
 .PDFPIC parts/poster.pdf
 
-.NH 2
-Ethics Form
-.XP
-.PDFPIC parts/ethics.pdf
-
-.NH 2
-Project Specification
-.XP
-.PDFPIC parts/projspec.pdf
-
 .bp
 

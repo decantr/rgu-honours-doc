@@ -2563,36 +2563,51 @@ Project Log
 .PP
 .TS
 centre expand tab(;);
-css
-llx.
+csss
+llcx.
+.B
+.LG
 Semester 1
-Week;Beginning;Activity
-1;24/09/2018;Developed Ethics Form
-2;1/10/2018;
-3;8/10/2018;Began research for literature Review
-4;14/10/2018;
-5;22/10/2018;Begin writing Literature Review
-6;29/10/2018;
-7;5/11/2018;Submitted Literature Review
-8;12/11/2018;Began drafting Project Requirements
-9;19/11/2018;Completed drafting Project Requirements
-10;26/11/2018;Submitted Project Requirements
+.NL
+.R
+Week;Beginning;Meeting;Activity
+_
+1;24/09/2018;Y;Developed Ethics Form
+2;1/10/2018;Y;
+3;8/10/2018;Y;Began research for literature Review
+4;14/10/2018;N;
+5;22/10/2018;Y;Begin writing Literature Review
+6;29/10/2018;N;
+7;5/11/2018;Y;Submitted Literature Review
+8;12/11/2018;Y;Began drafting Project Requirements
+9;19/11/2018;Y;Completed drafting Project Requirements
+10;26/11/2018;N;Submitted Project Requirements
 .TE
 .TS
 centre expand tab(;);
-css
-llx.
+csss
+llcx.
+.B
+.LG
 Semester 2
-Week;Beginning;Activity
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+.NL
+.R
+Week;Beginning;Meeting;Activity
+_
+1;28/01/2019;Y;Begin Code
+2;04/02/2019;Y;Package Versioning Issues resolved
+3;11/03/2019;N;Researched HTTP file serving for updating
+4;18/03/2019;Y;Reporter functioning and rewrite
+5;25/03/2019;Y;Predicatable Hostnames and other usability
+6;04/04/2019;Y;Close IP issues on eduroam
+7;11/04/2019;N;
+8;18/04/2019;N;Look into using Systemd
+9;25/04/2019;Y;Final Major Addition to Code
+10;01/05/2019;Y;Start Report
+11;08/05/2019;N;Work on first Draft
+12;15/05/2019;N/A;Poster Submission
+13;22/05/2019;N/A;Final Draft & Poster Demo
+14;29/05/2019;N/A;Submission
+.TE
 
 

@@ -2420,6 +2420,11 @@ $
 This shows an initial empty array being returned as no objects existed in the database, then after the sensor was up and running the database was receiving data and the API was able to retrieve it.
 
 .NH 2
+API Speed Test
+.PP
+
+
+.NH 2
 Table of Compliance
 .PP
 Below are the requirements listen before along with whether or not they were passed or not, and if not a description why.
@@ -2513,12 +2518,26 @@ Must comply with IEEE & IETF standards	Y
 Evaluation
 .PP
 Below is a breakdown of the sections created to build this project and a discussion of the effectiveness of the implementation.
-.NH 2
-One
-.PP
-.NH 2
-Two
+The primary functions of the project, the Mesh Network and the Automated Deployment were a complete success.
+The Mesh Network exceeded expectations in that it is fast and reliable, even over longer distances, which was very unexpected.
+The deployment scripts can be considered thoroughly test as in the process of building the ancillary components many sensor nodes were created and recreated to ensure consistency.
+Below is a breakdown of the sections created to build this project and a discussion of the effectiveness of the implementation.
+The Table of Compliance in the in section 5.2 above shows that the majority of the requirements initially decided upon were met successfully.
 
+It is unfortunate, due to the nature of Raspbian being based upon Debian Stretch which is still based on the 4.9 kernel with a recent update to 4.14.
+However, its not unexpected as 4.14 is an Long Term Support
+.B "LTS" ) (
+release.
+
+The project, despite accomplishing the primary goal set out to achieve, has many more improvements and features to add and expand.
+The API should be rewritten in a concurrent and thread safe language with high performance, good candidates for this are Go and C.
+The currently implementation in Node.JS is serviceable but visibly lags when querying a thousand records, as shown in section 5.1, this would be an obvious point of improvement for further work.
+Additionally, the option to deploy the database and API to a separate device, or indeed VPS, as the bridging node would be essential for any production deployment of this software.
+
+Finally the WebUI experience would benefit greatly from being expanded.
+Currently it is a neglected area of the project and serves to demonstrate the possibilities.
+Further work into creating a far more expansive set of graphs and data reporting along with location mapping of the physical device location.
+Command and Control of the sensors from the WebUI would add convenience for the administrator, however this someone contradicts the philosophy of the project as that is more the realm of a Enterprise grade implementation.
 .bp
 .NH
 Conclusion

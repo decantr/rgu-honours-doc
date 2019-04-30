@@ -2424,6 +2424,113 @@ Table of Compliance
 .PP
 Below are the requirements listen before along with whether or not they were passed or not, and if not a description why.
 
+\# XXX
+.TS
+expand centre;
+css
+llr.
+.B
+.LG
+Endpoint
+.NL
+.R
+Requirement	Met	Why not
+_
+Communicate with the server over distance	Y
+Sensors must work	Y
+Sensor readings must work	Y
+Relay that information to the server	Y
+Compress data being sent	N	Tested implementation caused issues with the server
+Ensure that any lost data is resent	Y	(Handled by the WiFi adapter)
+Must recover from loss of network	Y	B.A.T.M.A.N Rediscovers network
+Can recover from loss of power	Y	Setup script handles reboot
+.TE
+
+.TS
+expand centre;
+css
+llr.
+.B
+.LG
+Server
+.NL
+.R
+Requirement	Met	Why not
+_
+Communicate with the endpoint	Y Through Static or DHCP IP
+Store incoming data using a DBMS	Y InfluxDB
+Not be susceptible to crashes	Y Setup runs every startup
+Maximum uptime ensured	Y	All errors are handled
+T{
+Able to establish new connections and handle lost connections
+T}	Y	B.A.T.M.A.N picks up the connections
+.TE
+.PP
+.B "Software"
+
+.RS
+.IP \[bu]
+Clients should sleep periodically to conserve power
+.IP \[bu]
+A minimum of Linux Kernel 4.18 should be used for the enhanced power saving improvements
+.IP \[bu]
+Client software must be deliverable as a single binary
+.IP \[bu]
+Should communicate of WiFi 2.4 GHz for the enhanced range
+.IP \[bu]
+Server software should be modelled as a RESTful API
+.RE
+
+.PP
+.B "Sensors"
+
+.RS
+.IP \[bu]
+.B "HC SR04"
+Ultrasonic Sensor
+.IP \[bu]
+.B "EZO-pH"
+Embedded pH Circuit
+.IP \[bu]
+.B "DS18B20"
+Temperature Sensor
+.IP \[bu]
+DHT Temperature & Humidity Sensors
+.RS
+.IP \[bu]
+.B "DHT11"
+Sensor
+.IP \[bu]
+.B "DHT22"
+Sensor
+.IP \[bu]
+.B "AM2302"
+Sensor
+.RE
+.RE
+
+.NH 3
+Non-Functional Requirements
+
+.PP
+.RS
+.IP \[bu]
+Software developed should be open source
+.IP \[bu]
+Software developed should be maintainable
+.IP \[bu]
+Should be well documented allowing hobbyists and professionals to implement on their own
+.IP \[bu]
+Software should be written in the LTS versions of software to ensure long life of the project
+.IP \[bu]
+Client software should be written with power saving in mind
+.IP \[bu]
+Must have scripts for deploying software packages to SD Cards
+.IP \[bu]
+Endpoints and servers should comply with IEEE & IETF standards where possible
+.RE
+
+
 
 .bp
 .NH

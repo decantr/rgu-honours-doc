@@ -1,16 +1,50 @@
 rgu honours docs
 ================
 
-Repository for my dissertation
+Distributed Mesh Sensor Network using Raspberry Pi's
+----------------------------------------------------
+
+This acts as a sister repository for the code for my honours project which
+ can be found at [rgu-honours](github.com/decantr/rgu-honours).
 
 
 Build
 -----
+To compile the groff document, the following one liner can be used.
+```
+	$ refer -p referbib -PS -e report.ms | groff -ms -kept -T ps | ps2pdfwr - report-img.pdf
+```
 
-compile with this command
+An understanding of the pipe is key to knowing how this command works,
+ essentially `refer` and `groff -ms` are both stream editors that edit
+ the plaintext `report.ms`.
+This is then passed to `ps2pdf` which converts the .ps file (in the pipe) to
+ a pdf on the disk.
 
-$ refer -PS -e report.ms | groff -ms -kept -T ps | ps2pdfwr - report-img.pdf
+To attach the ethics form use;
+```
+	$ pdfunite report-img.pdf parts/ethics.pdf final-report.pdf
+```
 
-attach the ethics form with
-$ pdfunite report-img.pdf parts/ethics.pdf final-report.pdf
 
+Groff?
+------
+I have been asked a number of times why I chose groff as the language to
+ compose my dissertation in.
+Originally I intended to use LaTeX, and did so for my literature review,
+ however it becomes painfully clear to anyone who has used LaTeX that compile
+ time for mid to large documents are atrocious.
+Further the need to recompile documents to add in references was the breaking
+ point for me.
+
+I had experimented using groff during a previous submission and was astonished
+ at the speed and simplicity of it.
+For example compiling this document less than a second (without images),
+ which meant near WYSIWYG level editing.
+```
+	$ time refer -p referbib -PS -e report.ms | groff -ms -keptU -T pdf > report-img.pdf
+
+  real    0m0.898s
+  user    0m1.154s
+  sys     0m0.065s
+```
